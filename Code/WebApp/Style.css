@@ -1,0 +1,23 @@
+
+html {
+    height: 100%;
+  }
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url('....\Sfondi\550527.jpg');
+    background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.Box1{
+    display: flex;
+    justify-content: center;
+}
