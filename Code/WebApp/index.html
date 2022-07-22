@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/b8ca21d9b2.js" crossorigin="anonymous"></script>
 </head>
 
     <!--  -->
@@ -17,9 +17,21 @@
 <body>
     <div class="Box1"> 
         <form action="#" method="post" >
-            <div class="Username" > <span class="imageMan" aria-hidden="true">  </span> <input name="Username" id="User" type="text" value placeholder="Username" required> </div>
-            <div class="Password"> <input name="Password" id="Pass" type="text" value placeholder="Password" required> </div>
-            <button type="submit" class="Button"> Login </button>
+            <div class="field-group" > 
+                <span class="fa-user" aria-hidden="true"></span> 
+                <div class="field">
+                    <input name="username" id="user" type="text" value placeholder="Username" required>
+                </div>   
+            </div>
+            <div class="field-group"> 
+                <span class="fa-lock" aria-hidden="true"></span> 
+                <div class="field">
+                    <input name="password" id="pass" type="text" value placeholder="Password" required>
+                </div>   
+            </div>
+            <div class="field-group"> 
+                 <button type="submit" class="Button"> Login </button>
+            </div>
         </form>
     </div>
 

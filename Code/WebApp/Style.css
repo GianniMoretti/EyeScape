@@ -9,11 +9,12 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-image: url('....\Sfondi\550527.jpg');
+    /*background-image: url('....\Sfondi\550527.jpg');*/
     background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
     justify-content: center;
     align-content: center;
+    background: url(https://images.wallpaperscraft.com/image/single/fish_aquarium_rocks_black_background_78667_2560x1440.jpg) no-repeat center;
     
 }
 
@@ -21,3 +22,52 @@ body {
     display: flex;
     justify-content: center;
 }
+form .field-group{
+    background:rgb(255, 255, 255);
+    margin-bottom: 20px;
+    border-radius: 35px;
+    display: -webkit-flex;
+
+}
+
+
+form .field-group span{
+    background-color: transparent;
+    -webkit-box-flex: 1;
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.fa-user:before {
+    content: "\f007";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #000;
+}
+.fa-lock::before{
+    content: "\f023";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #000;
+}
+.field input{
+    padding: 10px 0 10px 15px;
+    font-size: 17px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 1px;
+    border: none;
+    background: transparent;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    outline: none;
+}
+
+
+
