@@ -6,21 +6,35 @@ html {
 body {
     margin: 0px;
     min-height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: column;
     background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
     justify-content: center;
-    align-content: center;
     background: url(https://images.wallpaperscraft.com/image/single/fish_aquarium_rocks_black_background_78667_2560x1440.jpg) no-repeat center;
     
 }
 
-.Box1{
+.logo{
+    background-color: rgb(255, 255, 255);/*va messo trasparente una volta che troviamo il logo*/
+    height: 100px;/*da cambiare con le dimensioni del logo*/
+    width: 100px;/*idem*/
+    align-self: center;
+
+}
+
+.box1{
+    align-self: center;
+    width: 30%;
+    height: 300px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.271);
+    border-radius: 35px;
 }
+
+
 form .field-group{
     background:rgb(255, 255, 255);
     margin-bottom: 20px;
@@ -82,6 +96,7 @@ form .field-group span{
     border-radius: 35px;
     transition: 0.5s all;
 }
+
 
 
 
