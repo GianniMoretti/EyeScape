@@ -25,7 +25,7 @@ body {
 
 .box1{
     align-self: center;
-    width: 30%;
+    width: 350px;
     height: 300px;
     display: flex;
     justify-content: center;
