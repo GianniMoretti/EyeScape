@@ -9,7 +9,6 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    /*background-image: url('....\Sfondi\550527.jpg');*/
     background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
     justify-content: center;
@@ -26,14 +25,13 @@ form .field-group{
     background:rgb(255, 255, 255);
     margin-bottom: 20px;
     border-radius: 35px;
-    display: -webkit-flex;
+    display: flex;
 
 }
 
 
 form .field-group span{
     background-color: transparent;
-    -webkit-box-flex: 1;
     width: 20%;
     display: flex;
     justify-content: flex-end;
@@ -67,6 +65,22 @@ form .field-group span{
     font-family: 'Open Sans', sans-serif;
     width: 100%;
     outline: none;
+}
+
+.field button{
+    background: #fc636b;
+    border: none;
+    color: #fff;
+    padding: 11px 15px;
+    text-transform: uppercase;
+    font-family: 'Mukta', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 35px;
+    transition: 0.5s all;
 }
 
 
