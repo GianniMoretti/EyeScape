@@ -1,7 +1,7 @@
 
 html {
     height: 100%;
-  }
+}
 
 body {
     margin: 0px;
@@ -12,18 +12,18 @@ body {
     font-family: 'Open Sans', sans-serif;
     justify-content: center;
     background: url(https://images.wallpaperscraft.com/image/single/fish_aquarium_rocks_black_background_78667_2560x1440.jpg) no-repeat center;
-    
+
 }
 
-.logo{
-    background-color: rgb(255, 255, 255);/*va messo trasparente una volta che troviamo il logo*/
-    height: 100px;/*da cambiare con le dimensioni del logo*/
-    width: 100px;/*idem*/
+.logo {
+    background-color: rgb(255, 255, 255); /*va messo trasparente una volta che troviamo il logo*/
+    height: 100px; /*da cambiare con le dimensioni del logo*/
+    width: 100px; /*idem*/
     align-self: center;
 
 }
 
-.box1{
+.box1 {
     align-self: center;
     width: 350px;
     height: 300px;
@@ -35,8 +35,8 @@ body {
 }
 
 
-form .field-group{
-    background:rgb(255, 255, 255);
+form .field-group {
+    background: rgb(255, 255, 255);
     margin-bottom: 20px;
     border-radius: 35px;
     display: flex;
@@ -44,13 +44,14 @@ form .field-group{
 }
 
 
-form .field-group span{
+form .field-group span {
     background-color: transparent;
     width: 20%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
+
 .fa-user:before {
     content: "\f007";
     font-family: FontAwesome;
@@ -59,7 +60,8 @@ form .field-group span{
     text-decoration: inherit;
     color: #000;
 }
-.fa-lock::before{
+
+.fa-lock::before {
     content: "\f023";
     font-family: FontAwesome;
     font-style: normal;
@@ -67,7 +69,8 @@ form .field-group span{
     text-decoration: inherit;
     color: #000;
 }
-.field input{
+
+.field input {
     padding: 10px 0 10px 15px;
     font-size: 17px;
     font-weight: 300;
@@ -81,7 +84,7 @@ form .field-group span{
     outline: none;
 }
 
-.field button{
+.field button {
     background: #fc636b;
     border: none;
     color: #fff;
