@@ -11,27 +11,30 @@ body {
     background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
     justify-content: center;
-    background: url(https://images.wallpaperscraft.com/image/single/fish_aquarium_rocks_black_background_78667_2560x1440.jpg) no-repeat center;
+    background-image: url("https://images6.alphacoders.com/356/356742.jpg");
+    background-size: cover;
 
 }
 
-.logo {
-    background-color: rgb(255, 255, 255); /*va messo trasparente una volta che troviamo il logo*/
-    height: 100px; /*da cambiare con le dimensioni del logo*/
-    width: 100px; /*idem*/
-    align-self: center;
+.logo img {
+    width: 300px;  
 
+}
+.logo{
+    padding: 30px;
 }
 
 .box1 {
+
     align-self: center;
-    width: 350px;
-    height: 300px;
+    width: 500px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.271);
+    background-color: #495288af;
     border-radius: 35px;
+    flex-direction: column;
 }
 
 
@@ -72,7 +75,7 @@ form .field-group span {
 
 .field input {
     padding: 10px 0 10px 15px;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 300;
     color: #222;
     letter-spacing: 1px;
@@ -85,9 +88,9 @@ form .field-group span {
 }
 
 .field button {
-    background: #fc636b;
+    background: #9aeced;
     border: none;
-    color: #fff;
+    color: #222;
     padding: 11px 15px;
     text-transform: uppercase;
     font-family: 'Mukta', sans-serif;
@@ -98,6 +101,7 @@ form .field-group span {
     cursor: pointer;
     border-radius: 35px;
     transition: 0.5s all;
+    margin-bottom: 60px;
 }
 
 
