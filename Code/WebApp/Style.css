@@ -15,7 +15,7 @@ body {
     background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
     justify-content: center;
-    background-image: url("../../Documentation/Image/LoginWallpaper.png");
+    background-image: url("https://images6.alphacoders.com/356/356742.jpg");
     background-size: cover;
 
 }
@@ -24,6 +24,10 @@ body {
 .logo {
 
     padding: 30px;
+}
+
+.logo img{
+    width: 450px ;
 }
 
 .box1 {
