@@ -50,10 +50,21 @@ a.Logo:hover {
 
 
 svg {
-position: absolute;
- top: 50%;
-    margin-top: -60px;
-left: 50%;
-margin-left: -225px;
+position: relative;
+    width: 600px;
+    height: 600px;
+    margin-top: 10%;
+
 }
+/*
+svg {
+    font-weight: bold;
+    max-width: 600px;
+    height: auto;
+
+}*/
+
+/**/
+
+
 
