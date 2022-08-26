@@ -24,78 +24,65 @@
 
 </nav>
 
-<!--
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="2000px" height="240px" xml:space="preserve">
-    <defs>
-        <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
-            <path fill="#000"
-                  d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/>
-        </pattern>
+<div class="mainPage">
+    <svg viewbox="0 0 100 20">
+        <defs>
+            <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="5%" stop-color="#131D47"/>
+                <stop offset="95%" stop-color="#9AECED"/>
+            </linearGradient>
+            <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+                <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                      mask="url(#mask)" fill="url(#gradient)">
+                    <animateTransform
+                            attributeName="transform"
+                            begin="0s"
+                            dur="2.5s"
+                            type="translate"
+                            from="0,0"
+                            to="40,0"
+                            repeatCount="indefinite"/>
+                </path>
+            </pattern>
+        </defs>
+        <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="0.9">WELCOME</text>
+        <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#gradient)" fill-opacity="0.7">WELCOME</text>
+    </svg>
 
-        <text id="text" transform="translate(2,116)" font-family="'Cabin Condensed'"
-              font-size="161.047">Welcome!</text>
+    <div class="container1">
+        <a
+                target="_blank" title="Areatori">
+            <button>Areatori</button>
+        </a>
+        <a
+                target="_blank" title="Filtri">
+            <button>Filtri</button>
+        </a>
+        <a
+                target="_blank" title="Riscaldamento">
+            <button>Riscaldamento</button>
+        </a>
+    </div>
 
-        <mask id="text-mask">
-            <use x="0" y="0" xlink:href="#text" opacity="1" fill="#9AECED "/> Transparency--
-        </mask>
-
-        <g id="eff">
-        <use x="0" y="0" xlink:href="#text" fill="#131D47"/> scritta--
-            First wave--
-            <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" x="-300" y="50" width="1200" height="120"
-                  opacity="0.3">
-                <animate attributeType="xml" attributeName="x" from="-300" to="0" repeatCount="indefinite" dur="3s"/>
-            </rect>
-            Second wave--
-            <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="45" width="1600" height="120"
-                  opacity="0.3">
-                <animate attributeType="xml" attributeName="x" from="-400" to="0" repeatCount="indefinite" dur="4s"/>
-            </rect>
-            Third wave--
-            <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="55" width="800" height="120"
-                  opacity="0.3">
-                <animate attributeType="xml" attributeName="x" from="-200" to="0" repeatCount="indefinite" dur="1.8s"/>
-            </rect>
-            Fourth wave--
-            <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="55" width="2000" height="120"
-                  opacity="0.3">
-                <animate attributeType="xml" attributeName="x" from="-500" to="0" repeatCount="indefinite" dur="3.8s"/>
-            </rect>
-
-        </g>
-    </defs>
-
-    <use xlink:href="#eff" opacity="0.9" style="mix-blend-mode:color-burn"/>
-
-</svg>
-
--->
-
-
-<svg viewbox="0 0 100 20">
-    <defs>
-        <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="5%" stop-color="#131D47"/>
-            <stop offset="95%" stop-color="#9AECED"/>
-        </linearGradient>
-        <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
-            <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
-                  mask="url(#mask)" fill="url(#gradient)">
-                <animateTransform
-                        attributeName="transform"
-                        begin="0s"
-                        dur="2.5s"
-                        type="translate"
-                        from="0,0"
-                        to="40,0"
-                        repeatCount="indefinite"/>
-            </path>
-        </pattern>
-    </defs>
-    <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="0.9">WELCOME</text>
-    <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#gradient)" fill-opacity="0.7">WELCOME</text>
-</svg>
+    <div class="container2">
+        <a href="http://localhost:63342/ppm/EyeScape/Code/WebApp/Aquarium1.html?_ijt=14l5gtpgcmiigpolk8c0egp3jp&_ij_reload=RELOAD_ON_SAVE"
+           target="_blank" title="Bottone1">
+            <button class="button1">Acquario 1</button>
+        </a>
+        <a href="http://localhost:63342/ppm/EyeScape/Code/WebApp/Aquarium2.html?_ijt=abotqaji7lri3c6pngd4kljbjs&_ij_reload=RELOAD_ON_SAVE"
+           target="_blank" title="Bottone1">
+            <button class="button1">Acquario 2</button>
+        </a>
+        <a href="http://localhost:63342/ppm/EyeScape/Code/WebApp/Aquarium3.html?_ijt=abotqaji7lri3c6pngd4kljbjs&_ij_reload=RELOAD_ON_SAVE"
+           target="_blank" title="Bottone1">
+            <button class="button1">Acquario 3</button>
+        </a>
+        <a href="http://localhost:63342/ppm/EyeScape/Code/WebApp/Aquarium4.html?_ijt=abotqaji7lri3c6pngd4kljbjs&_ij_reload=RELOAD_ON_SAVE"
+           target="_blank" title="Bottone1">
+            <button class="button1">Acquario 4</button>
+        </a>
+    </div>
+</div>
 
 
 </body>
