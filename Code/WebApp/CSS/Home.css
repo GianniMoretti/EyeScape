@@ -43,7 +43,7 @@ a.Logo {
     font-size: 140%;
     width: 160px;
     padding: 25px 15px 25px 28px;
-    background-image: url("../../Documentation/Logo/Logo-completoTransparent.png");
+    background-image: url("../../../Documentation/Logo/Logo-completoTransparent.png");
     background-repeat: no-repeat;
     background-size: 180px 45px;
     background-position: 15px, 0;
@@ -51,7 +51,7 @@ a.Logo {
 }
 
 a.Logo:hover {
-    background-image: url("../../Documentation/Logo/Logo-sbrilluccicoso.png");
+    background-image: url("../../../Documentation/Logo/Logo-sbrilluccicoso.png");
 }
 
 
