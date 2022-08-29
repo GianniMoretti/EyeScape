@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.4em;
+    color: #333;
+    background-color: #f1f1f1;
+    text-align: center;
+
+}
+
+/*end general*/
+
+/*navigation rules*/
+.navbar {
+    background-color: #131d47;
+    height: 80px;
+    border-bottom: 1px solid #080808;
+    display: flex;
+    justify-content: center;
+}
+
+.mainPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+a.Logo {
+    font-size: 140%;
+    width: 160px;
+    padding: 25px 15px 25px 28px;
+    background-image: url("../../../Documentation/Logo/Logo-completoTransparent.png");
+    background-repeat: no-repeat;
+    background-size: 180px 45px;
+    background-position: 15px, 0;
+
+}
+
+a.Logo:hover {
+    background-image: url("../../../Documentation/Logo/Logo-sbrilluccicoso.png");
+}
+
+
+svg {
+    position: relative;
+    margin-top: 10%;
+}
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    align-self: center;
+}
+.button1 {
+    width: 300px;
+}
+
+
+/***************** roba per prova ************************/
+
+.plugin_wrapper {
+    margin:0 auto;
+    width:260px;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif; color: #999;
+}
+
+.plugin_wrapper h2 { text-align:left; margin-bottom:20px; margin-top:30px; font: normal 120% Verdana, Tahoma, sans-serif; color: #999;}
+
+.plugin_wrapper  .to-do-list-container {
+    width: 260px;
+    padding: 12px 0;
+    background: white;
+    border: 1px solid;
+    border-color: #617798;
+    border-radius: 2px;
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    padding: 9px;
+}
+
+.plugin_wrapper  textarea {
+    width: 260px;
+    max-width: 260px;
+    height: 60px;
+    line-height: 100%;
+    border-radius: 2px;
+    padding: 9px;
+    border: solid 1px #E5E5E5;
+    outline: 0;
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;
+    /*background: #FFFFFF url('bg_form.png') left top repeat-x;*/
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+}
+
+.plugin_wrapper input {
+    padding: 9px 15px;
+    background: #617798;
+    border: 0;
+    font-size: 14px;
+    color: #FFFFFF;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    cursor: pointer; width:280px;
+    text-align:center;
+    padding:9px;
+    margin: 10px 0 10px 0;
+
+}
+
+.plugin_wrapper ul { list-style-type:none; padding:0;}
+
+.plugin_wrapper ul li {
+    padding-top:10px;
+    padding-bottom:10px;
+    position: relative;
+
+    line-height: 21px;
+    font-size: 12px;
+    color: #8b8f97;
+    border-bottom: 1px solid #e6ebed;
+
+}
+
+.plugin_wrapper .todo_text {
+    cursor:pointer;
+    outline:none;
+    display:block;
+    padding:5px;
+    background-color:#F60;
+    color:#FFF;
+    font-weight:bold;
+    width:80%;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.plugin_wrapper .completed .todo_text { text-decoration:line-through; background-color:#0C0;}
+
+.plugin_wrapper span.deleter {
+    color:#F00;
+    font-weight:bold;
+    cursor:pointer;
+    position:absolute;
+    right:10px;
+    top:15px;
+
+}
+
+

@@ -17,19 +17,19 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `ppmtry`
+-- Database: `Aquarium`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `to_do`
+-- Table structure for table `Aquarium`
 --
 
 CREATE TABLE `Aquarium` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id acq` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id acq`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
