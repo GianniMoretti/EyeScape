@@ -26,49 +26,102 @@
 </nav>
 
 <div class="mainPage">
-    <svg viewbox="0 0 100 20">
-        <defs>
-            <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="5%" stop-color="#131D47"/>
-                <stop offset="95%" stop-color="#9AECED"/>
-            </linearGradient>
-            <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
-                <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
-                      mask="url(#mask)" fill="url(#gradient)">
-                    <animateTransform
-                            attributeName="transform"
-                            begin="0s"
-                            dur="2.5s"
-                            type="translate"
-                            from="0,0"
-                            to="40,0"
-                            repeatCount="indefinite"/>
-                </path>
-            </pattern>
-        </defs>
-        <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="0.9">WELCOME</text>
-        <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#gradient)" fill-opacity="0.7">WELCOME</text>
-    </svg>
-
-    <div class="container1">
-        <a
-                target="_blank" title="Areatori">
-            <button>Areatori</button>
-        </a>
-        <a
-                target="_blank" title="Filtri">
-            <button>Filtri</button>
-        </a>
-        <a
-                target="_blank" title="Riscaldamento">
-            <button>Riscaldamento</button>
-        </a>
+    <div class="WelcomeWrite">
+        <svg viewbox="0 0 100 20">
+            <defs>
+                <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="5%" stop-color="#131D47"/>
+                    <stop offset="95%" stop-color="#9AECED"/>
+                </linearGradient>
+                <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+                    <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                          mask="url(#mask)" fill="url(#gradient)">
+                        <animateTransform
+                                attributeName="transform"
+                                begin="0s"
+                                dur="2.5s"
+                                type="translate"
+                                from="0,0"
+                                to="40,0"
+                                repeatCount="indefinite"/>
+                    </path>
+                </pattern>
+            </defs>
+            <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="0.9">WELCOME</text>
+            <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#gradient)" fill-opacity="0.7">WELCOME
+            </text>
+        </svg>
     </div>
 
-    <div class="container2"></div>
+    <div class="DeviceButtonsContainer">
+        <!--
+        <button class="DeviceButton">
+            <div class="DeviceButtonContent">
+                <img src="../../../Documentation/Image/bubbles.png" class="buttonImage">
+                <text class="TextDeviceButton">
+                    Areatori
+                </text>
+            </div>
+        </button>
+        <div class="switch_container">
+            <div class="text_container">
+                <img src="../../../Documentation/Image/bubbles.png">
+                <h1> Aereatori</h1>
+            </div>
+            <label class="switch-wrap">
+                <input type="checkbox"/>
+                <div class="switch">
+                </div>
+            </label>
+        </div>
+
+
+        <div class="switch_container">
+            <div class="text_container">
+                <img src="../../../Documentation/Image/thermometer.png">
+                <h1> Riscaldatori</h1>
+            </div>
+            <label class="switch-wrap">
+                <input type="checkbox"/>
+                <div class="switch">
+                </div>
+            </label>
+        </div>
+
+
+        <div class="switch_container">
+            <div class="text_container">
+                <img src="../../../Documentation/Image/filter.png">
+                <h1> Filtri</h1>
+            </div>
+            <label class="switch-wrap">
+                <input type="checkbox"/>
+                <div class="switch">
+                </div>
+            </label>
+        </div>
+-->
+        <div class="button r" id="button-1">
+            <input type="checkbox" class="checkbox" />
+            <div class="knobs"></div>
+            <div class="layer"></div>
+        </div>
+        <div class="button r" id="button-2">
+            <input type="checkbox" class="checkbox" />
+            <div class="knobs"></div>
+            <div class="layer"></div>
+        </div>
+        <div class="button r" id="button-3">
+            <input type="checkbox" class="checkbox" />
+            <div class="knobs"></div>
+            <div class="layer"></div>
+        </div>
+    </div>
+
+    <div class="todo_plugin"></div>
+
 </div>
 
-<div class="todo_plugin"></div>
 
 </body>
 </html>
