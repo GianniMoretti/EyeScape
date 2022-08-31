@@ -69,8 +69,8 @@ svg {
 
 .WelcomeWrite {
     align-self: center;
-    width: 70%;
-    height: 70%;
+    width: 50%;
+    height: 50%;
 }
 
 .container2 {
@@ -87,7 +87,7 @@ svg {
 /*********************************/
 
 .DeviceButtonsContainer {
-    height: 200px;
+    height: 80px;
     width: 100%;
     display: flex;
     align-content: space-around;
@@ -242,16 +242,27 @@ svg {
 }
 
 .text_container img {
-    width: 80%;
+    width: 10%;
     height: 80%;
+    margin-left: 15%;
+    margin-top: 10%;
 }
 
 .text_container h1 {
     margin-left: 5px;
+    margin-top: 10%;
+    justify-content: stretch;
 }
 
+.UserNameWelcome {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    line-height: 1.4em;
+    color: #333;
+    font-weight: bold;
+}
 
-/************************************/
+/************************************//*Buttons style*/
 .switch-wrap {
     margin-top: 10px;
     cursor: pointer;
@@ -297,7 +308,15 @@ input:checked + .switch::after {
 }
 
 
-/**/
+.AllFirstButton {
+
+    width: 300px;
+    height: 150px;
+
+    background-color: #9AECED ;
+    border-radius: 50px;
+    flex-direction: column;
+}
 
 
 .row {
@@ -353,7 +372,6 @@ input:checked + .switch::after {
     z-index: 1;
 }
 
-/* Button 1 */
 #button-1 .knobs:before,
 #button-2 .knobs:before,
 #button-3 .knobs:before {
