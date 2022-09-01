@@ -30,6 +30,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -110,6 +111,52 @@ svg {
     color: #333;
     font-weight: bold;
 }
+
+.Separazione {
+    height: 3px;
+    border-width: 0px;
+    width: 80%;
+    color: #131D47;
+    background-color: #131D47;
+    margin-top: 2%;
+    border-radius: 50%;
+
+}
+
+.Separazione2 {
+    height: 3px;
+    border-width: 0px;
+    width: 80%;
+    color: #131D47;
+    background-color: #131D47;
+    margin-top: 7%;
+    border-radius: 50%;
+
+}
+
+.MyAquarium {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    line-height: 1.4em;
+    color: #333;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.button-group1 {
+    display: flex;
+    flex-wrap: wrap;
+    display: -webkit-flex;
+    margin-top: 20%;
+}
+
+.button-group2 {
+    display: flex;
+    flex-wrap: wrap;
+    display: -webkit-flex;
+    margin-top: 10%;
+}
+
 
 /***************** WELCOME ************************/
 
@@ -238,13 +285,13 @@ svg {
     display: flex;
     align-items: center;
     height: 40px;
+    justify-content: center;
 
 }
 
 .text_container img {
     width: 10%;
     height: 80%;
-    margin-left: 15%;
     margin-top: 10%;
 }
 
@@ -312,8 +359,10 @@ input:checked + .switch::after {
 
     width: 300px;
     height: 150px;
-
-    background-color: #9AECED ;
+    border-color: #131D47;
+    border: solid;
+    border-width: 5px;
+    background-color: #9AECED;
     border-radius: 50px;
     flex-direction: column;
 }
@@ -334,15 +383,14 @@ input:checked + .switch::after {
 
 .button {
     position: relative;
-    top: 50%;
+    top: 40px;
     width: 74px;
     height: 36px;
     margin: -20px auto 0 auto;
     overflow: hidden;
 }
 
-.button.r,
-.button.r .layer {
+.button.r, .button.r .layer {
     border-radius: 100px;
 }
 
@@ -394,7 +442,7 @@ input:checked + .switch::after {
 
 #button-1 .checkbox:checked + .knobs:before,
 #button-2 .checkbox:checked + .knobs:before,
-#button-3 .checkbox:checked + .knobs:before{
+#button-3 .checkbox:checked + .knobs:before {
     content: "ON";
     left: 42px;
     background-color: #131D47;
@@ -403,7 +451,7 @@ input:checked + .switch::after {
 #button-1 .checkbox:checked ~ .layer,
 #button-2 .checkbox:checked ~ .layer,
 #button-3 .checkbox:checked ~ .layer {
-    background-color: #9AECED;
+    background-color: #365DF7;
 }
 
 #button-1 .knobs,
@@ -414,6 +462,38 @@ input:checked + .switch::after {
 #button-2 .layer,
 #button-3 .knobs,
 #button-3 .knobs:before,
-#button-3 .layer{
+#button-3 .layer {
     transition: 0.3s ease all;
 }
+
+.button-group1{
+    display: flex;
+    flex-wrap: wrap;
+    width: 420px;
+}
+
+.small-button {
+    margin: 5px;
+    width: 200px;
+    height: 100px;
+    border-radius: 20px;
+    color: #00CC00;
+    border: solid #131D47 5px;
+    background-color: #9AECED;
+}
+
+.small-button:hover{
+    cursor: pointer;
+}
+
+.small-button h1{
+    line-height: 1.4em;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+
+
+
