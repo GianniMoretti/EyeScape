@@ -32,6 +32,57 @@ CREATE TABLE `Aquarium` (
   PRIMARY KEY (`id acq`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
+
+
+--
+-- Table structure for table `Sensor`
+--
+
+CREATE TABLE `Sensor` (
+  `id sens` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  PRIMARY KEY (`id sens`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+
+
+--
+-- Table structure for table `Users`
+--
+
+CREATE TABLE `Users` (
+  `id user` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `password` text NOT NULL,
+  PRIMARY KEY (`id user`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+
+
+--
+-- Table structure for table `Device`
+--
+
+CREATE TABLE `Device` (
+  `id dev` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `status` text NOT NULL,
+  PRIMARY KEY (`id dev`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+
+
+
+--
+-- Table structure for table `Lecture`
+--
+
+CREATE TABLE `Lecture` (
+  `id acq` int(11) NOT NULL AUTO_INCREMENT,
+  'id sens' int(11) NOT NULL AUTO_INCREMENT,
+  `data` int NOT NULL,
+  `value` float NOT NULL,
+  FOREIGN KEY ('id acq', 'id sens')
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
