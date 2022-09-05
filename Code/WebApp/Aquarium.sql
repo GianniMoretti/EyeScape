@@ -79,7 +79,7 @@ CREATE TABLE `Lecture` (
   'id sens' int(11) NOT NULL AUTO_INCREMENT,
   `data` int NOT NULL,
   `value` float NOT NULL,
-  FOREIGN KEY ('id acq', 'id sens')
+  PRIMARY KEY ('id acq', 'id sens')
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

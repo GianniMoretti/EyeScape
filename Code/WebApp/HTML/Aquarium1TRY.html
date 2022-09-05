@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="../css/prova.css" type="text/css">
     <title>Aquarium demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
@@ -21,23 +22,34 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
-
 </head>
 
 
 <body>
 
 
-<nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">I miei acquari</a>
+<nav class="navbar " style="background-color: #131d47;">
+    <div class="container-fluid justify-content-center">
+        <a class="navbar-brand" href="#">
+            <img src="../../../Documentation/Logo/Logo-completoTransparent.png" alt="" width="230" height="60"
+                 class="d-inline-block align-text-top">
+        </a>
+
+        <a class="navbar-brand" href="#">
+            <select class="form-select" aria-label="Default select example">
+                <option value="1">Acquario 1</option>
+                <option value="2">Acquario 2</option>
+                <option value="3">Acquario 3</option>
+                <option value="3">Acquario 4</option>
+            </select></a>
         <a class="navbar-brand" href="#">Impostazioni</a>
         <a class="navbar-brand" href="#">Controlli</a>
         <a class="navbar-brand" href="#">Grafici</a>
 
-        <!--bottone ham-->
+
+        <!--bottone ham
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-                aria-controls="offcanvasDarkNavbar">
+                aria-controls="offcanvasDarkNavbar" style="color:white!important;">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
@@ -75,13 +87,23 @@
                     <button class="btn btn-success" type="submit">Ricerca..</button>
                 </form>
             </div>
-        </div> <!--hamburger-->
+        </div> hamburger-->
     </div>
 </nav>
 
-<div>
-    <canvas id="myChart" width="400" height="400"></canvas>
-</div>
+    <div class="container text-center" style="width: 100%">
+        <div class="row">
+            <div class="col-6">
+                <canvas id="myChart1" height="200" style="padding: 20px;"></canvas>
+            </div>
+
+            <div class="col-6">
+                <canvas id="myChart2" height="200" style="padding: 20px;"></canvas>
+            </div>
+        </div>
+    </div>
+
+
 
 <script>
     const labels = [
@@ -91,15 +113,21 @@
         'April',
         'May',
         'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
     ];
 
     const data = {
         labels: labels,
         datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            label: 'Temperature',
+            backgroundColor: 'rgb(19,29,71)',
+            borderColor: 'rgb(19,29,71)',
+            data: [0, 10, 5, 2, 20, 30, 12, 5, 6, 25, 30, 34],
         }]
     };
 
@@ -111,8 +139,15 @@
 </script>
 
 <script>
-    const myChart = new Chart(
-        document.getElementById('myChart'),
+    const myChart1 = new Chart(
+        document.getElementById('myChart1'),
+        config
+    );
+</script>
+
+<script>
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
         config
     );
 </script>

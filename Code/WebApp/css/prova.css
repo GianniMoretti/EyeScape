@@ -1,0 +1,13 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-brand {
+    color:white!important;
+}
+
+.form-select {
+    background-color: #9AECED!important;
+    color: #131D47!important;
+
+}
