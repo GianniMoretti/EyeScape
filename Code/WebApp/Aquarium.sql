@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `Aquarium`
 --
 
-CREATE TABLE `Aquarium` (
+CREATE TABLE if not exists  `Aquarium` (
   `id acq` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   PRIMARY KEY (`id acq`)
@@ -38,7 +38,7 @@ CREATE TABLE `Aquarium` (
 -- Table structure for table `Sensor`
 --
 
-CREATE TABLE `Sensor` (
+CREATE TABLE if not exists  `Sensor` (
   `id sens` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   PRIMARY KEY (`id sens`)
@@ -49,7 +49,7 @@ CREATE TABLE `Sensor` (
 -- Table structure for table `Users`
 --
 
-CREATE TABLE `Users` (
+CREATE TABLE if not exists  `Users` (
   `id user` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `password` text NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE `Users` (
 -- Table structure for table `Device`
 --
 
-CREATE TABLE `Device` (
+CREATE TABLE if not exists  `Device` (
   `id dev` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `status` text NOT NULL,
@@ -74,13 +74,16 @@ CREATE TABLE `Device` (
 -- Table structure for table `Lecture`
 --
 
-CREATE TABLE `Lecture` (
-  `id acq` int(11) NOT NULL AUTO_INCREMENT,
-  'id sens' int(11) NOT NULL AUTO_INCREMENT,
-  `data` int NOT NULL,
-  `value` float NOT NULL,
-  PRIMARY KEY ('id acq', 'id sens')
+CREATE TABLE if not exists  `Lecture` (
+  `code` int(11) NOT NULL AUTO_INCREMENT,
+  `id acq` int(11) NOT NULL references `id acq`,
+  `id sens` int(11) NOT NULL references `id sens`,
+  `data` int(11) NOT NULL,
+  `value` int(11) NOT NULL,
+  PRIMARY KEY (`code`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
