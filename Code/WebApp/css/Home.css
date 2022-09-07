@@ -160,16 +160,16 @@ svg {
 }
 
 
-/***************** WELCOME ************************/
+/***************** WELCOME *********************up***/
 
-.plugin_wrapper {
+.plugin_wrapper { /*wrapper*/
     margin: 0 auto;
     width: 260px;
     font: normal 13px/100% Verdana, Tahoma, sans-serif;
     color: #999;
 }
 
-.plugin_wrapper h2 {
+.plugin_wrapper h2 { /*titolo mytodo*/
     text-align: left;
     margin-bottom: 20px;
     margin-top: 30px;
@@ -177,12 +177,12 @@ svg {
     color: #999;
 }
 
-.plugin_wrapper .to-do-list-container {
+.plugin_wrapper .to-do-list-container { /*bo*/
     width: 260px;
     padding: 12px 0;
-    background: white;
+    background: rebeccapurple;
     border: 1px solid;
-    border-color: #617798;
+    border-color: #324233;
     border-radius: 2px;
     background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
     background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
@@ -192,14 +192,14 @@ svg {
     padding: 9px;
 }
 
-.plugin_wrapper textarea {
+.plugin_wrapper textarea { /*dove si inserisci il testo*/
     width: 260px;
     max-width: 260px;
     height: 60px;
     line-height: 100%;
     border-radius: 2px;
     padding: 9px;
-    border: solid 1px #E5E5E5;
+    border: solid 1px red;
     outline: 0;
     font: normal 13px/100% Verdana, Tahoma, sans-serif;
     /*background: #FFFFFF url('bg_form.png') left top repeat-x;*/
@@ -210,9 +210,9 @@ svg {
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
 }
 
-.plugin_wrapper input {
+.plugin_wrapper input { /*tasto add*/
     padding: 9px 15px;
-    background: #617798;
+    background: green;
     border: 0;
     font-size: 14px;
     color: #FFFFFF;
@@ -226,29 +226,29 @@ svg {
 
 }
 
-.plugin_wrapper ul {
+.plugin_wrapper ul { /*bo*/
     list-style-type: none;
     padding: 0;
 }
 
-.plugin_wrapper ul li {
+.plugin_wrapper ul li { /*bo*/
     padding-top: 10px;
     padding-bottom: 10px;
     position: relative;
 
     line-height: 21px;
     font-size: 12px;
-    color: #8b8f97;
+    color: purple;
     border-bottom: 1px solid #e6ebed;
 
 }
 
-.plugin_wrapper .todo_text {
+.plugin_wrapper .todo_text { /*oggeto visualizzato*/
     cursor: pointer;
     outline: none;
     display: block;
     padding: 5px;
-    background-color: #F60;
+    background-color: black;
     color: #FFF;
     font-weight: bold;
     width: 80%;
@@ -259,13 +259,13 @@ svg {
     user-select: none;
 }
 
-.plugin_wrapper .completed .todo_text {
+.plugin_wrapper .completed .todo_text { /*bo*/
     text-decoration: line-through;
     background-color: #0C0;
 }
 
-.plugin_wrapper span.deleter {
-    color: #F00;
+.plugin_wrapper span.deleter { /*la x per cancellare*/
+    color: blue;
     font-weight: bold;
     cursor: pointer;
     position: absolute;
