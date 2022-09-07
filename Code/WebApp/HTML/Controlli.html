@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../css/Impostazioni.css" type="text/css">
-    <title>Impostazioni</title>
+    <link rel="stylesheet" href="../css/Aquarium1.css" type="text/css">
+    <title>Controlli</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <!--Boostrap-->
@@ -18,24 +18,19 @@
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
             crossorigin="anonymous"></script>
 
-    <!--LineChart
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
-
 
 </head>
+
 
 <style>
     body {
         background: #f7f9fa;
-        /*background-image: image("../../../Documentation/Image/LoginWallpaper.png");*/
         background-image: url("../../../Documentation/Image/LoginWallpaper.png");
 
     }
 
     .box {
-        background-color: #ffffff;
-    ;
+        background-color: #ffffff;;
         border-radius: 25px;
         border: 1px solid rgba(0, 0, 0, .125);
         box-shadow: 0px 4px 8px rgb(8 35 48 / 24%);
@@ -66,58 +61,31 @@
         <a class="navbar-brand" href="#">Impostazioni</a>
         <a class="navbar-brand" href="#">Controlli</a>
         <a class="navbar-brand" href="#">Grafici</a>
-
     </div>
 </nav>
 
 
 <div class="container text-center" style="margin-top: 100px;">
     <div class="row justify-content-md-center">
-
         <div class="col-md-6 box">
+
             <div style="padding:50px;">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg input-wrap" placeholder="Username"
-                           aria-label="Username">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                    <label class="form-check-label " for="flexSwitchCheckChecked">Controllo automatico
+                        temperatura</label>
                 </div>
 
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg input-wrap" placeholder="Username"
-                           aria-label="Username">
+                <div class="input-group mb-3" style="margin-top: 100px">
+                    <label for="customRange1" class="form-label">Luminosità</label>
+                    <input type="range" class="form-range" id="customRange1">
                 </div>
-
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg input-wrap" placeholder="Username"
-                           aria-label="Username">
-                </div>
-
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg input-wrap" placeholder="Username"
-                           aria-label="Username">
-                </div>
-
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg input-wrap" placeholder="Username"
-                           aria-label="Username">
-                </div>
-
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg input-wrap" placeholder="Username"
-                           aria-label="Username">
-                </div>
-
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
 
             </div>
         </div>
-
     </div>
 </div>
+
 
 </body>
 </html>

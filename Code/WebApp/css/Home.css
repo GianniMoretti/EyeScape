@@ -64,7 +64,6 @@ a.Logo:hover {
 }
 
 
-
 svg {
     position: relative;
     margin-top: 10%;
@@ -468,7 +467,7 @@ input:checked + .switch::after {
     transition: 0.3s ease all;
 }
 
-.button-group1{
+.button-group1 {
     display: flex;
     flex-wrap: wrap;
     width: 420px;
@@ -484,11 +483,11 @@ input:checked + .switch::after {
     background-color: #9AECED;
 }
 
-.small-button:hover{
+.small-button:hover {
     cursor: pointer;
 }
 
-.small-button h1{
+.small-button h1 {
     line-height: 1.4em;
     color: #333;
     font-weight: bold;
