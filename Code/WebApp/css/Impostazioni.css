@@ -9,5 +9,28 @@
 .form-select {
     background-color: #9AECED!important;
     color: #131D47!important;
+}
 
+body {
+    margin: 0px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+    background-image: url("../../../Documentation/Image/LoginWallpaper.png");
+    background-size: cover;
+
+}
+
+.box {
+    background-color: #ffffff;
+    border-radius: 25px;
+    border: 1px solid rgba(0, 0, 0, .125);
+    box-shadow: 0px 4px 8px rgb(8 35 48 / 24%);
+}
+
+.input-wrap {
+    border-radius: 25px;
 }

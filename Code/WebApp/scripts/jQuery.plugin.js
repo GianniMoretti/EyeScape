@@ -25,9 +25,9 @@
 
             $this.addClass('to-do-list-container');
 
-            $('<h2>My To Do List</h2>' +
+            $('<h2>Il mio titolo del cazzo</h2>' +
                 '<textarea class="todo_textarea"></textarea>' +
-                '<input type="submit" value="add to do" class="to_do_submit" />').insertBefore($this);
+                '<input type="submit" value="bottone del cazzo" class="to_do_submit" />').insertBefore($this);
 
             var $submitButton = $('.to_do_submit', $this.parent());
 
@@ -42,11 +42,11 @@
         });
 
 
-        function sendToDo($el) {
+        function sendToDo($el) { // richiesta di aggiunta che viene effettuata nel php
             console.log($el);
             var $this = $el;
             console.log("sendToDo");
-            request_type = "insert";
+            request_type = "insert"; //******************************************
             var $todoText = $this.parent().find('.todo_textarea');
             var todoText = $todoText.val();
             console.log("TODOTEXT: " + todoText);

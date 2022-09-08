@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../css/Aquarium1.css" type="text/css">
+    <link rel="stylesheet" href="../css/Controlli.css" type="text/css">
     <title>Controlli</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
@@ -22,25 +22,6 @@
 </head>
 
 
-<style>
-    body {
-        background: #f7f9fa;
-        background-image: url("../../../Documentation/Image/LoginWallpaper.png");
-
-    }
-
-    .box {
-        background-color: #ffffff;;
-        border-radius: 25px;
-        border: 1px solid rgba(0, 0, 0, .125);
-        box-shadow: 0px 4px 8px rgb(8 35 48 / 24%);
-    }
-
-    .input-wrap {
-        border-radius: 25px;
-    }
-</style>
-
 <body>
 
 
@@ -53,12 +34,12 @@
 
         <a class="navbar-brand" href="#">
             <select class="form-select" aria-label="Default select example">
-                <option value="1">Acquario 1</option>
+                <option value="1"><a >Acquario 1</a></option>
                 <option value="2">Acquario 2</option>
                 <option value="3">Acquario 3</option>
                 <option value="3">Acquario 4</option>
             </select></a>
-        <a class="navbar-brand" href="#">Impostazioni</a>
+        <a class="navbar-brand" href="http://localhost:63342/ppm/EyeScape/Code/WebApp/HTML/impostazioni.html?_ijt=cmlss63ih9l2uk9dmjs1nduhvi&_ij_reload=RELOAD_ON_SAVE#">Impostazioni</a>
         <a class="navbar-brand" href="#">Controlli</a>
         <a class="navbar-brand" href="#">Grafici</a>
     </div>
@@ -71,20 +52,27 @@
 
             <div style="padding:50px;">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                    <label class="form-check-label " for="flexSwitchCheckChecked">Controllo automatico
+                    <label class="form-check-label " for="flexSwitchCheckChecked"> <input class="form-check-input"
+                                                                                          type="checkbox" role="switch"
+                                                                                          id="flexSwitchCheckChecked"
+                                                                                          checked>Controllo automatico
                         temperatura</label>
                 </div>
 
-                <div class="input-group mb-3" style="margin-top: 100px">
-                    <label for="customRange1" class="form-label">Luminosità</label>
-                    <input type="range" class="form-range" id="customRange1">
+                <div class="fra">
+
+                    <div style="margin-top: 100px">
+                        <label for="customRange1" class="form-label">Luminosità <input type="range" class="form-range"
+                                                                                       id="customRange1"></label>
+                    </div>
                 </div>
 
             </div>
         </div>
     </div>
 </div>
+
+
 
 
 </body>
