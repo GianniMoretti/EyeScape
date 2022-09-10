@@ -33,7 +33,7 @@
 
 
             $submitButton.on("click", function(event){
-                //alert("To Do Submitted");
+                alert("To Do Submitted");
                 sendToDo($this);
             });
 
