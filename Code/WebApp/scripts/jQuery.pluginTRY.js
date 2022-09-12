@@ -1,20 +1,20 @@
 // JavaScript Document
 
-(function($){ //risposta a chiamata in init
+(function ($) { //risposta a chiamata in init
     console.log("JQUERY: " + $); //tipo risposta su web di jquery
 
 
-    $.fn.todo = function(options) { //In jQuery, the fn property is just an alias to the prototype property. The jQuery identifier (or $) is just a constructor function, and all instances created with it, inherit from the constructor's prototype.
+    $.fn.todo = function (options) { //In jQuery, the fn property is just an alias to the prototype property. The jQuery identifier (or $) is just a constructor function, and all instances created with it, inherit from the constructor's prototype.
         console.log("CALL PLUGIN TODO"); //bo
         var defaults = {
-            serverURL : "example.com/server_page_url", //bo
+            serverURL: "example.com/server_page_url", //bo TODO da capire!
         }
         options = $.extend(defaults, options); //The extends keyword is used in class declarations or class expressions to create a class that is a child of another class.
         // cosa cazzo serve porco dio
         console.log("OPTIONS: " + defaults['serverURL']); // logga col server?
 
         // for each item in the wrapped set
-        return this.each(function(i, obj) {
+        return this.each(function (i, obj) {
             console.log("INITIALIZE PLUGIN " + i);
 
             // cache "this."
@@ -23,16 +23,23 @@
             // Wrap "this" in a div with a class of "plugin_wrapper"
             $this.wrap('<div class="plugin_wrapper" />');
 
-            $this.addClass('to-do-list-container');
+            $this.addClass('aquarium-container');
 
-            $('<h2>Il mio titolo del cazzo</h2>' +
-                '<textarea class="todo_textarea"></textarea>' +
-                '<input type="submit" value="bottone del cazzo" class="to_do_submit" />').insertBefore($this);
+            $('<p class="text-center">I miei acquari</p>' +
+                '<div class="container text-center">\n' +
+                '  <div class="row row-cols-2">\n' +
+                '    <div class="col"><input class="btn btn-primary" type="submit" value="Acquario 1"></div>\n' +
+                '    <div class="col"><input class="btn btn-primary" type="submit" value="Acquario 2"></div>\n' +
+                '    <div class="col"><input class="btn btn-primary" type="submit" value="Acquario 3"></div>\n' +
+                '    <div class="col"><input class="btn btn-primary" type="submit" value="Acquario 4"></div>\n' +
+                '  </div>\n' +
+                '</div>').insertBefore($this);
 
-            var $submitButton = $('.to_do_submit', $this.parent());
+
+            var $submitButton = $('.btn', $this.parent());
 
 
-            $submitButton.on("click", function(event){
+            $submitButton.on("click", function (event) {
                 alert("To Do Submitted");
                 sendToDo($this);
             });
@@ -47,32 +54,29 @@
             var $this = $el;
             console.log("sendToDo");
             request_type = "insert"; //******************************************
-            var $todoText = $this.parent().find('.todo_textarea');
-            var todoText = $todoText.val();
+            var todoText = "cazzo in culo"; // bravo matte gg
             console.log("TODOTEXT: " + todoText);
-            $todoText.val("");
+
 
             if (todoText.length > 2) {
 
                 var request = $.ajax({
                     url: options.serverURL,
                     type: "POST",
-                    data: {"text" : todoText, "action" : request_type},
+                    data: {"text": todoText, "action": request_type},
                     dataType: "json",
                 });
 
-                request.done(function(data) {
+                request.done(function (data) {
                     console.log("REQUEST.DONE: " + data)
                     handleInsert(data, $this);
                 });
 
                 request.fail(
-                    function(jqXHR, textStatus) {
-                        alert( "Request failed: " + textStatus );
+                    function (jqXHR, textStatus) {
+                        alert("Request failed: " + textStatus);
                     });
-
             }
-
         } // end sendToDo
 
 
@@ -83,7 +87,7 @@
             var todos = data["todos"];
 
             // crea una variabile per la risposta
-            var html="";
+            var html = "";
 
             if (
                 !($(".todo-list", $this).length > 0)
@@ -95,14 +99,14 @@
             if ($('p', $this).length > 0) {
                 $('p', $this).remove();
             }
-
-            html += "<li data-id='todo_" + todos[0]['id'] + "'><span class='todo_text'>" + todos[0]['text'] + "</span> <span class='deleter'>x</span></li>\n";
-            $('.todo-list', $this).prepend(html);
-
-
+            document.getElementById('.col').innerHTML = '<ul><li>primo</li><li>secondo</li><li>terzo</li></ul>';
+            html += "<button type=\"button\" class=\"btn btn-secondary\">ah! GAYY</button>";
+            $(html).insertBefore($this);
 
 
         } // handleInsert
+
+
 
         function loadToDo($el) {
             var $this = $el;
@@ -114,19 +118,19 @@
                 url: options.serverURL,
                 type: "POST",
                 //contentType: 'application/json; charset=utf-8',
-                data: {"action" : request_type},
+                data: {"action": request_type},
                 dataType: "json",
                 //headers: {"Content-type" :"application/x-www-form-urlencoded"},
             });
 
-            request.done(function(data) {
+            request.done(function (data) {
                 //console.log("done: " + msg)
                 handleLoad(data, $this);
             });
 
             request.fail(
-                function(jqXHR, textStatus) {
-                    alert( "Request failed: " + textStatus );
+                function (jqXHR, textStatus) {
+                    alert("Request failed: " + textStatus);
                 });
         }
 
@@ -136,7 +140,7 @@
 
             $this = $el;
             var todos = data["todos"];
-            var $toDoList= $("<ul class='todo-list'>");
+            var $toDoList = $("<ul class='todo-list'>");
             var html = "";
 
 
@@ -144,9 +148,9 @@
 
                 $this.append($toDoList);
 
-                $(todos).each(function(index, object) {
+                $(todos).each(function (index, object) {
 
-                    html += "<li data-id='todo_" + object['id'] + "'" + ((object['completed'] === "1") ? "class='completed'>" : ">")  + "<span class='todo_text'>" + object['text']
+                    html += "<li data-id='todo_" + object['id'] + "'" + ((object['completed'] === "1") ? "class='completed'>" : ">") + "<span class='todo_text'>" + object['text']
                         + "</span> <span class='deleter'>x</span></li>\n";
                 });
 
@@ -159,7 +163,7 @@
             }
 
             // aggiunta listener sui nuovi elementi
-            $($this).on('click', '.deleter', function() {
+            $($this).on('click', '.deleter', function () {
 
                 var id = $(this).parent().data("id");
                 var $parent = $(this).parents(".todo_plugin");
@@ -167,7 +171,7 @@
                 deleteToDo($parent, id);
             });
 
-            $($this).on('dblclick', '.todo_text', function() {
+            $($this).on('dblclick', '.todo_text', function () {
 
                 var id = $(this).parent().data("id");
                 var $parent = $(this).parents(".todo_plugin");
@@ -189,19 +193,19 @@
                 url: options.serverURL,
                 type: "POST",
                 //contentType: 'application/json; charset=utf-8',
-                data: {"action" : request_type, "status" : status, "id": id},
+                data: {"action": request_type, "status": status, "id": id},
                 dataType: "json",
                 //headers: {"Content-type" :"application/x-www-form-urlencoded"},
             });
 
-            request.done(function(data) {
+            request.done(function (data) {
                 //console.log("done: " + msg)
                 handleUpdate(data, $this);
             });
 
             request.fail(
-                function(jqXHR, textStatus) {
-                    alert( "Request failed: " + textStatus );
+                function (jqXHR, textStatus) {
+                    alert("Request failed: " + textStatus);
                 });
 
         }
@@ -225,19 +229,19 @@
                 url: options.serverURL,
                 type: "POST",
                 //contentType: 'application/json; charset=utf-8',
-                data: {"action" : request_type, "id" : id},
+                data: {"action": request_type, "id": id},
                 dataType: "json",
                 //headers: {"Content-type" :"application/x-www-form-urlencoded"},
             });
 
-            request.done(function(data) {
+            request.done(function (data) {
                 //console.log("done: " + msg)
                 handleDelete(data, $this);
             });
 
             request.fail(
-                function(jqXHR, textStatus) {
-                    alert( "Request failed: " + textStatus );
+                function (jqXHR, textStatus) {
+                    alert("Request failed: " + textStatus);
                 });
         }
 
@@ -245,7 +249,7 @@
             if (data['deleted'] == true) {
 
                 var elemToBeDeleted = $('[data-id="' + data['id'] + '"]', $el); //$("." + data['id'], $el);
-                elemToBeDeleted.fadeOut(500, function() {
+                elemToBeDeleted.fadeOut(500, function () {
                     $(this).remove();
                     var toDoList = $('.todo-list li', $el);
                     if (!(toDoList.length > 0)) {
@@ -257,7 +261,6 @@
 
             }
         }
-
 
 
     }

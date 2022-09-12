@@ -64,7 +64,7 @@
 
 }
 
-	function insertData() {
+	function insertData() { /*il sendToDo usa questa ********************/
 
 		if (isset($_POST['text'])) {
 			$to_do_text = $_POST['text'];

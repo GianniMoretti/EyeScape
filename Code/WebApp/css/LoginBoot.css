@@ -21,7 +21,24 @@ body {
   padding: 15px;
 }
 
-.form-signin .form-floating:focus-within {
+.form-signin {
   z-index: 2;
+}
+
+.fa-user:before {
+  content: "\f007";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #000;
+}
+.fa-lock::before {
+  content: "\f023";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #000;
 }
 
