@@ -32,6 +32,11 @@
             user-select: none;
         }
 
+        .error-label {
+            font-size: 12px;
+            color: red;
+        }
+
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -119,17 +124,61 @@
             </div>
         </div>
 
-            <div class="row justify-content-md-center">
-                <button class="w-100 btn btn-lg btn-primary" type="submit"
-                        style="border-radius: 25px; background-color:#9AECED;  width: 140px!important; color: black; padding-left: 20px; padding-right: 20px; margin-top: 5px">
-                    Login
-                </button>
-            </div>
+        <div class="row justify-content-md-center">
+            <button class="w-100 btn btn-lg btn-primary" id="login" type="button"
+                    style="border-radius: 25px; background-color:#9AECED;  width: 140px!important; color: black; padding-left: 20px; padding-right: 20px; margin-top: 5px">
+                Login
+            </button>
+        </div>
 
-        </form>
     </div>
 </main>
 
 
 </body>
 </html>
+
+<script>
+    $('#login').on("click", function (event) {
+        var id = document.getElementById("user").value;
+        var pass = document.getElementById("pwd").value;
+        var bool = true;
+
+        if (id == "" || id == " ") {
+            bool = false;
+            document.getElementById("errorID").innerHTML = "*inserisci l'username";
+        } else {
+            document.getElementById("errorID").innerHTML = "";
+        }
+
+        if (pass == "" || pass == " ") {
+            bool = false;
+            document.getElementById("errorPSW").innerHTML = "*inserisci una password";
+        } else {
+            document.getElementById("errorPSW").innerHTML = "";
+        }
+
+        if (bool) {
+            $.ajax({
+                type: "POST",
+                url: "../Server/Login.php",
+                data: {user: id, psw: pass},
+                dataType: 'JSON',
+                success: function (response) {
+                    document.getElementById("errorID").innerHTML = "";
+                    document.getElementById("errorPSW").innerHTML = "";
+                    console.log(response);
+                    if (response["login"] == "true") {
+                        window.location.href = "Prova.html";
+                    } else {
+                        document.getElementById("errorID").innerHTML = "Nome utente o password errati";
+                    }
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            });
+        }
+
+    });
+</script>
