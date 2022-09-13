@@ -94,23 +94,28 @@
 <body class="text-center body">
 <main class="form-signin w-100 m-auto">
     <div style="background-color:#495288af; padding: 20px; border-radius: 25px;">
-        <form>
-            <img class="mb-4" src="../../../Documentation/Logo/Logo-completoTransparent.png" alt="" width="350">
+        <img class="mb-4" src="../../../Documentation/Logo/Logo-completoTransparent.png" alt="" width="350">
 
-            <div class="row justify-content-md-center" style="margin-bottom: 20px;--bs-gutter-x:0;">
-                <div class="form-floating" style="border-radius: 25px ; background-color: #ffffff; width: 80%">
-                    <span class="fa-user" aria-hidden="true" style="width: 20%"></span>
-                    <input name="username" id="user" type="text" value placeholder="Username" required style="background-color: transparent; width: 80%; padding: 10px 0 10px 15px; border: none;outline: none;">
-                    <label for="user"></label>
-                </div>
+        <div class="row justify-content-md-center" style="margin-bottom: 20px;--bs-gutter-x:0;">
+            <label id="errorID" class="error-label"></label>
+            <div class="form-floating" style="border-radius: 25px ; background-color: #ffffff; width: 80%">
+                <span class="fa-user" aria-hidden="true" style="width: 20%"></span>
+                <input name="username" id="user" type="text" value placeholder="Username"
+                       style="background-color: transparent; width: 80%; padding: 10px 0 10px 15px; border: none;outline: none;"
+                       required>
+                <label for="user"></label>
             </div>
-            <div class="row justify-content-md-center" style="margin-bottom: 10px;--bs-gutter-x:0;">
-                <div class="form-floating" style="border-radius: 25px ; background-color: #ffffff; width: 80%">
-                    <span class="fa-lock" aria-hidden="true" style="width: 20%"></span>
-                    <input name="username" id="pwd" type="password" value placeholder="Password" required style="background-color: transparent; width: 80%;padding: 10px 0 10px 15px;border: none;outline: none;">
-                    <label for="pwd"></label>
-                </div>
+        </div>
+        <div class="row justify-content-md-center" style="margin-bottom: 10px;--bs-gutter-x:0;">
+            <label id="errorPSW" class="error-label"></label>
+            <div class="form-floating" style="border-radius: 25px ; background-color: #ffffff; width: 80%">
+                <span class="fa-lock" aria-hidden="true" style="width: 20%"></span>
+                <input name="username" id="pwd" type="password" value placeholder="Password"
+                       style="background-color: transparent; width: 80%;padding: 10px 0 10px 15px;border: none;outline: none;"
+                       required>
+                <label for="pwd"></label>
             </div>
+        </div>
 
             <div class="row justify-content-md-center">
                 <button class="w-100 btn btn-lg btn-primary" type="submit"

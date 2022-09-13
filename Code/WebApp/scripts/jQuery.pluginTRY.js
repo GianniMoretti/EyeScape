@@ -1,5 +1,10 @@
 // JavaScript Document
 
+
+
+
+
+
 (function ($) { //risposta a chiamata in init
     console.log("JQUERY: " + $); //tipo risposta su web di jquery
 
@@ -27,85 +32,38 @@
 
             $('<p class="text-center">I miei acquari</p>' +
                 '<div class="container text-center">\n' +
-                '  <div class="row row-cols-2">\n' +
-                '    <div class="col"><input class="btn btn-primary" type="submit" value="Acquario 1"></div>\n' +
-                '    <div class="col"><input class="btn btn-primary" type="submit" value="Acquario 2"></div>\n' +
-                '    <div class="col"><input class="btn btn-primary" type="submit" value="Acquario 3"></div>\n' +
-                '    <div class="col"><input class="btn btn-primary" type="submit" value="Acquario 4"></div>\n' +
+                '  <div class="row row-cols-2" id="append-div">\n' +
+                '    <div class="col"><button type=\'button\' class=\'btn btn-primary\'>Acquario 1</button></div>\n' +
+                '    <div class="col"><button type=\'button\' class=\'btn btn-primary\'>Acquario 2</button></div>\n' +
+                '    <div class="col"><button type=\'button\' class=\'btn btn-primary\'>Acquario 3</button></div>\n' +
+                '    <div class="col"><button type=\'button\' class=\'btn btn-primary\'>Acquario 4</button></div>\n' +
                 '  </div>\n' +
                 '</div>').insertBefore($this);
 
 
             var $submitButton = $('.btn', $this.parent());
 
-
             $submitButton.on("click", function (event) {
-                alert("To Do Submitted");
-                sendToDo($this);
+                var request_type = "insert";
+                var text = "prova";
+                $.ajax({
+                    type: "POST",
+                    url: "../Server/Actions.php",
+                    data: {"text": text, "action": request_type},
+                    dataType:'JSON',
+                    success: function(response){
+                        var html = "<div class='col'><button type='button' class='btn btn-secondary'>ah! GAYY</button></div>";
+                        $("#append-div").append(html);
+                    },
+                    error : function(response) {
+                        console.log(response);
+                    }
+                });
             });
 
             loadToDo($this);
 
         });
-
-
-        function sendToDo($el) { // richiesta di aggiunta che viene effettuata nel php
-            console.log($el);
-            var $this = $el;
-            console.log("sendToDo");
-            request_type = "insert"; //******************************************
-            var todoText = "cazzo in culo"; // bravo matte gg
-            console.log("TODOTEXT: " + todoText);
-
-
-            if (todoText.length > 2) {
-
-                var request = $.ajax({
-                    url: options.serverURL,
-                    type: "POST",
-                    data: {"text": todoText, "action": request_type},
-                    dataType: "json",
-                });
-
-                request.done(function (data) {
-                    console.log("REQUEST.DONE: " + data)
-                    handleInsert(data, $this);
-                });
-
-                request.fail(
-                    function (jqXHR, textStatus) {
-                        alert("Request failed: " + textStatus);
-                    });
-            }
-        } // end sendToDo
-
-
-        function handleInsert(data, $el) {
-            console.log("to do added");
-            var $this = $el;
-            // trova tutti i todo, in questo caso uno
-            var todos = data["todos"];
-
-            // crea una variabile per la risposta
-            var html = "";
-
-            if (
-                !($(".todo-list", $this).length > 0)
-            ) {
-                var toDoList = $('<ul class="todo-list"></ul>');
-                $this.append(toDoList);
-            }
-
-            if ($('p', $this).length > 0) {
-                $('p', $this).remove();
-            }
-            document.getElementById('.col').innerHTML = '<ul><li>primo</li><li>secondo</li><li>terzo</li></ul>';
-            html += "<button type=\"button\" class=\"btn btn-secondary\">ah! GAYY</button>";
-            $(html).insertBefore($this);
-
-
-        } // handleInsert
-
 
 
         function loadToDo($el) {
