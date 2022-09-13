@@ -1,5 +1,4 @@
 <?php
-	// defines database connection data
 	define('DB_HOST', 'localhost');
 	define('DB_USER', 'aquarium');
 	define('DB_PASSWORD', 'aquarium');
