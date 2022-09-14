@@ -4,41 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="User database added">
-      <change afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Config.php" afterDir="false" />
+    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="Project Refactoring">
+      <change afterPath="$PROJECT_DIR$/Assets/Image/png-transparent-number-computer-icons-plus-miscellaneous-game-plus.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/Aquarium.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Sql/Aquarium.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Controlli.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Controlli.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/LoginBoot.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Prova.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/impostazioni.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/impostazioni.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Aquarium1.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Aquarium1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Controlli.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Controlli.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Impostazioni.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Impostazioni.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/inc/head.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/to-do-list.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Sql/to-do-list.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Image/GeneralConnection1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Image/GeneralConnection1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Image/GeneralConnection2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Image/GeneralConnection2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Image/LoginWallpaper.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Image/LoginWallpaper.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Image/bubbles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Image/bubbles.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Image/filter.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Image/filter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Image/thermometer.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Image/thermometer.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Logo/LittleFishes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Logo/LittleFishes.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Logo/LittleFishesTransparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Logo/LittleFishesTransparent.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Logo/Logo-completoTransparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Logo/Logo-completoTransparent.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Logo/Logo-sbrilluccicoso.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Logo/Logo-sbrilluccicoso.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Logo/Logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Logo/Logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Logo/LogoEyeScape.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Logo/LogoEyeScape.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/Logo/TransparentLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Logo/TransparentLogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Prova.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Prova.css" afterDir="false" />
     </list>
-    <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte" />
+    <list id="f890ead7-90a7-421c-a04f-0fcdb23d9f1a" name="Changes by giannimoretti" comment="">
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Home.css" afterDir="false" />
+    </list>
+    <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte">
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" afterDir="false" />
+    </list>
     <list id="43fa877a-a477-4ae7-9d4c-b101b7b49892" name="Changes by mirko" comment="Changes by gianni" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +30,45 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/Code/WebApp/HTML/Home.html">
+      <ranges>
+        <range start1="6" end1="7" start2="6" end2="7" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="65" end1="66" start2="65" end2="66" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="68" end1="69" start2="68" end2="69" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="78" end1="79" start2="78" end2="79" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="125" end1="126" start2="125" end2="126" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="128" end1="129" start2="128" end2="129" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="131" end1="132" start2="131" end2="132" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="134" end1="135" start2="134" end2="135" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="147" end1="148" start2="147" end2="148" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="170" end1="171" start2="170" end2="171" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="185" end1="185" start2="185" end2="193" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="3" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="10" end1="11" start2="10" end2="11" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php">
+      <ranges>
+        <range start1="3" end1="4" start2="3" end2="4" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="26" end1="27" start2="26" end2="27" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="39" end1="40" start2="39" end2="40" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="42" end1="43" start2="42" end2="43" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/Code/WebApp/HTML/Login.html">
+      <ranges>
+        <range start1="146" end1="147" start2="146" end2="147" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="153" end1="154" start2="153" end2="154" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="163" end1="164" start2="163" end2="164" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="170" end1="172" start2="170" end2="172" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -69,12 +91,13 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\MAMP\htdocs\EyeScape\Assets\Image" />
       <recent name="C:\MAMP\htdocs\EyeScape\Code\WebApp\Server\Sql" />
       <recent name="C:\MAMP\htdocs\EyeScape\Code\WebApp\Server\Php" />
     </key>
@@ -90,7 +113,10 @@
       <workItem from="1662739582773" duration="5879000" />
       <workItem from="1663072234809" duration="26000" />
       <workItem from="1663072278768" duration="12045000" />
-      <workItem from="1663147652610" duration="957000" />
+      <workItem from="1663147652610" duration="1308000" />
+      <workItem from="1663149009653" duration="167000" />
+      <workItem from="1663149192895" duration="418000" />
+      <workItem from="1663149722823" duration="9113000" />
     </task>
     <task id="LOCAL-00001" summary="User database added">
       <created>1663087546835</created>
@@ -113,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663087601689</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Project Refactoring">
+      <created>1663148773598</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663148773598</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +169,7 @@
     <MESSAGE value="Changes by matte and gianni" />
     <MESSAGE value="Changes by matte" />
     <MESSAGE value="Changes by gianni" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by gianni" />
+    <MESSAGE value="Project Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project Refactoring" />
   </component>
 </project>

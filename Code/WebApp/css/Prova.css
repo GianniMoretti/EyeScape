@@ -28,9 +28,9 @@ body {
 }
 
 .WelcomeWrite {
-    align-self: center;
-    width: 50%;
-    height: 50%;
+    align-self: start;
+    width: 30%;
+    height: 30%;
 }
 
 .UserNameWelcome {
@@ -50,6 +50,13 @@ body {
     margin-top: 7%;
     border-radius: 50%;
 
+}
+
+.buttonAquarium {
+    width: 90%;
+    height: 200px;
+    margin: 15px;
+    background-color: #9AECED;
 }
 
 

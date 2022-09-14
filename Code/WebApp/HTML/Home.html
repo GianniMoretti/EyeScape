@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomeTRY</title>
+    <title>Home</title>
     <link rel="stylesheet" href="../css/Prova.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,10 +63,10 @@
             </pattern>
         </defs>
         <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="0.9">
-            WELCOME,
+            WELCOME
         </text>
         <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#gradient)" fill-opacity="0.7">
-            WELCOME,
+            WELCOME
         </text>
     </svg>
 </div>
@@ -76,7 +76,7 @@
         <div class="col">
         </div>
         <div class="col">
-            <p class="fs-1" style="font-weight: bold">Nigga</p>
+            <p class="fs-1" style="font-weight: bold">Negri bastardi</p>
         </div>
         <div class="col">
         </div>
@@ -132,7 +132,7 @@
             <button type='button' class='btn btn-primary'>Acquario 3</button>
         </div>
         <div class="col">
-            <button type='button' class='btn btn-primary'>Acquario 4</button>
+            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium4" style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 50px;" ><i class="bi bi-plus-circle"></i></button>
         </div>
     </div>
 </div>
@@ -145,7 +145,7 @@
     $(document).ready(function () {
         $.ajax({
             type: "POST",
-            url: "../Server/Actions.php",
+            url: "../Server/Php/Actions.php",
             data: {"action": "load"},
             dataType: 'JSON',
             success: function (response) {
@@ -168,7 +168,7 @@
             var text = "prova";
             $.ajax({
                 type: "POST",
-                url: "../Server/Actions.php",
+                url: "../Server/Php/Actions.php",
                 data: {"text": text, "action": request_type},
                 dataType: 'JSON',
                 success: function (response) {

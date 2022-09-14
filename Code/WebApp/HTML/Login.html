@@ -161,15 +161,15 @@
         if (bool) {
             $.ajax({
                 type: "POST",
-                url: "../Server/Login.php",
+                url: "../Server/Php/Login.php",
                 data: {user: id, psw: pass},
                 dataType: 'JSON',
                 success: function (response) {
                     document.getElementById("errorID").innerHTML = "";
                     document.getElementById("errorPSW").innerHTML = "";
                     console.log(response);
-                    if (response["login"] == "true") {
-                        window.location.href = "Prova.html";
+                    if (response["login"] === "true") {
+                        window.location.href = "Home.html";
                     } else {
                         document.getElementById("errorID").innerHTML = "Nome utente o password errati";
                     }

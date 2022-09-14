@@ -1,7 +1,7 @@
 <?php
 
 	header('Content-Type: text/json');
-	require_once("config.php");
+	require_once("Config.php");
 	$action = $_POST['action'];
 	$query_string = "";
 
