@@ -70,9 +70,9 @@ svg {
 }
 
 .WelcomeWrite {
-    align-self: center;
-    width: 50%;
-    height: 50%;
+    align-self: start;
+    width: 30%;
+    height: 30%;
 }
 
 .container2 {
