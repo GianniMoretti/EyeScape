@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Aquarium.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Aquarium.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/LoginBoot.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/LoginBoot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/LoginBoot.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/LoginBoot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Prova.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Prova.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/scripts/jQuery.pluginTRY.js" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/scripts/jQuery.pluginTRY.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/server/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/server/Config.php" afterDir="false" />
+    </list>
+    <list id="9f43f0b2-53fb-435f-b73d-9bfd010c8042" name="Changes by giannimoretti" comment="" />
+    <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="">
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/LoginBoot.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/LoginBoot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Actions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/server/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/server/Config.php" afterDir="false" />
+    </list>
+    <list id="43fa877a-a477-4ae7-9d4c-b101b7b49892" name="Changes by mirko" comment="">
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/LoginBoot.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/LoginBoot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/inc/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,11 +30,33 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/Code/WebApp/Server/Config.php">
+      <ranges>
+        <range start1="1" end1="2" start2="1" end2="1" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="3" end1="6" start2="2" end2="6" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/Code/WebApp/HTML/LoginBoot.html">
+      <ranges>
+        <range start1="23" end1="23" start2="23" end2="25" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="31" end1="31" start2="33" end2="38" changelist="43fa877a-a477-4ae7-9d4c-b101b7b49892" />
+        <range start1="96" end1="98" start2="103" end2="104" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="99" end1="113" start2="105" end2="125" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="114" end1="120" start2="126" end2="132" changelist="43fa877a-a477-4ae7-9d4c-b101b7b49892" />
+        <range start1="121" end1="122" start2="133" end2="133" changelist="43fa877a-a477-4ae7-9d4c-b101b7b49892" />
+        <range start1="128" end1="128" start2="139" end2="184" changelist="43fa877a-a477-4ae7-9d4c-b101b7b49892" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2EXQhFdi4EA5zZX8TvUpdfAeRMs" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,6 +70,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -46,6 +83,8 @@
       <option name="presentableId" value="Default" />
       <updated>1662739572298</updated>
       <workItem from="1662739582773" duration="5879000" />
+      <workItem from="1663072234809" duration="26000" />
+      <workItem from="1663072278768" duration="11875000" />
     </task>
     <servers />
   </component>
