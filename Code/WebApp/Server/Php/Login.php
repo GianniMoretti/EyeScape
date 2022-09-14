@@ -8,7 +8,7 @@
 	$result = $mysqli->query($query_string);
 
 	while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-       $_SESSION["userID"] = $row["id user"];  // TODO DA CAMBIARE $row["id user"] CON $row["userID"]
+       $_SESSION["userID"] = $row["userID"];
 	}
 
 	if(isset($_SESSION["userID"]))

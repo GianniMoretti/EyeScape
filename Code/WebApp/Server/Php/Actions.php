@@ -24,7 +24,7 @@
 
 	function loadData() {
 		global $mysqli;
-		$query_string = 'SELECT * FROM to_do ORDER BY date DESC';
+		$query_string = 'SELECT name FROM aquarium';
 		$result = $mysqli->query($query_string);
     	$todos = array();
 		while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -37,10 +37,10 @@
 
 	function insertData() { /*il sendToDo usa questa ********************/
         global $mysqli;
-		$query_string = "INSERT INTO to_do (text) values ('". htmlspecialchars($to_do_text) . "')";
+		$query_string = "INSERT INTO aquarium (text) values ('". htmlspecialchars($to_do_text) . "')";
 		$result = $mysqli->query($query_string);
 
-    	$query_string = 'SELECT * FROM to_do WHERE ID=' . $mysqli->insert_id;
+    	$query_string = 'SELECT * FROM aquarium WHERE ID=' . $mysqli->insert_id;
 		$result = $mysqli->query($query_string);
     	$todos = array();
 		while ($row = $result->fetch_array(MYSQLI_ASSOC)) {

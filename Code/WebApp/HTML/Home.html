@@ -123,13 +123,13 @@
 <div class="container text-center">
     <div class="row row-cols-2" id="append-div">
         <div class="col">
-            <button type='button' class='btn btn-primary'>Acquario 1</button>
+            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium1" style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;"><i class="bi bi-plus-circle" style=" width:50px; height: 50px;"></i></button>
         </div>
         <div class="col">
-            <button type='button' class='btn btn-primary'>Acquario 2</button>
+            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium2" style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 50px;"><i class="bi bi-plus-circle"></i></button>
         </div>
         <div class="col">
-            <button type='button' class='btn btn-primary'>Acquario 3</button>
+            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium3" style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 50px;"><i class="bi bi-plus-circle"></i></button>
         </div>
         <div class="col">
             <button type='button' class='btn btn-primary buttonAquarium' id="aquarium4" style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 50px;" ><i class="bi bi-plus-circle"></i></button>
@@ -183,5 +183,13 @@
 
     });
 </script>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("#aquarium1").html("cazzo");
+        });
+    });
+</script>
+
 
 </html>

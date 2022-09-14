@@ -144,14 +144,14 @@
         var pass = document.getElementById("pwd").value;
         var bool = true;
 
-        if (id == "" || id == " ") {
+        if (id === "" || id === " ") {
             bool = false;
             document.getElementById("errorID").innerHTML = "*inserisci l'username";
         } else {
             document.getElementById("errorID").innerHTML = "";
         }
 
-        if (pass == "" || pass == " ") {
+        if (pass === "" || pass === " ") {
             bool = false;
             document.getElementById("errorPSW").innerHTML = "*inserisci una password";
         } else {
