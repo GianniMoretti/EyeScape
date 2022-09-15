@@ -44,7 +44,7 @@
 }
 
 	function insertData() {
-        global $mysqli;
+        /*global $mysqli;
 		$query_string = "INSERT INTO aquarium (text) values ('". htmlspecialchars($to_do_text) . "')";
 		$result = $mysqli->query($query_string);
 
@@ -55,8 +55,8 @@
 			array_push($todos, $todo);
 		}
 
-    	$response = array('todos' => $todos, 'type' => 'insert');
-		echo json_encode($response);
+    	$response = array('todos' => $todos, 'type' => 'insert');*/
+		echo json_encode("yess");
 
 	}
 

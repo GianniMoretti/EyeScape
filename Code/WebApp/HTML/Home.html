@@ -169,13 +169,19 @@
                     element.classList.add("full");
                 }
                 if (response["id"][1] === 2) {
-                    $("#aquarium2").html(response["name"][2]);
+                    var element = document.getElementById("#aquarium2");
+                    element.html(response["name"][1]);
+                    element.classList.add("full");
                 }
                 if (response["id"][2] === 3) {
-                    $("#aquarium3").html(response["name"][2]);
+                    var element = document.getElementById("#aquarium3");
+                    element.html(response["name"][2]);
+                    element.classList.add("full");
                 }
                 if (response["id"][3] === 4) {
-                    $("#aquarium4").html(response["name"][3]);
+                    var element = document.getElementById("#aquarium4");
+                    element.html(response["name"][3]);
+                    element.classList.add("full");
                 }
             },
             error: function () {
