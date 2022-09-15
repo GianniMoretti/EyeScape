@@ -4,24 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="Project Refactoring">
-      <change afterPath="$PROJECT_DIR$/Assets/Image/png-transparent-number-computer-icons-plus-miscellaneous-game-plus.png" afterDir="false" />
+    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="User database added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Prova.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Prova.css" afterDir="false" />
     </list>
-    <list id="f890ead7-90a7-421c-a04f-0fcdb23d9f1a" name="Changes by giannimoretti" comment="">
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Home.css" afterDir="false" />
-    </list>
-    <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte">
+    <list id="f5ea30cc-1552-45a4-b178-4f626abb065b" name="Changes by giannimoretti" comment="" />
+    <list id="7e36c28d-0c63-4593-9a9d-36edd2642426" name="Changes by leona" comment="">
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" afterDir="false" />
     </list>
+    <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte" />
     <list id="43fa877a-a477-4ae7-9d4c-b101b7b49892" name="Changes by mirko" comment="Changes by gianni" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,39 +28,36 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/Code/WebApp/HTML/Home.html">
       <ranges>
-        <range start1="6" end1="7" start2="6" end2="7" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="65" end1="66" start2="65" end2="66" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="68" end1="69" start2="68" end2="69" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="78" end1="79" start2="78" end2="79" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="125" end1="126" start2="125" end2="126" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-        <range start1="128" end1="129" start2="128" end2="129" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-        <range start1="131" end1="132" start2="131" end2="132" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-        <range start1="134" end1="135" start2="134" end2="135" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="147" end1="148" start2="147" end2="148" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="170" end1="171" start2="170" end2="171" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="185" end1="185" start2="185" end2="193" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php">
-      <ranges>
-        <range start1="2" end1="3" start2="2" end2="3" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="10" end1="11" start2="10" end2="11" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="34" end1="36" start2="34" end2="36" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="39" end1="39" start2="39" end2="43" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="40" end1="40" start2="44" end2="46" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="42" end1="42" start2="48" end2="49" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="119" end1="120" start2="126" end2="126" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="125" end1="126" start2="131" end2="134" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="128" end1="129" start2="136" end2="139" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="131" end1="132" start2="141" end2="144" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="134" end1="135" start2="146" end2="149" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="139" end1="140" start2="153" end2="153" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="142" end1="143" start2="155" end2="156" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="151" end1="159" start2="164" end2="177" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="160" end1="162" start2="178" end2="180" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="171" end1="172" start2="189" end2="190" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="185" end1="185" start2="203" end2="205" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="186" end1="189" start2="206" end2="209" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="194" end1="195" start2="214" end2="232" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
       </ranges>
     </file>
     <file path="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php">
       <ranges>
-        <range start1="3" end1="4" start2="3" end2="4" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="26" end1="27" start2="26" end2="27" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-        <range start1="39" end1="40" start2="39" end2="40" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-        <range start1="42" end1="43" start2="42" end2="43" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/Code/WebApp/HTML/Login.html">
-      <ranges>
-        <range start1="146" end1="147" start2="146" end2="147" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-        <range start1="153" end1="154" start2="153" end2="154" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-        <range start1="163" end1="164" start2="163" end2="164" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="170" end1="172" start2="170" end2="172" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="2" end1="2" start2="2" end2="3" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="13" end1="14" start2="14" end2="14" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="22" end1="22" start2="22" end2="26" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="23" end1="23" start2="27" end2="29" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="26" end1="27" start2="32" end2="33" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="28" end1="29" start2="34" end2="36" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="30" end1="31" start2="37" end2="39" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="32" end1="33" start2="40" end2="41" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="37" end1="38" start2="45" end2="46" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
       </ranges>
     </file>
   </component>
@@ -91,7 +82,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

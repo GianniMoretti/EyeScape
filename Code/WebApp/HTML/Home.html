@@ -137,10 +137,9 @@
     </div>
 </div>
 
-<div id="list-load"></div>
 
 </body>
-
+</html>
 <script type="text/javascript">
     $(document).ready(function () {
         $.ajax({
@@ -149,17 +148,22 @@
             data: {"action": "load"},
             dataType: 'JSON',
             success: function (response) {
-                var todos = response["todos"];
-                var html = "<ul class='todo-list'>";
-                $(todos).each(function (index, object) {
-                    html += "<li data-id='todo_" + object['id'] + "'" + ((object['completed'] === "1") ? "class='completed'>" : ">") + "<span class='todo_text'>" + object['text']
-                        + "</span> <span class='deleter'>x</span></li>\n";
-                });
-                html += "</ul>";
-                $("#list-load").append(html);
+                console.log(response["id"][0])
+                if (response["id"][0] === 1) {
+                    $("#aquarium1").html(response["name"][0]);
+                }
+                if (response["id"][1] === 2) {
+                    $("#aquarium2").html(response["name"][2]);
+                }
+                if (response["id"][2] === 3) {
+                    $("#aquarium3").html(response["name"][2]);
+                }
+                if (response["id"][3] === 4) {
+                    $("#aquarium4").html(response["name"][3]);
+                }
             },
-            error: function (response) {
-                console.log(response);
+            error: function () {
+                console.log("è vuoto");
             }
         });
 
@@ -169,7 +173,7 @@
             $.ajax({
                 type: "POST",
                 url: "../Server/Php/Actions.php",
-                data: {"text": text, "action": request_type},
+                data: {"action": request_type},
                 dataType: 'JSON',
                 success: function (response) {
                     var html = "<div class='col'><button type='button' class='btn btn-secondary'>ah! GAYY</button></div>";
@@ -184,12 +188,29 @@
     });
 </script>
 <script>
-    $(document).ready(function(){
-        $("button").click(function(){
-            $("#aquarium1").html("cazzo");
+    $(document).ready(function () {
+        $("#aquarium1").click(function () {
+
         });
     });
 </script>
 
 
-</html>
+<script>
+    $("#Logout").on("click", function (event) {
+
+            $.ajax({
+                type: "POST",
+                url: "../Server/Php/Actions.php",
+                data: {"action": "logout"},
+                dataType: 'JSON',
+                success: function () {
+                    window.location.href = "Login.html"
+                }
+            })
+        }
+    );
+</script>
+
+
+

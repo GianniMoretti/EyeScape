@@ -1,5 +1,6 @@
 <?php
 
+    session_start();
 	header('Content-Type: text/json');
 	require_once("Config.php");
 	$action = $_POST['action'];
@@ -11,7 +12,6 @@
 			loadData();
 		break;
 		case "insert" :
-			//echo($action);
 			insertData();
 		break;
 		case "update" :
@@ -20,22 +20,28 @@
 		case "delete" :
 			deleteData();
 		break;
+		case "logout" :
+		    session_destroy();
+
+		break;
 	}
 
 	function loadData() {
 		global $mysqli;
-		$query_string = 'SELECT name FROM aquarium';
+		$query_string = 'SELECT name, aquaID FROM aquarium';
 		$result = $mysqli->query($query_string);
-    	$todos = array();
+    	$names = array();
+    	$id = array();
 		while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-			array_push($todos, $row);
+			array_push($names, $row["name"]);
+			array_push($id, $row["aquaID"]);
 		}
-    	$response = array('todos' => $todos, 'type' => 'load');
+    	$response = array('names' => $names, 'id' => $id, 'type' => 'load');
 		echo json_encode($response);
 
 }
 
-	function insertData() { /*il sendToDo usa questa ********************/
+	function insertData() {
         global $mysqli;
 		$query_string = "INSERT INTO aquarium (text) values ('". htmlspecialchars($to_do_text) . "')";
 		$result = $mysqli->query($query_string);

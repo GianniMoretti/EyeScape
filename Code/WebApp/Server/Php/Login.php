@@ -16,7 +16,6 @@
 	else
 	    $response = array('login' => "false");
 
-    session_destroy();  // MANDARE SU LOGOUT
 
     echo json_encode($response);
 
