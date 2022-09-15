@@ -26,6 +26,8 @@
 		break;
 	}
 
+
+
 	function loadData() {
 		global $mysqli;
 		$query_string = 'SELECT name, aquaID FROM aquarium';
