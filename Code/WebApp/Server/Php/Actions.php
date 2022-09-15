@@ -22,7 +22,7 @@
 		break;
 		case "logout" :
 		    session_destroy();
-
+            echo json_encode("ok");
 		break;
 	}
 

@@ -4,60 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="User database added">
+    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="Home revisited">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" afterDir="false" />
     </list>
     <list id="f5ea30cc-1552-45a4-b178-4f626abb065b" name="Changes by giannimoretti" comment="" />
-    <list id="7e36c28d-0c63-4593-9a9d-36edd2642426" name="Changes by leona" comment="">
+    <list id="7e36c28d-0c63-4593-9a9d-36edd2642426" name="Changes by leona" comment="" />
+    <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte">
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
     </list>
-    <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte" />
     <list id="43fa877a-a477-4ae7-9d4c-b101b7b49892" name="Changes by mirko" comment="Changes by gianni" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Code/WebApp/HTML/Home.html">
-      <ranges>
-        <range start1="34" end1="36" start2="34" end2="36" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
-        <range start1="39" end1="39" start2="39" end2="43" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
-        <range start1="40" end1="40" start2="44" end2="46" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
-        <range start1="42" end1="42" start2="48" end2="49" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
-        <range start1="119" end1="120" start2="126" end2="126" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
-        <range start1="125" end1="126" start2="131" end2="134" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
-        <range start1="128" end1="129" start2="136" end2="139" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
-        <range start1="131" end1="132" start2="141" end2="144" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
-        <range start1="134" end1="135" start2="146" end2="149" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
-        <range start1="139" end1="140" start2="153" end2="153" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="142" end1="143" start2="155" end2="156" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="151" end1="159" start2="164" end2="177" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="160" end1="162" start2="178" end2="180" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="171" end1="172" start2="189" end2="190" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="185" end1="185" start2="203" end2="205" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
-        <range start1="186" end1="189" start2="206" end2="209" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="194" end1="195" start2="214" end2="232" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php">
       <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="13" end1="14" start2="14" end2="14" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="22" end1="22" start2="22" end2="26" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="23" end1="23" start2="27" end2="29" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
-        <range start1="26" end1="27" start2="32" end2="33" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="28" end1="29" start2="34" end2="36" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="30" end1="31" start2="37" end2="39" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="32" end1="33" start2="40" end2="41" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="37" end1="38" start2="45" end2="46" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="24" end1="25" start2="24" end2="25" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="46" end1="47" start2="46" end2="47" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="57" end1="59" start2="57" end2="59" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/Code/WebApp/HTML/Home.html">
+      <ranges>
+        <range start1="40" end1="41" start2="40" end2="41" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="166" end1="167" start2="166" end2="169" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="169" end1="170" start2="171" end2="174" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="172" end1="173" start2="176" end2="179" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="175" end1="176" start2="181" end2="184" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
+        <range start1="182" end1="182" start2="190" end2="200" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="183" end1="199" start2="201" end2="215" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="208" end1="209" start2="224" end2="224" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="222" end1="223" start2="237" end2="238" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
       </ranges>
     </file>
   </component>
@@ -73,19 +61,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\MAMP\htdocs\EyeScape\Assets\Image" />

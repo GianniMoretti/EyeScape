@@ -38,7 +38,7 @@
                  class="d-inline-block align-text-top">
         </a>
         <a class="navbar-brand justify-content-end">
-            <button type="button" class="btn btn-outline-light" id="Logout"><i class="bi bi-box-arrow-right"></i>Logout
+            <button type="button" class="btn btn-outline-light" id="Logout"><i class="bi bi-box-arrow-right"></i> Logout
             </button>
         </a>
     </div>
@@ -164,7 +164,9 @@
             success: function (response) {
                 console.log(response["id"][0])
                 if (response["id"][0] === 1) {
-                    $("#aquarium1").html(response["name"][0]);
+                    var element = document.getElementById("#aquarium1");
+                    element.html(response["name"][0]);
+                    element.classList.add("full");
                 }
                 if (response["id"][1] === 2) {
                     $("#aquarium2").html(response["name"][2]);
@@ -180,23 +182,31 @@
                 console.log("è vuoto");
             }
         });
+        $(".buttonAquarium").on("click", function (event) {
+            var request_type = "insert"
+            if (this.classList.contains("full"))
+                window.location.href = "Aquarium.html"
+            else {
+                //logica per richiedere il nome
+                this.innerHTML='<div class="input-group mb-3">\n' +
+                    '  <input type="text" class="form-control" placeholder="Aquarium name" aria-label="Aquarium name" aria-describedby="button-addon2">\n' +
+                    '  <button class="btn btn-outline-dark" type="button" id="button-addon2">Save <i class="bi bi-box-arrow-in-down"></i></button>\n' +
+                    '</div>'
 
-        $('.btn').on("click", function (event) {
-            var request_type = "insert";
-            var text = "prova";
-            $.ajax({
-                type: "POST",
-                url: "../Server/Php/Actions.php",
-                data: {"action": request_type},
-                dataType: 'JSON',
-                success: function (response) {
-                    var html = "<div class='col'><button type='button' class='btn btn-secondary'>ah! GAYY</button></div>";
-                    $("#append-div").append(html);
-                },
-                error: function (response) {
-                    console.log(response);
-                }
-            });
+                /*$.ajax({
+                    type: "POST",
+                    url: "../Server/Php/Actions.php",
+                    data: {"action": "insert"},
+                    dataType: 'JSON',
+                    success: function (response) {
+                        var html = "<div class='col'><button type='button' class='btn btn-secondary'>ah! GAYY</button></div>";
+                        $("#append-div").append(html);
+                    },
+                    error: function (response) {
+                        console.log(response);
+                    }
+                });*/
+            }
         });
 
     });
@@ -206,7 +216,6 @@
 <script>
     $(document).ready(function () {
         $("#aquarium1").click(function () {
-
         });
     });
 </script>
@@ -220,7 +229,7 @@
                 url: "../Server/Php/Actions.php",
                 data: {"action": "logout"},
                 dataType: 'JSON',
-                success: function () {
+                success: function (response) {
                     window.location.href = "Login.html"
                 }
             })
