@@ -8,13 +8,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" afterDir="false" />
     </list>
     <list id="f5ea30cc-1552-45a4-b178-4f626abb065b" name="Changes by giannimoretti" comment="" />
-    <list id="7e36c28d-0c63-4593-9a9d-36edd2642426" name="Changes by leona" comment="" />
-    <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte">
+    <list id="7e36c28d-0c63-4593-9a9d-36edd2642426" name="Changes by leona" comment="">
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
     </list>
+    <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte" />
     <list id="43fa877a-a477-4ae7-9d4c-b101b7b49892" name="Changes by mirko" comment="Changes by gianni" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,24 +29,38 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php">
-      <ranges>
-        <range start1="24" end1="25" start2="24" end2="25" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="46" end1="47" start2="46" end2="47" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-        <range start1="57" end1="59" start2="57" end2="59" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/Code/WebApp/HTML/Home.html">
       <ranges>
-        <range start1="40" end1="41" start2="40" end2="41" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="166" end1="167" start2="166" end2="169" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="169" end1="170" start2="171" end2="174" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-        <range start1="172" end1="173" start2="176" end2="179" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-        <range start1="175" end1="176" start2="181" end2="184" changelist="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" />
-        <range start1="182" end1="182" start2="190" end2="200" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="183" end1="199" start2="201" end2="215" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="208" end1="209" start2="224" end2="224" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
-        <range start1="222" end1="223" start2="237" end2="238" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="28" end1="29" start2="28" end2="34" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="31" end1="31" start2="36" end2="37" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="85" end1="86" start2="91" end2="92" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="98" end1="99" start2="104" end2="105" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="134" end1="134" start2="140" end2="141" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="137" end1="138" start2="144" end2="145" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="142" end1="143" start2="149" end2="150" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="147" end1="148" start2="154" end2="155" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="164" end1="164" start2="171" end2="172" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="165" end1="169" start2="173" end2="181" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="170" end1="174" start2="182" end2="186" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="175" end1="179" start2="187" end2="191" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="180" end1="184" start2="192" end2="196" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="185" end1="185" start2="197" end2="199" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="195" end1="195" start2="209" end2="210" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="196" end1="214" start2="211" end2="216" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="215" end1="217" start2="217" end2="218" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="244" end1="244" start2="245" end2="273" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php">
+      <ranges>
+        <range start1="31" end1="32" start2="31" end2="32" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="36" end1="36" start2="36" end2="37" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="37" end1="39" start2="38" end2="40" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="40" end1="41" start2="41" end2="42" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="46" end1="56" start2="47" end2="56" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="57" end1="58" start2="57" end2="57" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="61" end1="61" start2="60" end2="62" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="62" end1="63" start2="63" end2="64" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
       </ranges>
     </file>
   </component>
@@ -61,19 +76,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Matteo/Documenti/MAMP/htdocs/EyeScape",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\MAMP\htdocs\EyeScape\Assets\Image" />

@@ -29,33 +29,32 @@
 
 
 	function loadData() {
-		global $mysqli;
+		global $mysqli, $_SESSION;
 		$query_string = 'SELECT name, aquaID FROM aquarium';
 		$result = $mysqli->query($query_string);
     	$names = array();
     	$id = array();
+        $user = $_SESSION["userID"]["name"];
 		while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-			array_push($names, $row["name"]);
-			array_push($id, $row["aquaID"]);
+			$names[] = $row["name"];
+			$id[] = $row["aquaID"];
 		}
-    	$response = array('names' => $names, 'id' => $id, 'type' => 'load');
+    	$response = array('user'=> $user,'names' => $names, 'id' => $id, 'type' => 'load');
 		echo json_encode($response);
 
 }
 
 	function insertData() {
-        /*global $mysqli;
-		$query_string = "INSERT INTO aquarium (text) values ('". htmlspecialchars($to_do_text) . "')";
-		$result = $mysqli->query($query_string);
+        if (isset($_POST['text'])) {
+            $aquarium_name = $_POST['text'];
+        } else {
+            echo "you didn't specify a text";
+            return;
+        }
+        global $mysqli;
+		$query_string = "INSERT INTO aquarium (name) values ('". htmlspecialchars($aquarium_name) . "')";
+		$mysqli->query($query_string);
 
-    	$query_string = 'SELECT * FROM aquarium WHERE ID=' . $mysqli->insert_id;
-		$result = $mysqli->query($query_string);
-    	$todos = array();
-		while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-			array_push($todos, $todo);
-		}
-
-    	$response = array('todos' => $todos, 'type' => 'insert');*/
 		echo json_encode("yess");
 
 	}
