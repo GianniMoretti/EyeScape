@@ -34,6 +34,7 @@
     </style>
 </head>
 
+
 <body>
 
 <nav class="navbar " style="background-color: #131d47;">
@@ -88,7 +89,7 @@
         <div class="col">
         </div>
         <div class="col">
-            <p class="fs-1" style="font-weight: bold">Negri bastardi</p>
+            <p class="fs-1" id="afterWelcome" style="font-weight: bold"></p>
         </div>
         <div class="col">
         </div>
@@ -241,6 +242,34 @@
             })
         }
     );
+</script>
+
+<script>
+    $(document).on("click", ".btname", function (event) {
+        console.log("entra")
+        var text = document.getElementById("inputButton").value;
+        var bool = true;
+
+        if (text === "" || text === " ") {
+            bool = false;
+            document.getElementById("errorID").innerHTML = "*inserisci il nome dell'acquario";
+        }
+        if (bool) {
+            console.log("entra")
+            $.ajax({
+                type: "POST",
+                url: "../Server/Php/Actions.php",
+                data: {"text": text, "action": "insert"},
+                dataType: 'JSON',
+                success: function (response) {
+                    window.location.href = "impostazioni.html";
+                },
+                error: function (response) {
+                    console.log("errore");
+                }
+            });
+        }
+    });
 </script>
 
 
