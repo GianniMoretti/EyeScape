@@ -1,0 +1,28 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-brand {
+    color:white!important;
+}
+
+.form-select {
+    background-color: #9AECED!important;
+    color: #131D47!important;
+
+}
+
+.d-inline-block {
+    height:60px;
+    width: 230px;
+    background-repeat: no-repeat;
+    background-size: 230px 60px;
+}
+
+.d-inline-block:hover {
+   background-image: url("../../../Assets/Logo/Logo-sbrilluccicoso.png");
+}
+
+.form-select:hover {
+
+}

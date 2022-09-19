@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="Home revisited">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Login.php" afterDir="false" />
+    </list>
+    <list id="f5ea30cc-1552-45a4-b178-4f626abb065b" name="Changes by giannimoretti" comment="" />
+    <list id="7e36c28d-0c63-4593-9a9d-36edd2642426" name="Changes by leona" comment="">
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
+    </list>
+    <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte" />
+    <list id="43fa877a-a477-4ae7-9d4c-b101b7b49892" name="Changes by mirko" comment="Changes by gianni" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/Code/WebApp/HTML/Home.html">
+      <ranges>
+        <range start1="28" end1="29" start2="28" end2="34" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="31" end1="31" start2="36" end2="37" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="85" end1="86" start2="91" end2="92" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="98" end1="99" start2="104" end2="105" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="134" end1="134" start2="140" end2="141" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="137" end1="138" start2="144" end2="145" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="142" end1="143" start2="149" end2="150" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="147" end1="148" start2="154" end2="155" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="164" end1="164" start2="171" end2="172" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="165" end1="169" start2="173" end2="181" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="170" end1="174" start2="182" end2="186" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="175" end1="179" start2="187" end2="191" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="180" end1="184" start2="192" end2="196" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="185" end1="185" start2="197" end2="199" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="195" end1="195" start2="209" end2="210" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="196" end1="214" start2="211" end2="216" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="215" end1="217" start2="217" end2="218" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="244" end1="244" start2="245" end2="273" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php">
+      <ranges>
+        <range start1="31" end1="32" start2="31" end2="32" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="36" end1="36" start2="36" end2="37" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="37" end1="39" start2="38" end2="40" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="40" end1="41" start2="41" end2="42" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="46" end1="56" start2="47" end2="56" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="57" end1="58" start2="57" end2="57" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="61" end1="61" start2="60" end2="62" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+        <range start1="62" end1="63" start2="63" end2="64" changelist="7e36c28d-0c63-4593-9a9d-36edd2642426" />
+      </ranges>
+    </file>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EXQhFdi4EA5zZX8TvUpdfAeRMs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Matteo/Documenti/MAMP/htdocs/EyeScape",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\MAMP\htdocs\EyeScape\Assets\Image" />
+      <recent name="C:\MAMP\htdocs\EyeScape\Code\WebApp\Server\Sql" />
+      <recent name="C:\MAMP\htdocs\EyeScape\Code\WebApp\Server\Php" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="" />
+      <created>1662739572298</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662739572298</updated>
+      <workItem from="1662739582773" duration="5879000" />
+      <workItem from="1663072234809" duration="26000" />
+      <workItem from="1663072278768" duration="12045000" />
+      <workItem from="1663147652610" duration="1308000" />
+      <workItem from="1663149009653" duration="167000" />
+      <workItem from="1663149192895" duration="418000" />
+      <workItem from="1663149722823" duration="9113000" />
+    </task>
+    <task id="LOCAL-00001" summary="User database added">
+      <created>1663087546835</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663087546835</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Changes by matte">
+      <created>1663087582634</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663087582634</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Changes by gianni">
+      <created>1663087601689</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663087601689</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Project Refactoring">
+      <created>1663148773598</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663148773598</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Usera databse added" />
+    <MESSAGE value="User database added" />
+    <MESSAGE value="Changes by matte and gianni" />
+    <MESSAGE value="Changes by matte" />
+    <MESSAGE value="Changes by gianni" />
+    <MESSAGE value="Project Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project Refactoring" />
+  </component>
+</project>

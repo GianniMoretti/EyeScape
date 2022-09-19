@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>LoginBoot</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+    <script src="https://kit.fontawesome.com/b8ca21d9b2.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+            integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+            integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        .error-label {
+            font-size: 12px;
+            color: red;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .body {
+            margin: 0px;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-repeat: no-repeat;
+            font-family: 'Open Sans', sans-serif;
+            justify-content: center;
+            background-image: url("../../../Assets/Image/LoginWallpaper.png");
+            background-size: cover;
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../css/LoginBoot.css" type="text/css">
+</head>
+
+<body class="text-center body">
+<main class="form-signin w-100 m-auto">
+    <div style="background-color:#495288af; padding: 20px; border-radius: 25px;">
+        <img class="mb-4" src="../../../Assets/Logo/Logo-completoTransparent.png" alt="" width="350">
+
+        <div class="row justify-content-md-center" style="margin-bottom: 20px;--bs-gutter-x:0;">
+            <label id="errorID" class="error-label"></label>
+            <div class="form-floating" style="border-radius: 25px ; background-color: #ffffff; width: 80%">
+                <span class="fa-user" aria-hidden="true" style="width: 20%"></span>
+                <input name="username" id="user" type="text" value placeholder="Username"
+                       style="background-color: transparent; width: 80%; padding: 10px 0 10px 15px; border: none;outline: none;"
+                       required>
+                <label for="user"></label>
+            </div>
+        </div>
+        <div class="row justify-content-md-center" style="margin-bottom: 10px;--bs-gutter-x:0;">
+            <label id="errorPSW" class="error-label"></label>
+            <div class="form-floating" style="border-radius: 25px ; background-color: #ffffff; width: 80%">
+                <span class="fa-lock" aria-hidden="true" style="width: 20%"></span>
+                <input name="username" id="pwd" type="password" value placeholder="Password"
+                       style="background-color: transparent; width: 80%;padding: 10px 0 10px 15px;border: none;outline: none;"
+                       required>
+                <label for="pwd"></label>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <button class="w-100 btn btn-lg btn-primary" id="login" type="button"
+                    style="border-radius: 25px; background-color:#9AECED;  width: 140px!important; color: black; padding-left: 20px; padding-right: 20px; margin-top: 5px">
+                Login
+            </button>
+        </div>
+
+    </div>
+</main>
+
+
+</body>
+</html>
+
+<script>
+    $('#login').on("click", function (event) {
+        var id = document.getElementById("user").value;
+        var pass = document.getElementById("pwd").value;
+        var bool = true;
+
+        if (id === "" || id === " ") {
+            bool = false;
+            document.getElementById("errorID").innerHTML = "*inserisci l'username";
+        } else {
+            document.getElementById("errorID").innerHTML = "";
+        }
+
+        if (pass === "" || pass === " ") {
+            bool = false;
+            document.getElementById("errorPSW").innerHTML = "*inserisci una password";
+        } else {
+            document.getElementById("errorPSW").innerHTML = "";
+        }
+
+        if (bool) {
+            $.ajax({
+                type: "POST",
+                url: "../Server/Php/Login.php",
+                data: {user: id, psw: pass},
+                dataType: 'JSON',
+                success: function (response) {
+                    document.getElementById("errorID").innerHTML = "";
+                    document.getElementById("errorPSW").innerHTML = "";
+                    console.log(response);
+                    if (response["login"] === "true") {
+                        window.location.href = "Home.html";
+                    } else {
+                        document.getElementById("errorID").innerHTML = "Nome utente o password errati";
+                    }
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            });
+        }
+
+    });
+</script>

@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
 html {
     height: 100%;
@@ -11,17 +15,18 @@ body {
     background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
     justify-content: center;
-    background-image: url("https://images6.alphacoders.com/356/356742.jpg");
+    background-image: url("../../../Assets/Image/LoginWallpaper.png");
     background-size: cover;
-
 }
 
-.logo img {
-    width: 300px;  
 
-}
-.logo{
+.logo {
+
     padding: 30px;
+}
+
+.logo img{
+    width: 450px ;
 }
 
 .box1 {

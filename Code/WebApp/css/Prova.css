@@ -1,0 +1,62 @@
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+* {
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.navbar-brand {
+    color:white!important;
+}
+
+.form-select {
+    background-color: #9AECED!important;
+    color: #131D47!important;
+}
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    justify-content: center;
+    background-size: cover;
+
+
+}
+
+.WelcomeWrite {
+    align-self: start;
+    width: 30%;
+    height: 30%;
+}
+
+.UserNameWelcome {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    line-height: 1.4em;
+    color: #333;
+    font-weight: bold;
+}
+
+.Separazione2 {
+    height: 3px;
+    border-width: 0px;
+    width: 100%;
+    color: #131D47;
+    background-color: #131D47;
+    margin-top: 7%;
+    border-radius: 50%;
+
+}
+
+.buttonAquarium {
+    width: 90%;
+    height: 200px;
+    margin: 15px;
+    background-color: #9AECED;
+}
+
+
