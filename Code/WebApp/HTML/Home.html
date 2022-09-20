@@ -102,8 +102,8 @@
     <div class="row" style="margin-top: 7%; margin-bottom: 8%">
         <div class="col">
             <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
-                <div class="form-check form-switch" style=>
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked1" checked>
+                <div class="form-check form-switch">
+                    <input typeSwitch="filtri" class="form-check-input switch-j"  type="checkbox" role="switch" id="flexSwitchCheckChecked1" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked1"><i class="bi bi-funnel-fill"></i>Filtri</label>
                 </div>
             </div>
@@ -111,7 +111,7 @@
         <div class="col">
             <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked2" checked>
+                    <input typeSwitch="areatori" class="form-check-input switch-j" type="checkbox" role="switch" id="flexSwitchCheckChecked2" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked2"><i
                             class="bi bi-fan"></i>Areatori</label>
                 </div>
@@ -120,7 +120,7 @@
         <div class="col">
             <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked3" checked>
+                    <input typeSwitch="riscaldatori" class="form-check-input switch-j" type="checkbox" role="switch" id="flexSwitchCheckChecked3" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked3"><i class="bi bi-thermometer-half"></i>Riscaldatori</label>
                 </div>
             </div>
@@ -202,6 +202,43 @@
                 console.log("è vuoto");
             }
         });
+        $.ajax({
+            type: "POST",
+            url: "../Server/Php/Actions.php",
+            data: {"action": "deviceload"},
+            dataType: 'JSON',
+            success: function (response) {
+                var element;
+                if(response["status"][0] === 'OFF'){
+                    element = document.getElementById("flexSwitchCheckChecked1");
+                    element.checked = false;
+                    console.log(element.checked);
+                }else{
+                    element = document.getElementById("flexSwitchCheckChecked1");
+                    element.checked = true;
+                    console.log(element.checked);
+                }
+                if(response["status"][2] == 'OFF'){
+                    element = document.getElementById("flexSwitchCheckChecked2");
+                    element.checked = false;
+                    console.log(element.checked);
+                }else{
+                    element = document.getElementById("flexSwitchCheckChecked2");
+                    element.checked = true;
+                    console.log(element.checked);
+                }
+                if(response["status"][1] == 'OFF'){
+                    element = document.getElementById("flexSwitchCheckChecked3");
+                    element.checked = false;
+                    console.log(element.checked);
+                }else{
+                    element = document.getElementById("flexSwitchCheckChecked3");
+                    element.checked = true;
+                    console.log(element.checked);
+                }
+            }
+
+        });
         $(".buttonAquarium").on("click", function (event) {
             var request_type = "insert"
             if (this.classList.contains("full"))
@@ -215,7 +252,34 @@
                     '                <button class="btn btn-outline-secondary btname" type="button" id="button-addon2">Button</button>\n' +
                     '            </div>');
             }
-        })
+        });
+
+        $(".switch-j").on("click", function(event) {
+            var ty = this.getAttribute("typeSwitch");
+            var onff = this.checked;
+
+            var id;
+            var status;
+
+            if(ty == "filtri"){
+                id = 1;
+            }else if(ty == "areatori"){
+                id=2;
+            }else id=3;
+
+            if(onff){
+                status = "ON";
+            }else status = "OFF";
+
+            $.ajax({
+                type: "POST",
+                url: "../Server/Php/Actions.php",
+                data: {"action": "deviceupdate", "status": status, "id": id},
+                dataType: 'JSON',
+                success: function (response) {}
+            });
+        });
+
     });
 </script>
 
