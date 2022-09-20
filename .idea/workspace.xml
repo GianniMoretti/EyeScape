@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="insert aquarium and load logic">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
-    </list>
+    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="switch logic" />
     <list id="f5ea30cc-1552-45a4-b178-4f626abb065b" name="Changes by giannimoretti" comment="" />
     <list id="7e36c28d-0c63-4593-9a9d-36edd2642426" name="Changes by leona" comment="Changes by leona" />
     <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte" />
@@ -73,7 +69,7 @@
       <workItem from="1663149192895" duration="418000" />
       <workItem from="1663149722823" duration="9113000" />
       <workItem from="1663572447785" duration="18281000" />
-      <workItem from="1663659852566" duration="341000" />
+      <workItem from="1663659852566" duration="700000" />
     </task>
     <task id="LOCAL-00001" summary="User database added">
       <created>1663087546835</created>
@@ -117,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663401784237</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="switch logic">
+      <created>1663660497098</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663660497098</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +146,7 @@
     <MESSAGE value="Project Refactoring" />
     <MESSAGE value="insert aquarium and load logic" />
     <MESSAGE value="Changes by leona" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by leona" />
+    <MESSAGE value="switch logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch logic" />
   </component>
 </project>
