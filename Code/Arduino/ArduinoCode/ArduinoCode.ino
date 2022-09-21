@@ -94,8 +94,12 @@ Servo servoSwitch;
 
 //***************4RELE MODULE****************************//
 
+#define PUMP 50
+#define RESISTORS 51
+#define FILTERS 52
+#define BLOWERS 53
 
-
+//****************************SETUP*******************//
 
 void setup() {
   //Serial connection with raspberry pi
@@ -117,12 +121,106 @@ void setup() {
   #ifdef ACQ_4
     wts_4.begin();
   #endif
-  //*******************
 
-  
+  //RELE pin settings
+  pinMode(PUMP, OUTPUT);
+  pinMode(RESISTORS, OUTPUT);
+  pinMode(FILTERS, OUTPUT);
+  pinMode(BLOWERS, OUTPUT);
 }
 
-void loop() {
-  
+String strs[20]; 
 
+void loop() {
+  //wait for Command available from Raspberry 
+  while (Serial.available() == 0) {}     
+  String str = Serial.readString();  //read until timeout
+  str.trim();                        // remove any \r \n whitespace at the end of the String
+  
+  //SPLITTING THE COMMAND
+  //COMMAND PROTOCOL
+  //Sensor Request: 10
+  //Switch Request: 20|on|on|on|on (Pump|Filters|Resistors|Blower)
+
+  //Slitting the string using |
+  splitString(str, '|');
+
+  //Switching thse command
+  switch(strs[0].toInt()){
+    case 10:
+      sendSensorsData();
+      break;
+    case 20:
+      changeSwitchState();
+      break;
+    default:
+      Serial.println("100|something went wrong");
+      break;
+  }
+  
+  
+  delay(1000);
+}
+
+
+void sendSensorsData(){
+  Serial.println("Sending data");
+    
+}
+
+void changeSwitchState(){
+  Serial.println("SwitchingState");
+  if (strs[1] == "on")
+    digitalWrite(PUMP, HIGH);
+  else
+    digitalWrite(PUMP, LOW);
+    
+  if (strs[2] == "on")
+    digitalWrite(FILTERS, HIGH);
+  else
+    digitalWrite(FILTERS, LOW);
+    
+  if (strs[3] == "on")
+    digitalWrite(RESISTORS, HIGH);
+  else
+    digitalWrite(RESISTORS, LOW);
+    
+  if (strs[4] == "on")
+    digitalWrite(BLOWERS, HIGH);
+  else
+    digitalWrite(BLOWERS, LOW);
+}
+
+String acquariumSensorsData(int num){
+  #ifdef ACQ_1
+    
+  #endif
+  #ifdef ACQ_2
+    
+  #endif
+  #ifdef ACQ_3
+    
+  #endif
+  #ifdef ACQ_4
+    
+  #endif
+}
+
+
+
+void splitString(String str, char Separator){
+  int stringCount = 0;
+  while (str.length() > 0) {
+    int index = str.indexOf('|');
+    if (index == -1) // No space found
+    {
+      strs[stringCount++] = str;
+      break;
+    }
+    else
+    {
+      strs[stringCount++] = str.substring(0, index);
+      str = str.substring(index+1);
+    }
+  }
 }
