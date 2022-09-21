@@ -5,8 +5,8 @@
 	require_once("Config.php");
 	$action = $_POST['action'];
 	$query_string = "";
-
 	switch($action) {
+
 
 		case "load" :
 			loadData();
@@ -22,8 +22,15 @@
 		break;
 		case "logout" :
 		    session_destroy();
-            echo json_encode("ok");
 		break;
+        case "deviceload":
+            deviceLoad();
+        break;
+        case "deviceupdate":
+
+            deviceUpdate();
+            echo json_encode("yess");
+        break;
 	}
 
 
@@ -59,42 +66,13 @@
 
 	}
 
-
-
-function updateData() {
-		global $mysqli;
-		if (isset($_POST['id'])) $id = $_POST['id'];
-		if (isset($_POST['status'])) $status = $_POST['status'];
-
-		$pieces = explode("_", $id);
-
-		$query_string = 'UPDATE to_do SET completed=' . $status . ' WHERE ID=' . $pieces[1];
-
-    	// esegui la query
-		$result = $mysqli->query($query_string);
-
-		//echo $query_string;
-
-    	if($mysqli->affected_rows > 0) {
-		// encodo l'array in JSON
-
-	  		$response = array('updated' => true, 'id' => $id, 'type' => 'update');
-
-		} else {
-	  		$response = array('updated' => false, 'id' => $id, 'type' => 'update');
-		}
-
-	echo json_encode($response);
-
-}
-
-
 	function deleteData() {
         global $mysqli;
 		if (isset($_POST['id'])) $id = $_POST['id'];
 			$pieces = explode("_", $id);
-			$query_string = 'DELETE FROM to_do WHERE ID=' . $pieces[1];
+			$query_string = 'DELETE FROM to_do WHERE ID=' . $pieces[0];
 			$result = $mysqli->query($query_string);
+
 
     		if($mysqli->affected_rows > 0) {
 	  			$response = array('deleted' => true, 'id' => $id, 'type' => 'delete');
@@ -102,7 +80,31 @@ function updateData() {
 	  			$response = array('deleted' => false, 'id' => $id, 'type' => 'delete');
 	  		}
 
-			echo json_encode($response);
+			echo json_encode($query_string);
 	}
+
+    function deviceUpdate(){
+        global $mysqli;
+        if (isset($_POST['id'])) $id = $_POST['id'];
+        if (isset($_POST['status'])) $status = $_POST['status'];
+
+        $query_string = 'UPDATE device SET status="' . $status . '" WHERE devID=' . $id;
+        $mysqli->query($query_string);
+
+        echo json_encode("ok");
+    }
+    function deviceLoad(){
+        global $mysqli, $_SESSION;
+        $query_string = 'SELECT * FROM device';
+        $result = $mysqli->query($query_string);
+        $id = array();
+        $status = array();
+        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+            $id[] = $row["devID"];
+            $status[] = $row["status"];
+        }
+        $response = array('status' => $status, 'id' => $id, 'type' => 'deviceload');
+        echo json_encode($response);
+    }
 
 ?>
