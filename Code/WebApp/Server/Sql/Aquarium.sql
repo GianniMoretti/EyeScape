@@ -29,6 +29,12 @@ SET time_zone = "+00:00";
 CREATE TABLE if not exists  `Aquarium` (
   `aquaID` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
+  'description' text NOT NULL,
+  'startlight' text NOT NULL,
+  'lightduration' int(2) NOT NULL,
+  'luminositypercentage' int (2) NOT NULL,
+  'automaticrefill' binary(1) NOT NULL,
+  'onofflight' binary(1) NOT NULL,
   PRIMARY KEY (`aquaID`)
 );
 
