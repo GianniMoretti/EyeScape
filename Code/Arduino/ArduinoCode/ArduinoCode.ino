@@ -1,3 +1,9 @@
+/*TODO:
+*Fix the convercion to String
+*Water level sensor 
+*Plafoniera e timer
+*/
+
 
 //*******************ACQUARIUM ENABLE**************************//
 //Uncomment the line of the acquarium output you're going to use
@@ -5,6 +11,10 @@
 //#define ACQ_2
 //#define ACQ_3
 //#define ACQ_4
+
+//**************************COST******************************//
+#define VIN 5 // V power voltage
+#define R 10000 //ohm resistance value
 
 //*******************SENSOR POWER PIN*************************//
 //Uncomment this line for enamble.
@@ -37,9 +47,6 @@
 #ifdef ACQ_4
   #define LX_4 A7
 #endif
-
-long int Res_1Lux = 1000000;
-float k = 1;
 
 //*********DHT11 SENSOR (humidity & Air Temperature)*********//
 #include <SimpleDHT.h>
@@ -140,7 +147,7 @@ void loop() {
   //SPLITTING THE COMMAND
   //COMMAND PROTOCOL
   //Sensor Request: 10
-  //Switch Request: 20|on|on|on|on (Pump|Filters|Resistors|Blower)
+  //Switch Request: 20|on|on|on (Filters|Resistors|Blower)
 
   //Slitting the string using |
   splitString(str, '|');
@@ -158,52 +165,47 @@ void loop() {
       break;
   }
   
-  
   delay(1000);
 }
 
 
 void sendSensorsData(){
-  Serial.println("Sending data");
-    
+  String data = "SD|";
+  //Lux
+  luxData = luxSensors();
+  data = data + luxData + "|";
+  //WaterTemp
+  waterTemp = waterTempSensors();
+  data = data + waterTemp + "|";
+  //Humidity and Air
+  HumAtp = humidityAndAirTemp();
+  data = data + HumAtp + "|";
+  //Water Level sensor
+
+  Serial.println(data);
 }
 
 void changeSwitchState(){
   Serial.println("SwitchingState");
-  if (strs[1] == "on")
+/*   if (strs[1] == "on")
     digitalWrite(PUMP, HIGH);
   else
-    digitalWrite(PUMP, LOW);
+    digitalWrite(PUMP, LOW); */
     
-  if (strs[2] == "on")
+  if (strs[1] == "on")
     digitalWrite(FILTERS, HIGH);
   else
     digitalWrite(FILTERS, LOW);
     
-  if (strs[3] == "on")
+  if (strs[2] == "on")
     digitalWrite(RESISTORS, HIGH);
   else
     digitalWrite(RESISTORS, LOW);
     
-  if (strs[4] == "on")
+  if (strs[3] == "on")
     digitalWrite(BLOWERS, HIGH);
   else
     digitalWrite(BLOWERS, LOW);
-}
-
-String acquariumSensorsData(int num){
-  #ifdef ACQ_1
-    
-  #endif
-  #ifdef ACQ_2
-    
-  #endif
-  #ifdef ACQ_3
-    
-  #endif
-  #ifdef ACQ_4
-    
-  #endif
 }
 
 
@@ -225,34 +227,124 @@ void splitString(String str, char Separator){
   }
 }
 
+//***********************************SENSORS REQUEST****************************//
 
+String humidityAndAirTemp(){
+  String datau = "HUM=";
+  String datat = "ATP=";
+
+  byte temperature = 0;
+  byte humidity = 0;
+
+  #ifdef ACQ_1
+    int err = SimpleDHTErrSuccess;
+    if ((err = dht_1.read(&temperature, &humidity, NULL)) != SimpleDHTErrSuccess) {
+      datau = datau + "err,";
+      datat = datat + "err,";
+    }
+    //Da convertire a string
+    datau = datau + (int)humidity + ",";
+    datat = datat + (int)temperature + ",";
+  #endif
+  #ifdef ACQ_2
+    int err = SimpleDHTErrSuccess;
+    if ((err = dht_2.read(&temperature, &humidity, NULL)) != SimpleDHTErrSuccess) {
+      datau = datau + "err,";
+      datat = datat + "err,";
+    }
+    //Da convertire a string
+    datau = datau + (int)humidity + ",";
+    datat = datat + (int)temperature + ",";
+  #endif
+  #ifdef ACQ_3
+    int err = SimpleDHTErrSuccess;
+    if ((err = dht_3.read(&temperature, &humidity, NULL)) != SimpleDHTErrSuccess) {
+      datau = datau + "err,";
+      datat = datat + "err,";
+    }
+    //Da convertire a string
+    datau = datau + (int)humidity + ",";
+    datat = datat + (int)temperature + ",";
+  #endif
+  #ifdef ACQ_4
+    int err = SimpleDHTErrSuccess;
+    if ((err = dht_4.read(&temperature, &humidity, NULL)) != SimpleDHTErrSuccess) {
+      datau = datau + "err,";
+      datat = datat + "err,";
+    }
+    //Da convertire a string
+    datau = datau + (int)humidity;
+    datat = datat + (int)temperature;
+  #endif
+  
+  return datau + "|" + datat;
+}
+
+String waterTempSensors(){
+  String data = "WTS="
+  //non si converte cosi a string
+  #ifdef ACQ_1
+    wts_1.requestTemperatures(); 
+    tc = temp.getTempCByIndex(0);
+    data + String(tc) + ","
+  #endif
+  #ifdef ACQ_2
+    wts_1.requestTemperatures(); 
+    tc = temp.getTempCByIndex(0);
+    data + String(tc) + ","
+  #endif
+  #ifdef ACQ_3
+    wts_1.requestTemperatures(); 
+    tc = temp.getTempCByIndex(0);
+    data + String(tc) + ","
+  #endif
+  #ifdef ACQ_4
+    wts_1.requestTemperatures(); 
+    tc = temp.getTempCByIndex(0);
+    data + String(tc)
+  #endif
+  
+  return data;
+}
+
+
+String luxSensors(){
+  String data = "LUX="
+
+  #ifdef ACQ_1
+    sensorVal = analogRead(LX_1);
+    lux=sensorRawToPhys(sensorVal);
+    data + String(lux) + ","
+  #endif
+  #ifdef ACQ_2
+    sensorVal = analogRead(LX_2);
+    lux=sensorRawToPhys(sensorVal);
+    data + String(lux) + ","
+  #endif
+  #ifdef ACQ_3
+    sensorVal = analogRead(LX_3);
+    lux=sensorRawToPhys(sensorVal);
+    data + String(lux) + ","
+  #endif
+  #ifdef ACQ_4
+    sensorVal = analogRead(LX_4);
+    lux=sensorRawToPhys(sensorVal);
+    data + String(lux)
+  #endif
+  
+  return data;
+}
+
+int sensorRawToPhys(int raw){
+  // Conversion rule
+  float Vout = float(raw) * (VIN / float(1023));// Conversion analog to voltage
+  float RLDR = (R * (VIN - Vout))/Vout; // Conversion voltage to resistance
+  int phys=500/(RLDR/1000); // Conversion resitance to lumen
+  return phys;
+}
 
 
 /*  CODICI SENSORI
- #include <OneWire.h>
-#include <DallasTemperature.h>
-
-OneWire oneWire(5);
-DallasTemperature temp(&oneWire);
-
-float tc = 0;
-float tf = 0;
-
-void setup(void) {
-  Serial.begin(9600);
-  temp.begin();
-}
-
-void loop(void) { 
-  temp.requestTemperatures(); 
-  tc = temp.getTempCByIndex(0);
-  tf = temp.toFahrenheit(tc);
-  Serial.print(" C  ");
-  Serial.print(tc);
-  Serial.print(" F  ");
-  Serial.println(tf);
-  delay(1000);
-}
 
 #define POWER_PIN  7
 #define SIGNAL_PIN A5
@@ -277,44 +369,6 @@ void loop() {
   Serial.println(value);
 
   delay(1000);
-}
+} 
 
-
-#include <SimpleDHT.h>
-
-// for DHT11, 
-//      VCC: 5V or 3V
-//      GND: GND
-//      DATA: 2
-int pinDHT11 = 2;
-SimpleDHT11 dht11(pinDHT11);
-
-void setup() {
-  Serial.begin(115200);
-}
-
-void loop() {
-  // start working...
-  Serial.println("=================================");
-  Serial.println("Sample DHT11...");
-  
-  // read without samples.
-  byte temperature = 0;
-  byte humidity = 0;
-  int err = SimpleDHTErrSuccess;
-  if ((err = dht11.read(&temperature, &humidity, NULL)) != SimpleDHTErrSuccess) {
-    Serial.print("Read DHT11 failed, err="); Serial.print(SimpleDHTErrCode(err));
-    Serial.print(","); Serial.println(SimpleDHTErrDuration(err)); delay(1000);
-    return;
-  }
-  
-  Serial.print("Sample OK: ");
-  Serial.print((int)temperature); Serial.print(" *C, "); 
-  Serial.print((int)humidity); Serial.println(" H");
-  
-  // DHT11 sampling rate is 1HZ.
-  delay(1500);
-
-  
-
- */
+*/
