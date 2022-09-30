@@ -27,10 +27,9 @@
 
             $('<h2>Il mio titolo del cazzo</h2>' +
                 '<textarea class="todo_textarea"></textarea>' +
-                '<input type="submit" value="bottone del cazzo" class="to_do_submit" />').insertBefore($this);
+                '<input type="submit" value="bottone del cazzo miao" class="to_do_submit" />').insertBefore($this);
 
             var $submitButton = $('.to_do_submit', $this.parent());
-
 
             $submitButton.on("click", function(event){
                 alert("To Do Submitted");
