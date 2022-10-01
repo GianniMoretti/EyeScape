@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="Settings buttons upgraded">
-      <change afterPath="$PROJECT_DIR$/Code/WebApp/HTML/AquFirstPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/impostazioni.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/impostazioni.html" afterDir="false" />
-    </list>
+    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="Settings buttons upgraded2" />
     <list id="f890ead7-90a7-421c-a04f-0fcdb23d9f1a" name="Changes by giannimoretti" comment="" />
     <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte" />
     <list id="43fa877a-a477-4ae7-9d4c-b101b7b49892" name="Changes by mirko" comment="Changes by gianni" />
@@ -154,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664288852811</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Settings buttons upgraded2">
+      <created>1664544991872</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1664544991872</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +186,7 @@
     <MESSAGE value="switch logic" />
     <MESSAGE value="ER diagram added" />
     <MESSAGE value="sql ugraded" />
-    <option name="LAST_COMMIT_MESSAGE" value="sql ugraded" />
+    <MESSAGE value="Settings buttons upgraded2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Settings buttons upgraded2" />
   </component>
 </project>
