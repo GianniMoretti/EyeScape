@@ -173,25 +173,26 @@
                 console.log(response["id"][0])
                 console.log(response["names"][0])
                 if (response["id"][0] == 1) {
-                    console.log(response["id"][0])
-                    console.log(response["names"][0])
-                    element = $("#aquarium1")
-                    var text = response["names"][0]
-                    element.html(text);
+                    element = $("#aquarium1");
+                    element.html(response["names"][0]);
                     document.getElementById("aquarium1").classList.add("full");
+                   /* document.getElementById("aquarium1").innerHTML = "<form action=\"resend-otp.php\" method=\"get\">\n" +
+                        "    <input type=\"hidden\" name=\"\" value=\"123\"/>\n" +
+                        "    <button>Resend OTP</button>\n" +
+                        "</form>"*/
                 }
                 if (response["id"][1] == 2) {
-                    element = $("#aquarium2")
+                    element = $("#aquarium2");
                     element.html(response["names"][1]);
                     document.getElementById("aquarium2").classList.add("full");
                 }
                 if (response["id"][2] == 3) {
-                    element = $("#aquarium3")
+                    element = $("#aquarium3");
                     element.html(response["names"][2]);
                     document.getElementById("aquarium3").classList.add("full");
                 }
                 if (response["id"][3] == 4) {
-                    element = $("#aquarium4")
+                    element = $("#aquarium4");
                     element.html(response["names"][3]);
                     document.getElementById("aquarium4").classList.add("full");
                 }
@@ -209,7 +210,7 @@
             dataType: 'JSON',
             success: function (response) {
                 var element;
-                if(response["status"][0] === 'OFF'){
+                if(response["status"][0] == 'OFF'){
                     element = document.getElementById("flexSwitchCheckChecked1");
                     element.checked = false;
                     console.log(element.checked);
@@ -246,11 +247,7 @@
             else {
                 this.classList.add("full");
                 //logica per richiedere il nome
-                this.insertAdjacentHTML('afterend', '<label id="errorID" class="error-label"></label>\n' +
-                    '<div class="input-group mb-3" id="buttonContainer">\n ' +
-                    '                <input type="text" class="form-control" id="inputButton" placeholder="Aquarium name" aria-label="Aquarium name" ">\n' +
-                    '                <button class="btn btn-outline-secondary btname" type="button" id="button-addon2">Button</button>\n' +
-                    '            </div>');
+                window.location.href = "impostazioni.html";
             }
         });
 
@@ -282,15 +279,6 @@
 
     });
 </script>
-
-
-<script>
-    $(document).ready(function () {
-        $("#aquarium1").click(function () {
-        });
-    });
-</script>
-
 
 <script>
     $("#Logout").on("click", function (event) {
@@ -326,7 +314,7 @@
                 data: {"text": text, "action": "insert"},
                 dataType: 'JSON',
                 success: function (response) {
-                    window.location.href = "impostazioni.html";
+                    window.location.href = "Impostazioni.html";
                 },
                 error: function (response) {
                     console.log("errore");

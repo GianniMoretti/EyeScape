@@ -58,8 +58,44 @@
             echo "you didn't specify a text";
             return;
         }
+        if (isset($_POST['description'])) {
+            $aquarium_description = $_POST['description'];
+        } else {
+            echo "you didn't specify a description";
+            return;
+        }
+        if (isset($_POST['timeStart'])) {
+            $aquarium_time_start = $_POST['timeStart'];
+        } else {
+            echo "you didn't specify a time";
+            return;
+        }
+        if (isset($_POST['timeEnd'])) {
+            $aquarium_duration = $_POST['timeEnd'];
+        } else {
+            echo "you didn't specify a time";
+            return;
+        }
+        if (isset($_POST['brightness'])) {
+            $aquarium_brightness = $_POST['brightness'];
+        } else {
+            echo "you didn't specify a text";
+            return;
+        }
+        if (isset($_POST['refill'])) {
+            $aquarium_autoRefill = $_POST['refill'];
+        } else {
+            echo "you didn't specify a text";
+            return;
+        }
+        if (isset($_POST['onOff'])) {
+            $aquarium_onOff = $_POST['onOff'];
+        } else {
+            echo "you didn't specify a text";
+            return;
+        }
         global $mysqli;
-		$query_string = "INSERT INTO aquarium (name) values ('". htmlspecialchars($aquarium_name) . "')";
+		$query_string = "INSERT INTO aquarium (name, description, startLight, lightDuration, luminosityPercentage, automaticRefill, onOffLight) values ('". htmlspecialchars($aquarium_name) . "', '". htmlspecialchars($aquarium_description) . "','". htmlspecialchars($aquarium_time_start) . "', '". htmlspecialchars($aquarium_duration) . "', '". htmlspecialchars($aquarium_brightness) . "', '". htmlspecialchars($aquarium_autoRefill) . "', '". htmlspecialchars($aquarium_onOff) . "')";
 		$mysqli->query($query_string);
 
 		echo json_encode("yess");
