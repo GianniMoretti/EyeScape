@@ -103,7 +103,8 @@
         <div class="col">
             <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
                 <div class="form-check form-switch">
-                    <input typeSwitch="filtri" class="form-check-input switch-j"  type="checkbox" role="switch" id="flexSwitchCheckChecked1" checked>
+                    <input typeSwitch="filtri" class="form-check-input switch-j" type="checkbox" role="switch"
+                           id="flexSwitchCheckChecked1" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked1"><i class="bi bi-funnel-fill"></i>Filtri</label>
                 </div>
             </div>
@@ -111,7 +112,8 @@
         <div class="col">
             <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
                 <div class="form-check form-switch">
-                    <input typeSwitch="areatori" class="form-check-input switch-j" type="checkbox" role="switch" id="flexSwitchCheckChecked2" checked>
+                    <input typeSwitch="areatori" class="form-check-input switch-j" type="checkbox" role="switch"
+                           id="flexSwitchCheckChecked2" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked2"><i
                             class="bi bi-fan"></i>Areatori</label>
                 </div>
@@ -120,7 +122,8 @@
         <div class="col">
             <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
                 <div class="form-check form-switch">
-                    <input typeSwitch="riscaldatori" class="form-check-input switch-j" type="checkbox" role="switch" id="flexSwitchCheckChecked3" checked>
+                    <input typeSwitch="riscaldatori" class="form-check-input switch-j" type="checkbox" role="switch"
+                           id="flexSwitchCheckChecked3" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked3"><i class="bi bi-thermometer-half"></i>Riscaldatori</label>
                 </div>
             </div>
@@ -170,33 +173,12 @@
             dataType: 'JSON',
             success: function (response) {
                 var element;
-                console.log(response["id"][0])
-                console.log(response["names"][0])
-                if (response["id"][0] == 1) {
-                    element = $("#aquarium1");
-                    element.html(response["names"][0]);
-                    document.getElementById("aquarium1").classList.add("full");
-                   /* document.getElementById("aquarium1").innerHTML = "<form action=\"resend-otp.php\" method=\"get\">\n" +
-                        "    <input type=\"hidden\" name=\"\" value=\"123\"/>\n" +
-                        "    <button>Resend OTP</button>\n" +
-                        "</form>"*/
+                for (let i = 0; i < response["id"].length; i++) {
+                    element = $("#aquarium" + (i + 1));
+                    element.html(response["names"][i]);
+                    document.getElementById("aquarium" + (i + 1)).setAttribute("aquaID", response["id"][i]);
+                    document.getElementById("aquarium" + (i + 1)).classList.add("full");
                 }
-                if (response["id"][1] == 2) {
-                    element = $("#aquarium2");
-                    element.html(response["names"][1]);
-                    document.getElementById("aquarium2").classList.add("full");
-                }
-                if (response["id"][2] == 3) {
-                    element = $("#aquarium3");
-                    element.html(response["names"][2]);
-                    document.getElementById("aquarium3").classList.add("full");
-                }
-                if (response["id"][3] == 4) {
-                    element = $("#aquarium4");
-                    element.html(response["names"][3]);
-                    document.getElementById("aquarium4").classList.add("full");
-                }
-                console.log(response["user"]);
                 $("#afterWelcome").html(response["user"]);
             },
             error: function () {
@@ -210,70 +192,66 @@
             dataType: 'JSON',
             success: function (response) {
                 var element;
-                if(response["status"][0] == 'OFF'){
+                if (response["status"][0] == 'OFF') {
                     element = document.getElementById("flexSwitchCheckChecked1");
                     element.checked = false;
-                    console.log(element.checked);
-                }else{
+                } else {
                     element = document.getElementById("flexSwitchCheckChecked1");
                     element.checked = true;
-                    console.log(element.checked);
                 }
-                if(response["status"][2] == 'OFF'){
+                if (response["status"][2] == 'OFF') {
                     element = document.getElementById("flexSwitchCheckChecked2");
                     element.checked = false;
-                    console.log(element.checked);
-                }else{
+                } else {
                     element = document.getElementById("flexSwitchCheckChecked2");
                     element.checked = true;
-                    console.log(element.checked);
                 }
-                if(response["status"][1] == 'OFF'){
+                if (response["status"][1] == 'OFF') {
                     element = document.getElementById("flexSwitchCheckChecked3");
                     element.checked = false;
-                    console.log(element.checked);
-                }else{
+                } else {
                     element = document.getElementById("flexSwitchCheckChecked3");
                     element.checked = true;
-                    console.log(element.checked);
+
                 }
             }
 
         });
         $(".buttonAquarium").on("click", function (event) {
-            var request_type = "insert"
-            if (this.classList.contains("full"))
-                window.location.href = "Aquarium.html"
-            else {
+            if (this.classList.contains("full")) {
+                localStorage.setItem("currentID", this.getAttribute("aquaID"));
+                window.location.href = "Aquarium.html";
+            } else {
                 this.classList.add("full");
                 //logica per richiedere il nome
-                window.location.href = "impostazioni.html";
+                window.location.href = "AquFirstPage.html";
             }
         });
 
-        $(".switch-j").on("click", function(event) {
+        $(".switch-j").on("click", function (event) {
             var ty = this.getAttribute("typeSwitch");
             var onff = this.checked;
 
             var id;
             var status;
 
-            if(ty == "filtri"){
+            if (ty == "filtri") {
                 id = 1;
-            }else if(ty == "areatori"){
-                id=3;
-            }else id=2;
+            } else if (ty == "areatori") {
+                id = 3;
+            } else id = 2;
 
-            if(onff){
+            if (onff) {
                 status = "ON";
-            }else status = "OFF";
+            } else status = "OFF";
 
             $.ajax({
                 type: "POST",
                 url: "../Server/Php/Actions.php",
                 data: {"action": "deviceupdate", "status": status, "id": id},
                 dataType: 'JSON',
-                success: function (response) {}
+                success: function (response) {
+                }
             });
         });
 
@@ -294,35 +272,3 @@
             })
         }
     );
-</script>
-
-<script>
-    $(document).on("click", ".btname", function (event) {
-        console.log("entra")
-        var text = document.getElementById("inputButton").value;
-        var bool = true;
-
-        if (text === "" || text === " ") {
-            bool = false;
-            document.getElementById("errorID").innerHTML = "*inserisci il nome dell'acquario";
-        }
-        if (bool) {
-            console.log("entra")
-            $.ajax({
-                type: "POST",
-                url: "../Server/Php/Actions.php",
-                data: {"text": text, "action": "insert"},
-                dataType: 'JSON',
-                success: function (response) {
-                    window.location.href = "Impostazioni.html";
-                },
-                error: function (response) {
-                    console.log("errore");
-                }
-            });
-        }
-    });
-</script>
-
-
-

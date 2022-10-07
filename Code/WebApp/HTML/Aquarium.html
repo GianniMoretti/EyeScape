@@ -6,22 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <!--Boostrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-            integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-            integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
             crossorigin="anonymous"></script>
     <!--LineChart-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 
 </head>
 
@@ -29,28 +22,33 @@
 <body>
 
 
-<nav class="navbar " style="background-color: #131d47;">
+<nav class="navbar" style="background-color: #131d47;">
     <div class="container-fluid justify-content-center">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="Home.html">
             <img src="../../../Assets/Logo/Logo-completoTransparent.png" alt="" width="230" height="60"
                  class="d-inline-block align-text-top">
         </a>
 
-        <a class="navbar-brand" href="#">
-            <select class="form-select" aria-label="Default select example">
-                <!-- <option value="1">Acquario 1</option>
-                 <option value="2">Acquario 2</option>
-                 <option value="3">Acquario 3</option>
-                 <option value="3">Acquario 4</option>-->
-            </select></a>
+        <div class="btn-group" style="padding-right: 1%">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                I miei acquari
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Acquario 1</a></li>
+                <li><a class="dropdown-item" href="#">Acquario 2</a></li>
+                <li><a class="dropdown-item" href="#">Acquario 3</a></li>
+                <li><a class="dropdown-item" href="#">Acquario 4</a></li>
+            </ul>
+        </div>
         <a class="navbar-brand"
-           href="http://localhost:63342/ppm/EyeScape/Code/WebApp/HTML/impostazioni.html?_ijt=cmlss63ih9l2uk9dmjs1nduhvi&_ij_reload=RELOAD_ON_SAVE#">Impostazioni</a>
+           href="impostazioni.html">Impostazioni</a>
         <a class="navbar-brand"
-           href="http://localhost:63342/ppm/EyeScape/Code/WebApp/HTML/Controlli.html?_ijt=cmlss63ih9l2uk9dmjs1nduhvi&_ij_reload=RELOAD_ON_SAVE#">Controlli</a>
+           href="Controlli.html">Controlli</a>
         <a class="navbar-brand" href="#">Grafici</a>
-
     </div>
 </nav>
+
 
 <div class="container text-center" style="width: 100%">
     <div class="row">
@@ -114,18 +112,43 @@
 
 <script>
     $(document).ready(function () {
+        var id = localStorage.getItem("currentID");
+        console.log(id);
+
         $.ajax({
+            type: "POST",
+            url: "../Server/Php/Actions.php",
+            data: {"action": "getAquariumData", "id": id},
+            dataType: 'JSON',
+            success: function (response) {
+                //todo prendere roba dal database e stamparla
+            }
+        });
+        /*$.ajax({
             type: "POST",
             url: "../Server/Php/Actions.php",
             data: {"action": "load"},
             dataType: 'JSON',
             success: function (response) {
-                for (let i = 0; i < 3; i++) {
+                var html = "";
+                for (let i = 0; i <response["id"].length ; i++) {
+                    if( localStorage.getItem("currentID") === response["id"][i]){
+                        html = '<option id="aqua-change" value='+response["id"][i]+'>'+ response["names"][i] + '</option>' + html;
+                    }else{
+                        html += '<option id="aqua-change" value='+response["id"][i]+'>'+ response["names"][i] + '</option>';
+                    }
 
-                    $("#form-select").html = '<option value="1">Acquario 1</option>';
                 }
+                document.getElementById("tent").innerHTML = html;
             }
-        })
+        });*/
+    })
+</script>
+<script>
+    $("#aqua-change").on("click", function (event) {
+        localStorage.setItem("currentID", $(this).value);
+        console.log("entra");
+        window.location.href = "#";
     })
 </script>
 
