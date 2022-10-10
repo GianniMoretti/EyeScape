@@ -37,6 +37,10 @@
             <img src="../../../Assets/Logo/Logo-completoTransparent.png" alt="" width="230" height="60"
                  class="d-inline-block align-text-top">
         </a>
+        <a class="navbar-brand justify-content-end">
+            <button type="button" class="btn btn-outline-light" id="Logout"><i class="bi bi-box-arrow-right"></i> Logout
+            </button>
+        </a>
     </div>
 </nav>
 
@@ -61,8 +65,8 @@
                 <div class="input-group mb-3">
                     <label id="errorDesc" class="error-label"></label>
                     <div class="input-group">
-                        <textarea class="form-control form-control-lg input-wrap" aria-label="With textarea"
-                                  placeholder="Inserisci descrizione" id="description"></textarea>
+                        <textarea class="form-control form-control-lg input-wrap" id="description" aria-label="With textarea"
+                                  placeholder="Inserisci descrizione"></textarea>
                         <span class="input-group-text ">Descrizione</span>
                     </div>
                 </div>
@@ -173,6 +177,22 @@
 
                 })
             }
+        }
+    );
+
+</script>
+<script>
+    $('#Logout').on("click", function (event) {
+
+            $.ajax({
+                type: "POST",
+                url: "../Server/Php/Actions.php",
+                data: {"action": "logout"},
+                dataType: 'JSON',
+                success: function (response) {
+                    window.location.href = "Login.html"
+                }
+            })
         }
     );
 

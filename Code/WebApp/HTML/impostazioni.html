@@ -6,113 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <!--Boostrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-            integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-            integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style>
-        .error-label {
-            font-size: 12px;
-            color: red;
-        }
-    </style>
+
 
 </head>
-
-
 <body>
 
 
-<nav class="navbar " style="background-color: #131d47;">
+<nav class="navbar" style="background-color: #131d47;">
     <div class="container-fluid justify-content-center">
         <a class="navbar-brand" href="Home.html">
             <img src="../../../Assets/Logo/Logo-completoTransparent.png" alt="" width="230" height="60"
                  class="d-inline-block align-text-top">
         </a>
 
-        <a class="navbar-brand" href="#">
-            <select class="form-select" aria-label="Default select example">
-                <option value="1">Acquario 1</option>
-                <option value="2">Acquario 2</option>
-                <option value="3">Acquario 3</option>
-                <option value="3">Acquario 4</option>
-
-            </select></a>
-        <a class="navbar-brand" href="#">Impostazioni</a>
+        <div class="btn-group" style="padding-right: 1%">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                I miei acquari
+            </button>
+            <ul class="dropdown-menu" id="dropList">
+            </ul>
+        </div>
+        <a class="navbar-brand"
+           href="impostazioni.html">Impostazioni</a>
         <a class="navbar-brand"
            href="Controlli.html">Controlli</a>
         <a class="navbar-brand" href="#">Grafici</a>
-
+        <a class="navbar-brand justify-content-end">
+            <button type="button" class="btn btn-outline-light" id="Logout"><i class="bi bi-box-arrow-right"></i> Logout
+            </button>
+        </a>
     </div>
 </nav>
 
 
-<div class="container text-center" style="margin-top: 10%;">
+<div class="container text-center" style="margin-top: 5%;">
     <div class="row justify-content-md-center">
 
         <div class="col-md-6 box">
             <div style="padding:50px;">
-                <label id="errorName" class="error-label"></label>
                 <div class="input-group mb-3">
-                    <button type="button" class="btn btn-outline-primary" id="submit-name">Invia</button>
                     <input type="text" class="form-control form-control-lg input-wrap" id="name"
                            placeholder="New aquarium name"
                            aria-label="Aquarium name">
                 </div>
 
-                <label id="errorDesc" class="error-label"></label>
                 <div class="input-group mb-3">
                     <div class="input-group">
-                        <button type="button" class="btn btn-outline-primary" id="submit-description">Invia</button>
-                        <textarea class="form-control form-control-lg input-wrap" id="description" aria-label="With textarea"
+                        <textarea class="form-control form-control-lg input-wrap" id="description"
+                                  aria-label="With textarea"
                                   placeholder="Descrizione"></textarea>
                         <span class="input-group-text">Descrizione</span>
                     </div>
                 </div>
 
                 <div class="input-group mb-3">
-                    <label id="errorDesc" class="error-label"></label>
                     <div class="input-group">
-                        <button type="button" class="btn btn-outline-primary" id="submit-light">Invia</button>
-                        <input type="text" aria-label="First name" class="form-control form-control-lg input-wrap"
+                        <input type="text" aria-label="First name" id="time-start"
+                               class="form-control form-control-lg input-wrap"
                                placeholder="Inizio">
-                        <input type="text" aria-label="Last name" class="form-control form-control-lg input-wrap"
-                               placeholder="Fine">
+                        <input type="text" aria-label="Last name" id="time-duration"
+                               class="form-control form-control-lg input-wrap"
+                               placeholder="Durata">
                         <span class="input-group-text">Inizio/fine orario luci</span>
                     </div>
                 </div>
 
                 <div class="input-group mb-3">
-                    <button type="button" class="btn btn-outline-primary" id="submit-brightness">Invia</button>
-                    <input type="text" class="form-control form-control-lg input-wrap"
+                    <input type="text" id="brightness" class="form-control form-control-lg input-wrap"
                            aria-label="Amount (to the nearest dollar)" placeholder="% luminosità">
-                    <span class="input-group-text">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
-                                   checked>
-                            <label class="form-check-label" for="flexSwitchCheckChecked">Luci</label>
-                        </div>
-                    </span>
                 </div>
-
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg input-wrap"
-                           placeholder="Refill automatico on/off" aria-label="Aquarium name">
-                    <span class="input-group-text">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
-                                   checked>
-                            <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                <div class="container text-center" style="padding-bottom: 5%; margin-top: 5%">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input switch-j" typeSwitch="light" type="checkbox" role="switch"
+                                       id="flexSwitchCheckDefault1">
+                                <label class="form-check-label" for="flexSwitchCheckDefault1">Luci</label>
+                            </div>
                         </div>
-                    </span>
+                        <div class="col">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input switch-j" typeSwitch="refill" type="checkbox" role="switch"
+                                       id="flexSwitchCheckDefault2">
+                                <label class="form-check-label" for="flexSwitchCheckDefault2">Refill automatico</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" id="submit-button" type="submit">Aggiorna Acquario</button>
                 </div>
             </div>
         </div>
@@ -120,67 +109,155 @@
 </div>
 
 <script>
-    $("#submit-name").on("click", function (event) {
+    $(document).ready(function () {
         var id = localStorage.getItem("currentID");
-        var bool = true;
-        var name = document.getElementById("name").value;
-        if (name === "" || name === " ") {
-            bool = false;
-            document.getElementById("errorName").innerHTML = "*inserisci un nome";
-        } else {
-            document.getElementById("errorName").innerHTML = "";
-        }
-        if (bool) {
-            $.ajax({
-                type: "POST",
-                url: "../Server/Php/Actions.php",
-                data: {
-                    "id": id,
-                    "field": "name",
-                    "modify": name,
-                    "action": "update"
-                },
-                dataType: 'JSON',
-                success: function (response) {
-                    window.location.reload();
+        console.log(id);
+        $.ajax({
+            type: "POST",
+            url: "../Server/Php/Actions.php",
+            data: {"action": "getAquariumData", "id": id},
+            dataType: 'JSON',
+            success: function (response) {
+                if (response["onOffLight"][0] == '0') {
+                    document.getElementById("flexSwitchCheckDefault1").checked = false;
+                } else {
+                    document.getElementById("flexSwitchCheckDefault1").checked = true;
                 }
-            })
+                if (response["automaticRefill"][0] == '0') {
+                    document.getElementById("flexSwitchCheckDefault2").checked = false;
+                } else {
+                    document.getElementById("flexSwitchCheckDefault2").checked = true;
+                }
+            }
+        });
+        $.ajax({
+            type: "POST",
+            url: "../Server/Php/Actions.php",
+            data: {"action": "load"},
+            dataType: 'JSON',
+            success: function (response) {
+                var html = "";
+                for (let i = 0; i < response["id"].length; i++) {
+                    html+= '<li><a class="dropdown-item" aquaID="'+ response["id"][i] +'" href="#">'+ response["names"][i] +'</a></li>'
+                }
+                document.getElementById("dropList").innerHTML = html;
+            },
+            error: function () {
+                console.log("è vuoto");
+            }
+        });
+
+    })
+</script>
+
+<script>
+    $("#submit-button").on("click", function (event) {
+        var id = localStorage.getItem("currentID");
+        console.log(id);
+        $.ajax({
+            type: "POST",
+            url: "../Server/Php/Actions.php",
+            data: {"action": "getAquariumData", "id": id},
+            dataType: 'JSON',
+            success: function (response) {
+                var name = response["names"][0];
+                var description = response["description"][0];
+                var timeDuration = response["lightDuration"][0];
+                var brightness = response["luminosityPercentage"][0];
+                var startLight = response["startLight"][0];
+                if (document.getElementById("name").value === "" || document.getElementById("name").value === " ") {
+                } else {
+                    name = document.getElementById("name").value;
+                }
+                if (document.getElementById("description").value === "" || document.getElementById("description").value === " ") {
+                } else {
+                    description = document.getElementById("description").value;
+                }
+                if (document.getElementById("time-duration").value === "" || document.getElementById("time-duration").value === " ") {
+                } else {
+                    timeDuration = document.getElementById("time-duration").value;
+                }
+                if (document.getElementById("brightness").value === "" || document.getElementById("brightness").value === " ") {
+                } else {
+                    brightness = document.getElementById("brightness").value;
+                }
+                if (document.getElementById("time-start").value === "" || document.getElementById("time-start").value === " ") {
+                } else {
+                    startLight = document.getElementById("time-start").value;
+                }
+                $.ajax({
+                    type: "POST",
+                    url: "../Server/Php/Actions.php",
+                    data: {
+                        "id": id,
+                        "name": name,
+                        "description": description,
+                        "timeStart": startLight,
+                        "timeDuration": timeDuration,
+                        "brightness": brightness,
+                        "action": "update"
+                    },
+                    dataType: 'JSON',
+                    success: function (response) {
+                        console.log(response);
+                    }
+                })
+            }
+        });
+    });
+</script>
+
+<script>
+    $(".switch-j").on("click", function (event) {
+        var id = localStorage.getItem("currentID");
+        var ty = this.getAttribute("typeSwitch");
+        var onoff = this.checked;
+
+        var switchString;
+        var status;
+
+        if (ty == "light") {
+            switchString = "onOffLight";
+        } else if (ty == "refill") {
+            switchString = "automaticRefill";
         }
 
-    });
+        if (onoff) {
+            status = "1";
+        } else status = "0";
 
+        $.ajax({
+            type: "POST",
+            url: "../Server/Php/Actions.php",
+            data: {"action": "switchUpdate", "status": status, "switch": switchString, "id":id},
+            dataType: 'JSON',
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    });
 </script>
 <script>
-    $("#submit-description").on("click", function (event) {
-        var id = localStorage.getItem("currentID");
-        var bool = true;
-        var description = document.getElementById("description").value;
-        if (name === "" || name === " ") {
-            bool = false;
-            document.getElementById("errorDesc").innerHTML = "*inserisci una descrizione";
-        } else {
-            document.getElementById("errorDesc").innerHTML = "";
-        }
-        if (bool) {
+    $(document).on("click",".dropdown-item", function(event){
+        localStorage.setItem("currentID", this.getAttribute("aquaID"));
+        window.location.reload();
+    })
+</script>
+<script>
+    $('#Logout').on("click", function (event) {
+
             $.ajax({
                 type: "POST",
                 url: "../Server/Php/Actions.php",
-                data: {
-                    "id": id,
-                    "field": "description",
-                    "modify": description,
-                    "action": "update"
-                },
+                data: {"action": "logout"},
                 dataType: 'JSON',
                 success: function (response) {
-                    window.location.reload();
+                    window.location.href = "Login.html"
                 }
             })
         }
-
-    });
+    );
 
 </script>
-
 </body>
 </html>

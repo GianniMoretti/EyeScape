@@ -34,11 +34,7 @@
                     aria-expanded="false">
                 I miei acquari
             </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Acquario 1</a></li>
-                <li><a class="dropdown-item" href="#">Acquario 2</a></li>
-                <li><a class="dropdown-item" href="#">Acquario 3</a></li>
-                <li><a class="dropdown-item" href="#">Acquario 4</a></li>
+            <ul class="dropdown-menu" id="dropList">
             </ul>
         </div>
         <a class="navbar-brand"
@@ -46,6 +42,10 @@
         <a class="navbar-brand"
            href="Controlli.html">Controlli</a>
         <a class="navbar-brand" href="#">Grafici</a>
+        <a class="navbar-brand justify-content-end">
+            <button type="button" class="btn btn-outline-light" id="Logout"><i class="bi bi-box-arrow-right"></i> Logout
+            </button>
+        </a>
     </div>
 </nav>
 
@@ -124,24 +124,23 @@
                 //todo prendere roba dal database e stamparla
             }
         });
-        /*$.ajax({
+        $.ajax({
             type: "POST",
             url: "../Server/Php/Actions.php",
             data: {"action": "load"},
             dataType: 'JSON',
             success: function (response) {
                 var html = "";
-                for (let i = 0; i <response["id"].length ; i++) {
-                    if( localStorage.getItem("currentID") === response["id"][i]){
-                        html = '<option id="aqua-change" value='+response["id"][i]+'>'+ response["names"][i] + '</option>' + html;
-                    }else{
-                        html += '<option id="aqua-change" value='+response["id"][i]+'>'+ response["names"][i] + '</option>';
-                    }
-
+                for (let i = 0; i < response["id"].length; i++) {
+                    html+= '<li><a class="dropdown-item" aquaID="'+ response["id"][i] +'" href="#">'+ response["names"][i] +'</a></li>'
                 }
-                document.getElementById("tent").innerHTML = html;
+                document.getElementById("dropList").innerHTML = html;
+            },
+            error: function () {
+                console.log("è vuoto");
             }
-        });*/
+        });
+
     })
 </script>
 <script>
@@ -151,6 +150,28 @@
         window.location.href = "#";
     })
 </script>
+<script>
+    $(document).on("click",".dropdown-item", function(event){
+        localStorage.setItem("currentID", this.getAttribute("aquaID"));
+        window.location.reload();
+    })
+</script>
 
 </body>
+<script>
+    $('#Logout').on("click", function (event) {
+
+            $.ajax({
+                type: "POST",
+                url: "../Server/Php/Actions.php",
+                data: {"action": "logout"},
+                dataType: 'JSON',
+                success: function (response) {
+                    window.location.href = "Login.html"
+                }
+            })
+        }
+    );
+
+</script>
 </html>

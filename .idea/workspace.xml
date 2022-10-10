@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="aquarium insert">
+    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="update and load and insert acquarium fixes">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/AquFirstPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/AquFirstPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Controlli.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Controlli.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/impostazioni.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/impostazioni.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
     </list>
     <list id="f890ead7-90a7-421c-a04f-0fcdb23d9f1a" name="Changes by giannimoretti" comment="" />
-    <list id="196a78f4-daf0-4df0-9191-4b4d28736929" name="Changes by leona" comment="" />
     <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte" />
     <list id="43fa877a-a477-4ae7-9d4c-b101b7b49892" name="Changes by mirko" comment="Changes by gianni" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +85,7 @@
       <workItem from="1664289377834" duration="632000" />
       <workItem from="1664356665701" duration="4122000" />
       <workItem from="1664607977779" duration="985000" />
-      <workItem from="1664616696177" duration="48728000" />
+      <workItem from="1664616696177" duration="73103000" />
     </task>
     <task id="LOCAL-00001" summary="User database added">
       <created>1663087546835</created>
@@ -158,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664607085532</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update and load and insert acquarium fixes">
+      <created>1665137860044</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665137860044</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +194,7 @@
     <MESSAGE value="ER diagram added" />
     <MESSAGE value="sql ugraded" />
     <MESSAGE value="aquarium insert" />
-    <option name="LAST_COMMIT_MESSAGE" value="aquarium insert" />
+    <MESSAGE value="update and load and insert acquarium fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="update and load and insert acquarium fixes" />
   </component>
 </project>
