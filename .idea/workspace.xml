@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="update and load and insert acquarium fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="aquarium insert">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/AquFirstPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/AquFirstPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Controlli.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/impostazioni.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/impostazioni.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Aquarium1.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Aquarium1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Controlli.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Impostazioni.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Impostazioni.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Prova.css" beforeDir="false" />
     </list>
     <list id="f890ead7-90a7-421c-a04f-0fcdb23d9f1a" name="Changes by giannimoretti" comment="" />
     <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte" />

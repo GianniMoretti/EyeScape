@@ -17,7 +17,6 @@
 </head>
 <body>
 
-
 <nav class="navbar" style="background-color: #131d47;">
     <div class="container-fluid justify-content-center">
         <a class="navbar-brand" href="Home.html">
@@ -26,7 +25,7 @@
         </a>
 
         <div class="btn-group" style="padding-right: 1%">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+            <button type="button" class="btn dropdown-toggle" style="background-color: #9AECED" data-bs-toggle="dropdown"
                     aria-expanded="false">
                 I miei acquari
             </button>
@@ -46,11 +45,11 @@
 </nav>
 
 
+
 <div class="container text-center" style="margin-top: 5%;">
     <div class="row justify-content-md-center">
-
         <div class="col-md-6 box">
-            <div style="padding:50px;">
+            <div style="padding:50px">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control form-control-lg input-wrap" id="name"
                            placeholder="New aquarium name"
@@ -86,14 +85,16 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-check form-switch">
-                                <input class="form-check-input switch-j" typeSwitch="light" type="checkbox" role="switch"
+                                <input class="form-check-input switch-j" typeSwitch="light" type="checkbox"
+                                       role="switch"
                                        id="flexSwitchCheckDefault1">
                                 <label class="form-check-label" for="flexSwitchCheckDefault1">Luci</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-check form-switch">
-                                <input class="form-check-input switch-j" typeSwitch="refill" type="checkbox" role="switch"
+                                <input class="form-check-input switch-j" typeSwitch="refill" type="checkbox"
+                                       role="switch"
                                        id="flexSwitchCheckDefault2">
                                 <label class="form-check-label" for="flexSwitchCheckDefault2">Refill automatico</label>
                             </div>
@@ -101,7 +102,7 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <button class="btn btn-primary" id="submit-button" type="submit">Aggiorna Acquario</button>
+                    <button class="btn" style="background-color: #9AECED; font-weight: bold" id="submit-button" type="submit">Aggiorna Acquario</button>
                 </div>
             </div>
         </div>
@@ -138,7 +139,7 @@
             success: function (response) {
                 var html = "";
                 for (let i = 0; i < response["id"].length; i++) {
-                    html+= '<li><a class="dropdown-item" aquaID="'+ response["id"][i] +'" href="#">'+ response["names"][i] +'</a></li>'
+                    html += '<li><a class="dropdown-item" aquaID="' + response["id"][i] + '" href="#">' + response["names"][i] + '</a></li>'
                 }
                 document.getElementById("dropList").innerHTML = html;
             },
@@ -229,7 +230,7 @@
         $.ajax({
             type: "POST",
             url: "../Server/Php/Actions.php",
-            data: {"action": "switchUpdate", "status": status, "switch": switchString, "id":id},
+            data: {"action": "switchUpdate", "status": status, "switch": switchString, "id": id},
             dataType: 'JSON',
             success: function (response) {
                 console.log(response);
@@ -238,7 +239,7 @@
     });
 </script>
 <script>
-    $(document).on("click",".dropdown-item", function(event){
+    $(document).on("click", ".dropdown-item", function (event) {
         localStorage.setItem("currentID", this.getAttribute("aquaID"));
         window.location.reload();
     })

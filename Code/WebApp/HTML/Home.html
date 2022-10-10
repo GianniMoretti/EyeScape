@@ -5,15 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../css/Prova.css" type="text/css">
+    <link rel="stylesheet" href="../css/Home.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:700' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!--<script type="text/javascript" src="../Scripts/Aquarium_plugin_initTRY.js"></script>
-    <script type="text/javascript" src="../Scripts/jQuery.pluginTRY.js"></script> -->
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
@@ -36,9 +33,9 @@
 
 
 <body>
-
+<!--
 <nav class="navbar " style="background-color: #131d47;">
-    <div class="container-fluid ">
+    <div class="container-fluid">
         <a class="navbar-brand mx-auto" href="#">
             <img src="../../../Assets/Logo/Logo-completoTransparent.png" alt="" width="230" height="60"
                  class="d-inline-block align-text-top">
@@ -48,9 +45,22 @@
             </button>
         </a>
     </div>
+</nav>-->
 
 
+<nav class="navbar " style="background-color: #131d47;">
+    <div class="container-fluid">
+        <a class="navbar-brand justify-content-start" href="#">
+            <img src="../../../Assets/Logo/Logo-completoTransparent.png" alt="" width="230" height="60"
+                 class="d-inline-block align-text-top">
+        </a>
+        <a class="navbar-brand justify-content-end">
+            <button type="button" class="btn btn-outline-light" id="Logout"><i class="bi bi-box-arrow-right"></i> Logout
+            </button>
+        </a>
+    </div>
 </nav>
+
 
 
 <div class="WelcomeWrite">
@@ -75,10 +85,10 @@
                 </path>
             </pattern>
         </defs>
-        <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="0.9">
+        <text text-anchor="middle" x="50" y="15" font-size="20" fill="url(#wave)" fill-opacity="0.9">
             WELCOME
         </text>
-        <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#gradient)" fill-opacity="0.7">
+        <text text-anchor="middle" x="50" y="15" font-size="20" fill="url(#gradient)" fill-opacity="0.7">
             WELCOME
         </text>
     </svg>
@@ -95,8 +105,8 @@
         </div>
     </div>
     <hr class="border border-dark border-2 opacity-75 " style="border-radius: 50%; width: 100%; margin-top: 20px">
-
 </div>
+
 
 <div class="container text-center" style="font-weight: bold; font-size:30px;">
     <div class="row" style="margin-top: 7%; margin-bottom: 8%">
@@ -134,7 +144,7 @@
 </div>
 
 
-<p class="text-center">I miei acquari</p>
+<p class="text-center" style="color: black; font-size: 30px; font-weight: bold">I miei acquari</p>
 <div class="container text-center">
     <div class="row row-cols-2" id="append-div">
         <div class="col">
