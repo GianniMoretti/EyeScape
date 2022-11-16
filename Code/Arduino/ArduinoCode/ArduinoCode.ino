@@ -172,15 +172,17 @@ void loop() {
 void sendSensorsData(){
   String data = "SD|";
   //Lux
-  luxData = luxSensors();
+  String luxData = luxSensors();
   data = data + luxData + "|";
   //WaterTemp
-  waterTemp = waterTempSensors();
+  String waterTemp = waterTempSensors();
   data = data + waterTemp + "|";
   //Humidity and Air
-  HumAtp = humidityAndAirTemp();
+  String HumAtp = humidityAndAirTemp();
   data = data + HumAtp + "|";
   //Water Level sensor
+  String Wls = waterLevelSensors();
+  data = data + Wls;
 
   Serial.println(data);
 }
@@ -281,27 +283,27 @@ String humidityAndAirTemp(){
 }
 
 String waterTempSensors(){
-  String data = "WTS="
+  String data = "WTS=";
   //non si converte cosi a string
   #ifdef ACQ_1
     wts_1.requestTemperatures(); 
-    tc = temp.getTempCByIndex(0);
-    data + String(tc) + ","
+    float tc = wts_1.getTempCByIndex(0);
+    data = data + String(tc) + ",";
   #endif
   #ifdef ACQ_2
-    wts_1.requestTemperatures(); 
-    tc = temp.getTempCByIndex(0);
-    data + String(tc) + ","
+    wts_2.requestTemperatures(); 
+    float tc = wts_2.getTempCByIndex(0);
+    data = data + String(tc) + ",";
   #endif
   #ifdef ACQ_3
-    wts_1.requestTemperatures(); 
-    tc = temp.getTempCByIndex(0);
-    data + String(tc) + ","
+    wts_3.requestTemperatures(); 
+    float tc = wts_3.getTempCByIndex(0);
+    data = data + String(tc) + ",";
   #endif
   #ifdef ACQ_4
-    wts_1.requestTemperatures(); 
-    tc = temp.getTempCByIndex(0);
-    data + String(tc)
+    wts_4.requestTemperatures(); 
+    float tc = wts_4.getTempCByIndex(0);
+    data = data + String(tc);
   #endif
   
   return data;
@@ -309,27 +311,27 @@ String waterTempSensors(){
 
 
 String luxSensors(){
-  String data = "LUX="
+  String data = "LUX=";
 
   #ifdef ACQ_1
-    sensorVal = analogRead(LX_1);
-    lux=sensorRawToPhys(sensorVal);
-    data + String(lux) + ","
+    float sensorVal = analogRead(LX_1);
+    int lux = sensorRawToPhys(sensorVal);
+    data = data + String(lux) + ",";
   #endif
   #ifdef ACQ_2
-    sensorVal = analogRead(LX_2);
-    lux=sensorRawToPhys(sensorVal);
-    data + String(lux) + ","
+    float sensorVal = analogRead(LX_2);
+    int lux = sensorRawToPhys(sensorVal);
+    data = data + String(lux) + ",";
   #endif
   #ifdef ACQ_3
-    sensorVal = analogRead(LX_3);
-    lux=sensorRawToPhys(sensorVal);
-    data + String(lux) + ","
+    float sensorVal = analogRead(LX_3);
+    int lux = sensorRawToPhys(sensorVal);
+    data = data + String(lux) + ",";
   #endif
   #ifdef ACQ_4
-    sensorVal = analogRead(LX_4);
-    lux=sensorRawToPhys(sensorVal);
-    data + String(lux)
+    float sensorVal = analogRead(LX_4);
+    int lux = sensorRawToPhys(sensorVal);
+    data = data + String(lux);
   #endif
   
   return data;
@@ -343,32 +345,25 @@ int sensorRawToPhys(int raw){
   return phys;
 }
 
-
-/*  CODICI SENSORI
-
-#define POWER_PIN  7
-#define SIGNAL_PIN A5
-
-int value = 0; // variable to store the sensor value
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(POWER_PIN, OUTPUT);   // configure D7 pin as an OUTPUT
-  digitalWrite(POWER_PIN, LOW); // turn the sensor OFF
+String waterLevelSensors(){
+  String data = "WLS=";
+  
+  #ifdef ACQ_1
+    float sensorVal = analogRead(WLS_1);
+    data = data + String(sensorVal) + ",";
+  #endif
+  #ifdef ACQ_2
+    float sensorVal = analogRead(WLS_2);
+    data = data + String(sensorVal) + ",";
+  #endif
+  #ifdef ACQ_3
+    float sensorVal = analogRead(WLS_3);
+    data = data + String(sensorVal) + ",";
+  #endif
+  #ifdef ACQ_4
+    float sensorVal = analogRead(WLS_4);
+    data = data + String(sensorVal);
+  #endif
+  
+  return data;
 }
-
-void loop() {
-
-  //lettura sensore livello dell'acqua
-  digitalWrite(POWER_PIN, HIGH);  // turn the sensor ON
-  delay(10);                      // wait 10 milliseconds
-  value = analogRead(SIGNAL_PIN); // read the analog value from sensor
-  digitalWrite(POWER_PIN, LOW);   // turn the sensor OFF
-
-  Serial.print("Sensor value: ");
-  Serial.println(value);
-
-  delay(1000);
-} 
-
-*/
