@@ -30,11 +30,11 @@ CREATE TABLE if not exists  `Aquarium` (
     `aquaID` int(11) NOT NULL AUTO_INCREMENT,
     `name` text NOT NULL,
     `description` text NOT NULL,
-    `startLight` text NOT NULL,
+    `startLight` text NOT NULL,                                    --da mettere tipo time
     `lightDuration` int(2) NOT NULL,
     `luminosityPercentage` int (2) NOT NULL,
-    `automaticRefill` binary(1) NOT NULL,
-    `onOffLight` binary(1) NOT NULL,
+    `automaticRefill` BOOLEAN NOT NULL,
+    `pos` int(11) NOT NULL,
     PRIMARY KEY (`aquaID`)
     );
 
@@ -76,9 +76,9 @@ CREATE TABLE if not exists  `Device` (
 
 CREATE TABLE if not exists  `Lecture` (
     `ID` int(11) NOT NULL AUTO_INCREMENT,
-    `aquaID` int(11) NOT NULL references `aquaID`,
-    `sensorID` int(11) NOT NULL references `sensorID`,
-    `data` int(11) NOT NULL,
+    `aquaID` int(11) NOT NULL references Aquarium(`aquaID`),
+    `sensorID` int(11) NOT NULL references Sensor(`sensorID`),
+    `data` DATETIME(6) NOT NULL,
     `value` int(11) NOT NULL,
     PRIMARY KEY (`ID`)
     );
@@ -89,17 +89,19 @@ INSERT INTO Users (name, password) VALUES ('pampa', 'Viva.le.2005');
 INSERT INTO Users (name, password) VALUES ('tina', 'Viva.le.2005');
 
 /*inserimento dei device*/
-INSERT INTO Device (name, status) VALUES ('Filters', "OFF");
-INSERT INTO Device (name, status) VALUES ('Resistors', "OFF");
-INSERT INTO Device (name, status) VALUES ('Blower', "OFF");
-INSERT INTO Device (name, status) VALUES ('Pump', "OFF");
+INSERT INTO Device (name, status) VALUES ('Filters', "off");
+INSERT INTO Device (name, status) VALUES ('Resistors', "off");
+INSERT INTO Device (name, status) VALUES ('Blower', "off");
+INSERT INTO Device (name, status) VALUES ('Pump', "off");
 
 /*inserimento dei sensori*/
-INSERT INTO Sensor (name) VALUES ('AirTemp');
-INSERT INTO Sensor (name) VALUES ('WaterTemp');
-INSERT INTO Sensor (name) VALUES ('WaterLevel');
-INSERT INTO Sensor (name) VALUES ('Humidity');
 INSERT INTO Sensor (name) VALUES ('Lux');
+INSERT INTO Sensor (name) VALUES ('WaterTemp');
+INSERT INTO Sensor (name) VALUES ('Humidity');
+INSERT INTO Sensor (name) VALUES ('AirTemp');
+INSERT INTO Sensor (name) VALUES ('WaterLevel');
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

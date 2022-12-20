@@ -1,9 +1,6 @@
 /*TODO:
-*Fix the convercion to String
-*Water level sensor 
 *Plafoniera e timer
 */
-
 
 //*******************ACQUARIUM ENABLE**************************//
 //Uncomment the line of the acquarium output you're going to use
@@ -106,6 +103,12 @@ Servo servoSwitch;
 #define FILTERS 52
 #define BLOWERS 53
 
+//***************LED MODULE****************************//
+#define LED_1 2
+#define LED_2 3
+#define LED_3 4
+#define LED_4 5
+
 //****************************SETUP*******************//
 
 void setup() {
@@ -134,6 +137,11 @@ void setup() {
   pinMode(RESISTORS, OUTPUT);
   pinMode(FILTERS, OUTPUT);
   pinMode(BLOWERS, OUTPUT);
+  //LED pin 
+  pinMode(LED_1, OUTPUT);
+  pinMode(LED_2, OUTPUT);
+  pinMode(LED_3, OUTPUT);
+  pinMode(LED_4, OUTPUT);
 }
 
 String strs[20]; 
@@ -146,8 +154,11 @@ void loop() {
   
   //SPLITTING THE COMMAND
   //COMMAND PROTOCOL
-  //Sensor Request: 10
-  //Switch Request: 20|on|on|on (Filters|Resistors|Blower)
+  //Sensor Request:     10
+  //Switch Request:     20|on|on|on (Filters|Resistors|Blower)
+  //Pump Activation:    30|on
+  //LED:                40|index|percentage
+  //SERVO SELECTION:    50|index
 
   //Slitting the string using |
   splitString(str, '|');
@@ -160,12 +171,21 @@ void loop() {
     case 20:
       changeSwitchState();
       break;
+    case 30:
+      refillPump();
+      break;
+    case 40:
+      LEDRequest();
+      break;
+    case 50:
+      SERVORequest();
+      break;
     default:
       Serial.println("100|something went wrong");
       break;
   }
   
-  delay(1000);
+  delay(100);
 }
 
 
@@ -188,26 +208,25 @@ void sendSensorsData(){
 }
 
 void changeSwitchState(){
-  Serial.println("SwitchingState");
-/*   if (strs[1] == "on")
-    digitalWrite(PUMP, HIGH);
-  else
-    digitalWrite(PUMP, LOW); */
-    
-  if (strs[1] == "on")
+  if (strs[1] == "on"){
     digitalWrite(FILTERS, HIGH);
+  }
   else
     digitalWrite(FILTERS, LOW);
     
-  if (strs[2] == "on")
+  if (strs[2] == "on"){
     digitalWrite(RESISTORS, HIGH);
+  }
   else
     digitalWrite(RESISTORS, LOW);
     
-  if (strs[3] == "on")
+  if (strs[3] == "on"){
     digitalWrite(BLOWERS, HIGH);
+  }
   else
     digitalWrite(BLOWERS, LOW);
+
+  Serial.println("Arduino: All the device state are updated");
 }
 
 
@@ -244,9 +263,10 @@ String humidityAndAirTemp(){
       datau = datau + "err,";
       datat = datat + "err,";
     }
-    //Da convertire a string
-    datau = datau + (int)humidity + ",";
-    datat = datat + (int)temperature + ",";
+    else{
+      datau = datau + (int)humidity + ",";
+      datat = datat + (int)temperature + ",";
+    }
   #endif
   #ifdef ACQ_2
     int err = SimpleDHTErrSuccess;
@@ -254,9 +274,10 @@ String humidityAndAirTemp(){
       datau = datau + "err,";
       datat = datat + "err,";
     }
-    //Da convertire a string
-    datau = datau + (int)humidity + ",";
-    datat = datat + (int)temperature + ",";
+    else{
+      datau = datau + (int)humidity + ",";
+      datat = datat + (int)temperature + ",";
+    }
   #endif
   #ifdef ACQ_3
     int err = SimpleDHTErrSuccess;
@@ -264,9 +285,10 @@ String humidityAndAirTemp(){
       datau = datau + "err,";
       datat = datat + "err,";
     }
-    //Da convertire a string
-    datau = datau + (int)humidity + ",";
-    datat = datat + (int)temperature + ",";
+    else{
+      datau = datau + (int)humidity + ",";
+      datat = datat + (int)temperature + ",";
+    }
   #endif
   #ifdef ACQ_4
     int err = SimpleDHTErrSuccess;
@@ -274,9 +296,10 @@ String humidityAndAirTemp(){
       datau = datau + "err,";
       datat = datat + "err,";
     }
-    //Da convertire a string
-    datau = datau + (int)humidity;
-    datat = datat + (int)temperature;
+    else{
+      datau = datau + (int)humidity + ",";
+      datat = datat + (int)temperature + ",";
+    }
   #endif
   
   return datau + "|" + datat;
@@ -349,21 +372,98 @@ String waterLevelSensors(){
   String data = "WLS=";
   
   #ifdef ACQ_1
-    float sensorVal = analogRead(WLS_1);
+    float Val = analogRead(WLS_1);
+    float sensorVal = ValtoCm(Val);
     data = data + String(sensorVal) + ",";
   #endif
   #ifdef ACQ_2
-    float sensorVal = analogRead(WLS_2);
+    float Val = analogRead(WLS_2);
+    float sensorVal = ValtoCm(Val);
     data = data + String(sensorVal) + ",";
   #endif
   #ifdef ACQ_3
-    float sensorVal = analogRead(WLS_3);
+    float Val = analogRead(WLS_3);
+    float sensorVal = ValtoCm(Val);
     data = data + String(sensorVal) + ",";
   #endif
   #ifdef ACQ_4
-    float sensorVal = analogRead(WLS_4);
+    float Val = analogRead(WLS_4);
+    float sensorVal = ValtoCm(Val);
     data = data + String(sensorVal);
   #endif
   
   return data;
+}
+
+float ValtoCm(float val){
+  return map(val, 0,700,0,4);
+}
+
+void refillPump(){
+  if (strs[1] == "on"){
+    digitalWrite(PUMP, HIGH);
+    Serial.println("Refill on");
+  }
+  else{
+    digitalWrite(PUMP, LOW); 
+    Serial.println("Refill off");
+  }
+}
+
+void LEDRequest(){
+  int index = strs[1].toInt();
+  int perc = strs[2].toInt();
+
+  int val = map(perc, 0, 100, 0, 255);
+
+  if (val > 255 || val < 0)
+    return;
+
+  switch(index){
+    case 1: 
+      analogWrite(LED_1, val);
+      Serial.println("Arduino: Led 1 set value " + strs[2] + " ok");
+    break;
+        case 2: 
+      analogWrite(LED_2, val);
+      Serial.println("Arduino: Led 2 set value " + strs[2] + " ok");
+    break;
+        case 3: 
+      analogWrite(LED_3, val);
+      Serial.println("Arduino: Led 3 set value " + strs[2] + " ok");
+    break;
+        case 4: 
+      analogWrite(LED_4, val);
+      Serial.println("Arduino: Led 4 set value " + strs[2] + " ok");
+    break;
+    default:
+      Serial.println("110|Index Led Not Valid");
+    break;
+  }
+}
+
+void SERVORequest(){
+  int index = strs[1].toInt();
+
+  switch(index){
+    case 1: 
+      servoSwitch.write(0);
+      Serial.println("Arduino: Index 1 ok");
+    break;
+        case 2: 
+      servoSwitch.write(60);
+      Serial.println("Arduino: Index 2 ok");
+    break;
+        case 3: 
+      servoSwitch.write(120);
+      Serial.println("Arduino: Index 3 ok");
+    break;
+        case 4: 
+      servoSwitch.write(180);
+      Serial.println("Arduino: Index 4 ok");
+    break;
+    default:
+      Serial.println("110|Index Servo Not Valid");
+    break;
+  }
 }

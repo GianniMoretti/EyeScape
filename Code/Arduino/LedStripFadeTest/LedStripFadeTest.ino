@@ -5,7 +5,7 @@ bool up = true;
 
 void setup() {
   analogWrite(PL, pl1Value);
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 
 void loop() {

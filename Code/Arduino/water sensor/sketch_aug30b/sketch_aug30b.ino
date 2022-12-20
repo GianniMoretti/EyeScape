@@ -1,14 +1,14 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
-OneWire oneWire(5);
+OneWire oneWire(38);
 DallasTemperature temp(&oneWire);
 
 float tc = 0;
 float tf = 0;
 
 void setup(void) {
-  Serial.begin(9600);
+  Serial.begin(115200);
   temp.begin();
 }
 
