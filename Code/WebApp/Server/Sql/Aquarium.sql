@@ -30,11 +30,12 @@ CREATE TABLE if not exists  `Aquarium` (
     `aquaID` int(11) NOT NULL AUTO_INCREMENT,
     `name` text NOT NULL,
     `description` text NOT NULL,
-    `startLight` text NOT NULL,                                    --da mettere tipo time
-    `lightDuration` int(2) NOT NULL,
+    `startLight` time NOT NULL,
+    `lightDuration` int (2) NOT NULL,
     `luminosityPercentage` int (2) NOT NULL,
     `automaticRefill` BOOLEAN NOT NULL,
     `pos` int(11) NOT NULL,
+    `onOffLight` BOOLEAN NOT NULL,
     PRIMARY KEY (`aquaID`)
     );
 

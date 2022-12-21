@@ -3,7 +3,6 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/Code/WebApp/Server/Sql/Aquarium.sql" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/Code/WebApp/Server/Sql/to-do-list.sql" dialect="MariaDB" />
     <file url="PROJECT" dialect="MySQL" />
   </component>
 </project>

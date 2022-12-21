@@ -33,10 +33,7 @@
             </ul>
         </div>
         <a class="navbar-brand"
-           href="impostazioni.html">Impostazioni</a>
-        <a class="navbar-brand"
-           href="Controlli.html">Controlli</a>
-        <a class="navbar-brand" href="#">Grafici</a>
+           href="Aquarium.html">Acquario</a>
         <a class="navbar-brand justify-content-end">
             <button type="button" class="btn btn-outline-light" id="Logout"><i class="bi bi-box-arrow-right"></i> Logout
             </button>
@@ -47,9 +44,13 @@
 
 
 <div class="container text-center" style="margin-top: 5%;">
+
     <div class="row justify-content-md-center">
         <div class="col-md-6 box">
-            <div style="padding:50px">
+            <div class="row justify-content-md-center">
+                <h3 style="color: #131D47; padding-top: 20px"> Inserisci i dati da aggiornare</h3>
+            </div>
+            <div style="padding: 20px 50px 50px 50px">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control form-control-lg input-wrap" id="name"
                            placeholder="New aquarium name"
@@ -73,34 +74,11 @@
                         <input type="text" aria-label="Last name" id="time-duration"
                                class="form-control form-control-lg input-wrap"
                                placeholder="Durata">
-                        <span class="input-group-text">Inizio/fine orario luci</span>
+                        <span class="input-group-text">Inizio/durata orario luci</span>
                     </div>
                 </div>
 
-                <div class="input-group mb-3">
-                    <input type="text" id="brightness" class="form-control form-control-lg input-wrap"
-                           aria-label="Amount (to the nearest dollar)" placeholder="% luminosità">
-                </div>
-                <div class="container text-center" style="padding-bottom: 5%; margin-top: 5%">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input switch-j" typeSwitch="light" type="checkbox"
-                                       role="switch"
-                                       id="flexSwitchCheckDefault1">
-                                <label class="form-check-label" for="flexSwitchCheckDefault1">Luci</label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input switch-j" typeSwitch="refill" type="checkbox"
-                                       role="switch"
-                                       id="flexSwitchCheckDefault2">
-                                <label class="form-check-label" for="flexSwitchCheckDefault2">Refill automatico</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-12">
                     <button class="btn" style="background-color: #9AECED; font-weight: bold" id="submit-button" type="submit">Aggiorna Acquario</button>
                 </div>
@@ -113,24 +91,6 @@
     $(document).ready(function () {
         var id = localStorage.getItem("currentID");
         console.log(id);
-        $.ajax({
-            type: "POST",
-            url: "../Server/Php/Actions.php",
-            data: {"action": "getAquariumData", "id": id},
-            dataType: 'JSON',
-            success: function (response) {
-                if (response["onOffLight"][0] == '0') {
-                    document.getElementById("flexSwitchCheckDefault1").checked = false;
-                } else {
-                    document.getElementById("flexSwitchCheckDefault1").checked = true;
-                }
-                if (response["automaticRefill"][0] == '0') {
-                    document.getElementById("flexSwitchCheckDefault2").checked = false;
-                } else {
-                    document.getElementById("flexSwitchCheckDefault2").checked = true;
-                }
-            }
-        });
         $.ajax({
             type: "POST",
             url: "../Server/Php/Actions.php",
@@ -161,10 +121,9 @@
             data: {"action": "getAquariumData", "id": id},
             dataType: 'JSON',
             success: function (response) {
-                var name = response["names"][0];
+                var name = response["name"][0];
                 var description = response["description"][0];
                 var timeDuration = response["lightDuration"][0];
-                var brightness = response["luminosityPercentage"][0];
                 var startLight = response["startLight"][0];
                 if (document.getElementById("name").value === "" || document.getElementById("name").value === " ") {
                 } else {
@@ -177,10 +136,6 @@
                 if (document.getElementById("time-duration").value === "" || document.getElementById("time-duration").value === " ") {
                 } else {
                     timeDuration = document.getElementById("time-duration").value;
-                }
-                if (document.getElementById("brightness").value === "" || document.getElementById("brightness").value === " ") {
-                } else {
-                    brightness = document.getElementById("brightness").value;
                 }
                 if (document.getElementById("time-start").value === "" || document.getElementById("time-start").value === " ") {
                 } else {
@@ -195,12 +150,12 @@
                         "description": description,
                         "timeStart": startLight,
                         "timeDuration": timeDuration,
-                        "brightness": brightness,
                         "action": "update"
                     },
                     dataType: 'JSON',
                     success: function (response) {
                         console.log(response);
+                        window.location.href = "Aquarium.html"
                     }
                 })
             }
@@ -208,36 +163,7 @@
     });
 </script>
 
-<script>
-    $(".switch-j").on("click", function (event) {
-        var id = localStorage.getItem("currentID");
-        var ty = this.getAttribute("typeSwitch");
-        var onoff = this.checked;
 
-        var switchString;
-        var status;
-
-        if (ty == "light") {
-            switchString = "onOffLight";
-        } else if (ty == "refill") {
-            switchString = "automaticRefill";
-        }
-
-        if (onoff) {
-            status = "1";
-        } else status = "0";
-
-        $.ajax({
-            type: "POST",
-            url: "../Server/Php/Actions.php",
-            data: {"action": "switchUpdate", "status": status, "switch": switchString, "id": id},
-            dataType: 'JSON',
-            success: function (response) {
-                console.log(response);
-            }
-        });
-    });
-</script>
 <script>
     $(document).on("click", ".dropdown-item", function (event) {
         localStorage.setItem("currentID", this.getAttribute("aquaID"));

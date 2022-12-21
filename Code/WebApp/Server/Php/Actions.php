@@ -39,6 +39,12 @@ switch ($action) {
     case "switchUpdate":
         switchUpdate();
         break;
+    case "getLectures":
+        getLectures();
+        break;
+    case "slider":
+        updateSlider();
+        break;
 }
 
 function loadData()
@@ -87,15 +93,22 @@ function insertData()
     if (isset($_POST['brightness'])) {
         $aquarium_brightness = $_POST['brightness'];
     } else {
-        echo "you didn't specify a text";
+        echo "you didn't specify a brightness";
         return;
     }
+    if (isset($_POST['pos'])) {
+        $aquarium_pos = $_POST['pos'];
+    } else {
+        echo "you didn't specify a pos";
+        return;
+    }
+
 
     $aquarium_autoRefill = 0;
     $aquarium_onOff = 0;
 
     global $mysqli;
-    $query_string = "INSERT INTO `aquarium`(`aquaID`, `name`, `description`, `startLight`, `lightDuration`, `luminosityPercentage`, `automaticRefill`, `onOffLight`) VALUES ('0','" . htmlspecialchars($aquarium_name) . "','" . htmlspecialchars($aquarium_description) . "','" . htmlspecialchars($aquarium_time_start) . "','" . htmlspecialchars($aquarium_duration) . "','" . htmlspecialchars($aquarium_brightness) . "','" . htmlspecialchars($aquarium_autoRefill) . "','" . htmlspecialchars($aquarium_onOff) . "')";
+    $query_string = "INSERT INTO `aquarium`(`aquaID`, `name`, `description`, `startLight`, `lightDuration`, `luminosityPercentage`, `automaticRefill`,`pos`, `onOffLight`) VALUES ('0','" . htmlspecialchars($aquarium_name) . "','" . htmlspecialchars($aquarium_description) . "','" . htmlspecialchars($aquarium_time_start) . "','" . htmlspecialchars($aquarium_duration) . "','" . htmlspecialchars($aquarium_brightness) . "','" . htmlspecialchars($aquarium_autoRefill) . "','" . htmlspecialchars($aquarium_pos) . "','" . htmlspecialchars($aquarium_onOff) . "')";
 
     $mysqli->query($query_string);
     echo json_encode("ok");
@@ -178,14 +191,12 @@ function updateData()
     $description = $_POST['description'];
     $timeStart = $_POST['timeStart'];
     $timeDuration = $_POST['timeDuration'];
-    $brightness = $_POST['brightness'];
 
-    $query_string = "UPDATE `aquarium` SET `name`='" . $name . "',`description`='" . $description . "',`startLight`='" . $timeStart . "',`lightDuration`='" . $timeDuration . "',`luminosityPercentage`='" . $brightness . "' WHERE aquaID ='" . $id . "'";
+    $query_string = "UPDATE `aquarium` SET `name`='" . $name . "',`description`='" . $description . "',`startLight`='" . $timeStart . "',`lightDuration`='" . $timeDuration . "' WHERE aquaID ='" . $id . "'";
     $mysqli->query($query_string);
 
     echo json_encode($query_string);
 }
-
 function getAquarium()
 {
     global $mysqli;
@@ -212,12 +223,12 @@ function getAquarium()
         $autoRefill[] = $row["automaticRefill"];
         $onOffLight[] = $row["onOffLight"];
     }
-    $response = array('names' => $names, 'id' => $id, 'description' => $description, 'startLight' => $startLight,
+    $response = array('name' => $names, 'id' => $id, 'description' => $description, 'startLight' => $startLight,
         'lightDuration' => $lightDuration, 'luminosityPercentage' => $luminosityPercentage, 'automaticRefill' => $autoRefill,
         'onOffLight' => $onOffLight);
     echo json_encode($response);
-
 }
+
 
 function switchUpdate(){
     global $mysqli;
@@ -225,10 +236,39 @@ function switchUpdate(){
     if (isset($_POST['status'])) $status = $_POST['status'];
     if (isset($_POST['switch'])) $field = $_POST['switch'];
 
-    $query_string = "UPDATE `aquarium` SET " .$field. "='" . $status . "' WHERE aquaID=" . $id;
+    $query_string = "UPDATE `aquarium` SET automaticRefill='" . $status . "' WHERE aquaID=" . $id;
     $mysqli->query($query_string);
 
     echo json_encode($query_string);
 }
+function getLectures(){
+
+    global  $mysqli;
+    if (isset($_POST['id'])) $id = $_POST['id'];
+    if (isset($_POST['sensorID'])) $sensorID = $_POST['sensorID'];
+
+    $values = array();
+    $dates = array();
+    $query_string = "SELECT `data`, `value` FROM `Lecture` WHERE `aquaID` ='".$id."' AND DATEDIFF(`data`, NOW()) < 1 AND `sensorID` = ".$sensorID;
+    $result = $mysqli->query($query_string);
+    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+        $values[] = $row['value'];
+        $dates[] = $row['data'];
+    }
+
+    $response = array('values'=>$values, 'dates'=>$dates);
+    echo json_encode($response);
+}
+
+function updateSlider(){
+    global  $mysqli;
+    if (isset($_POST['id'])) $id = $_POST['id'];
+    if (isset($_POST['value'])) $brightness = $_POST['value'];
+
+    $query_string = "UPDATE `aquarium` SET `luminosityPercentage`='" . $brightness . "' WHERE aquaID ='" . $id . "'";
+    $mysqli->query($query_string);
+    echo json_encode("");
+}
+
 
 ?>

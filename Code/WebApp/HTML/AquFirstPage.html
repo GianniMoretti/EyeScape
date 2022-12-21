@@ -134,27 +134,26 @@
             } else {
                 document.getElementById("errorDur").innerHTML = "";
             }
-
             var brightness = document.getElementById("brightness").value
             if (brightness === "" || brightness === " ") {
                 bool = false;
                 document.getElementById("errorLight").innerHTML = "*inserisci una luminosità";
             } else {
                 document.getElementById("errorLight").innerHTML = "";
-
             }
+            var pos = localStorage.getItem("pos");
 
             if (bool) {
                 $.ajax({
                     type: "POST",
                     url: "../Server/Php/Actions.php",
                     data: {
-
                         "name": name,
                         "description": description,
                         "timeStart": timeStart,
                         "timeDuration": timeDuration,
                         "brightness": brightness,
+                        "pos":pos,
                         "action": "insert"
                     },
                     dataType: 'JSON',

@@ -30,7 +30,8 @@
         </a>
 
         <div class="btn-group" style="padding-right: 1%">
-            <button type="button" class="btn dropdown-toggle" style="background-color: #9AECED" data-bs-toggle="dropdown"
+            <button type="button" class="btn dropdown-toggle" style="background-color: #9AECED"
+                    data-bs-toggle="dropdown"
                     aria-expanded="false">
                 I miei acquari
             </button>
@@ -39,9 +40,6 @@
         </div>
         <a class="navbar-brand"
            href="impostazioni.html">Impostazioni</a>
-        <a class="navbar-brand"
-           href="Controlli.html">Controlli</a>
-        <a class="navbar-brand" href="#">Grafici</a>
         <a class="navbar-brand justify-content-end">
             <button type="button" class="btn btn-outline-light" id="Logout"><i class="bi bi-box-arrow-right"></i> Logout
             </button>
@@ -64,57 +62,11 @@
 
 
 <script>
-    const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-    ];
-
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Temperature',
-            backgroundColor: 'rgb(19,29,71)',
-            borderColor: 'rgb(19,29,71)',
-            data: [0, 10, 5, 2, 20, 30, 12, 5, 6, 25, 30, 34],
-        }]
-    };
-
-    const config = {
-        type: 'line',
-        data: data,
-        options: {},
-    };
-</script>
-
-<script>
-    const myChart1 = new Chart(
-        document.getElementById('myChart1'),
-        config
-    );
-</script>
-
-<script>
-    const myChart2 = new Chart(
-        document.getElementById('myChart2'),
-        config
-    );
-</script>
-
-<script>
+    let date = [];
+    let value = [];
     $(document).ready(function () {
         var id = localStorage.getItem("currentID");
         console.log(id);
-
         $.ajax({
             type: "POST",
             url: "../Server/Php/Actions.php",
@@ -122,6 +74,17 @@
             dataType: 'JSON',
             success: function (response) {
                 //todo prendere roba dal database e stamparla
+                document.getElementById("name").innerHTML = response['name'];
+                document.getElementById("description").innerHTML = '<h4>' + response["description"] + '</h4>';
+                document.getElementById("lightTime").innerHTML = '<div class="row"><p style="font:bold; font-size: xx-large">' + response['startLight'] + '</p></div>' + '<div class="row"><p>Orario accensione luci</p></div>'
+
+                document.getElementById("duration").innerHTML = '<div class="row"><p style="font: bold; font-size: xx-large">' + response['lightDuration'] + ' ore </p></div>' + '<div class="row"><p>Durata</p></div>'
+
+                document.getElementById("customRange1").value = response["luminosityPercentage"];
+                document.getElementById("valueLabel").innerHTML = '<p>' + response["luminosityPercentage"] + '</p>'
+                if (response['automaticRefill'] == 0)
+                    document.getElementById("flexSwitchCheckDefault2").checked = false;
+                else document.getElementById("flexSwitchCheckDefault2").checked = true;
             }
         });
         $.ajax({
@@ -132,7 +95,7 @@
             success: function (response) {
                 var html = "";
                 for (let i = 0; i < response["id"].length; i++) {
-                    html+= '<li><a class="dropdown-item" aquaID="'+ response["id"][i] +'" href="#">'+ response["names"][i] +'</a></li>'
+                    html += '<li><a class="dropdown-item" aquaID="' + response["id"][i] + '" href="#">' + response["names"][i] + '</a></li>'
                 }
                 document.getElementById("dropList").innerHTML = html;
             },
@@ -140,9 +103,56 @@
                 console.log("è vuoto");
             }
         });
+        $.ajax({
+            type: "POST",
+            url: "../Server/Php/Actions.php",
+            data: {"action": "getLectures", "sensorID": 1, "id": id},
+            dataType: 'JSON',
+            success: function (response) {
+                //todo prendere roba dal database e  stamparla
+                date = response['dates'];
+                count = 0;
 
+                value = response['values'];
+                console.log(date);
+                console.log(value);
+
+            }
+        });
     })
+
+    const labels = date;
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperature',
+            backgroundColor: 'rgb(19,29,71)',
+            borderColor: 'rgb(19,29,71)',
+            data: value,
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {},
+    };
 </script>
+<script>
+    const myChart1 = new Chart(
+        document.getElementById('myChart1'),
+        config,
+    );
+</script>
+<script>
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config,
+    );
+</script>
+
+
 <script>
     $("#aqua-change").on("click", function (event) {
         localStorage.setItem("currentID", $(this).value);
@@ -151,10 +161,53 @@
     })
 </script>
 <script>
-    $(document).on("click",".dropdown-item", function(event){
+    $(document).on("click", ".dropdown-item", function (event) {
         localStorage.setItem("currentID", this.getAttribute("aquaID"));
         window.location.reload();
     })
+</script>
+<script>
+    var slider = document.getElementById("customRange1");
+    slider.oninput = function () {
+        document.getElementById("valueLabel").innerHTML = '<p>' + slider.value + '</p>'
+        console.log(slider.value)
+    }
+    slider.onchange = function () {
+        var value = slider.value;
+        var id = localStorage.getItem("currentID")
+        $.ajax({
+            type: "POST",
+            url: "../Server/Php/Actions.php",
+            data: {"action": "slider", "value": value, "id": id},
+            dataType: 'JSON',
+            success: function (response) {
+            }
+        })
+    }
+
+</script>
+<script>
+    $(".switch-j").on("click", function (event) {
+        var id = localStorage.getItem("currentID");
+        var onoff = this.checked;
+
+        var switchString;
+        var status;
+
+        if (onoff) {
+            status = "1";
+        } else status = "0";
+
+        $.ajax({
+            type: "POST",
+            url: "../Server/Php/Actions.php",
+            data: {"action": "switchUpdate", "status": status, "id": id},
+            dataType: 'JSON',
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    });
 </script>
 
 </body>
@@ -174,4 +227,5 @@
     );
 
 </script>
+
 </html>

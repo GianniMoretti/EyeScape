@@ -4,20 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="aquarium insert">
+    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="update aquarium">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Controlli.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/AquFirstPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/AquFirstPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/impostazioni.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/impostazioni.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Aquarium1.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Aquarium1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Controlli.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Impostazioni.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Impostazioni.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Prova.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Php/Actions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Sql/Aquarium.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/Server/Sql/Aquarium.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/Server/Sql/to-do-list.sql" beforeDir="false" />
     </list>
     <list id="f890ead7-90a7-421c-a04f-0fcdb23d9f1a" name="Changes by giannimoretti" comment="" />
+    <list id="d847e407-150c-452e-9619-10b55aa2f26f" name="Changes by leona" comment="">
+      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium.html" afterDir="false" />
+    </list>
     <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte" />
     <list id="43fa877a-a477-4ae7-9d4c-b101b7b49892" name="Changes by mirko" comment="Changes by gianni" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +32,26 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium.html">
+      <ranges>
+        <range start1="32" end1="33" start2="32" end2="34" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="41" end1="44" start2="42" end2="42" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="51" end1="51" start2="49" end2="79" changelist="d847e407-150c-452e-9619-10b55aa2f26f" />
+        <range start1="63" end1="63" start2="91" end2="144" changelist="d847e407-150c-452e-9619-10b55aa2f26f" />
+        <range start1="66" end1="80" start2="147" end2="207" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="87" end1="88" start2="214" end2="215" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="97" end1="98" start2="224" end2="224" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="101" end1="109" start2="227" end2="228" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="111" end1="112" start2="230" end2="230" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="113" end1="144" start2="231" end2="235" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="145" end1="145" start2="236" end2="238" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="153" end1="154" start2="246" end2="247" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="158" end1="158" start2="251" end2="294" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+        <range start1="176" end1="176" start2="312" end2="313" changelist="aa639746-b90d-4824-acfc-19a06030d315" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

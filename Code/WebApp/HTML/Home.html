@@ -33,7 +33,7 @@
 
 
 <body>
-<!--
+
 <nav class="navbar " style="background-color: #131d47;">
     <div class="container-fluid">
         <a class="navbar-brand mx-auto" href="#">
@@ -45,10 +45,10 @@
             </button>
         </a>
     </div>
-</nav>-->
+</nav>
 
 
-<nav class="navbar " style="background-color: #131d47;">
+<!--<nav class="navbar " style="background-color: #131d47;">
     <div class="container-fluid">
         <a class="navbar-brand justify-content-start" href="#">
             <img src="../../../Assets/Logo/Logo-completoTransparent.png" alt="" width="230" height="60"
@@ -60,6 +60,7 @@
         </a>
     </div>
 </nav>
+-->
 
 
 
@@ -148,23 +149,22 @@
 <div class="container text-center">
     <div class="row row-cols-2" id="append-div">
         <div class="col">
-            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium1"
+            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium1" pos = "1"
                     style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
                 <i class="bi bi-plus-circle" style=" width:50px; height: 50px;"></i></button>
-
         </div>
         <div class="col">
-            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium2"
+            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium2" pos = "2"
                     style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size:30px;">
                 <i class="bi bi-plus-circle"></i></button>
         </div>
         <div class="col">
-            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium3"
+            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium3" pos = "3"
                     style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
                 <i class="bi bi-plus-circle"></i></button>
         </div>
         <div class="col">
-            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium4"
+            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium4" pos = "4"
                     style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
                 <i class="bi bi-plus-circle"></i></button>
         </div>
@@ -202,21 +202,21 @@
             dataType: 'JSON',
             success: function (response) {
                 var element;
-                if (response["status"][0] == 'OFF') {
+                if (response["status"][0] == 'off') {
                     element = document.getElementById("flexSwitchCheckChecked1");
                     element.checked = false;
                 } else {
                     element = document.getElementById("flexSwitchCheckChecked1");
                     element.checked = true;
                 }
-                if (response["status"][2] == 'OFF') {
+                if (response["status"][2] == 'off') {
                     element = document.getElementById("flexSwitchCheckChecked2");
                     element.checked = false;
                 } else {
                     element = document.getElementById("flexSwitchCheckChecked2");
                     element.checked = true;
                 }
-                if (response["status"][1] == 'OFF') {
+                if (response["status"][1] == 'off') {
                     element = document.getElementById("flexSwitchCheckChecked3");
                     element.checked = false;
                 } else {
@@ -233,7 +233,7 @@
                 window.location.href = "Aquarium.html";
             } else {
                 this.classList.add("full");
-                //logica per richiedere il nome
+                localStorage.setItem("pos", this.getAttribute("pos"))
                 window.location.href = "AquFirstPage.html";
             }
         });
