@@ -5,20 +5,30 @@ import mysql.connector
 from math import floor
 
 #TODO:
-#Aggiungere on/off della lampada
 #finire i collegamenti
 #cambiare i sensori
 #creare la valvola
-#Aggiungere opzione per scrivere o no nel database i sensori
-#Update della pompa di refill nel database
+
+#Cancellare le letture da 10 giorni prima
+
+#OPTIONS
+SensorPeriod = 120
+LightPeriod = 1
+devicePeriod = 1
+refillPeriod = 120
+lectureDayInterval = 10
+
+
+minWaterlevel = 2         #acqua min level
+writeOnDB = True
+
 
 arduino = serial.Serial(port='/dev/ttyACM0', baudrate=115200, timeout=.1)
-period = 3 #seconds
 
 #Refill boolean control
 isUnderLevel = [False, False, False, False]
 isRefilling = [False, False, False, False]
-level = 2
+
 
 mydb = mysql.connector.connect(
     host="localhost",
@@ -84,15 +94,14 @@ def getSensorData():
             if v != '':
                 if v == "err":
                     v = -1
-                
-                stri = stri + str(v) + "       "   
-                mycursor.execute("SELECT * FROM `Aquarium` WHERE pos = " + str(count))
-                myresult = mycursor.fetchall()[0]
-                sql = "INSERT INTO `Lecture`(`ID`, `aquaID`, `sensorID`, `data`, `value`) VALUES (%s, %s, %s, %s, %s)"
-                val = ('0', myresult[0], i, dt.datetime.now() , v)
-                mycursor.execute(sql, val)
-                
-                if i == 5 and float(v) < level:          #Water level sensor  e under the level
+                stri = stri + str(v) + "       "
+                if writeOnDB:
+                    mycursor.execute("SELECT * FROM `Aquarium` WHERE pos = " + str(count))
+                    myresult = mycursor.fetchall()[0]
+                    sql = "INSERT INTO `Lecture`(`ID`, `aquaID`, `sensorID`, `data`, `value`) VALUES (%s, %s, %s, %s, %s)"
+                    val = ('0', myresult[0], i, dt.datetime.now() , v)
+                    mycursor.execute(sql, val)
+                if i == 5 and float(v) < minWaterlevel:          #Water level sensor  e under the level
                     isUnderLevel[count - 1] = True
                 else:
                     isUnderLevel[count - 1] = False
@@ -118,17 +127,26 @@ def ledRoutine():
         duration = v[4]
         perc = v[5]
         pos = v[7]
+        onOffAut = v[8]
 
         startTime = dt.time(floor(mytime.seconds / 3600), floor(mytime.seconds / 60) % 60, mytime.seconds % 60)
         nowtime = dt.datetime.now().time()
         endTime = dt.datetime.now() + dt.timedelta(hours = duration)
 
-        if isNowInTimePeriod(startTime, endTime.time(), nowtime):
-            writeToArduino("40|" + str(pos) + "|" + str(perc))
-        else:
+        if onOffAut == 0:
+            print("Aquarium " + str(pos) + " led off manually")
             writeToArduino("40|" + str(pos) + "|0")
-        print(readFromArduino())
-    
+            print(readFromArduino())
+        elif onOffAut == 1:
+            print("Aquarium " + str(pos) + " led on manually")
+            writeToArduino("40|" + str(pos) + "|" + str(perc))
+            print(readFromArduino())
+        else:
+            if isNowInTimePeriod(startTime, endTime.time(), nowtime):
+                writeToArduino("40|" + str(pos) + "|" + str(perc))
+            else:
+                writeToArduino("40|" + str(pos) + "|0")
+            print(readFromArduino())
     mydb.commit()
 
 
@@ -152,6 +170,9 @@ def automaticRefillRoutine():
                     print("Starting refill pump....")
                     writeToArduino("30|on")
                     print(readFromArduino())
+                    mycursor.execute("UPDATE `Device` SET `status` = 'on' WHERE `name` = 'Pump'")
+                    myresult = mycursor.fetchall()
+                    mydb.commit()
                     isRefilling[row[7] - 1] = True
             else:
                 print("Acquarium " + str(row[7]) + " ok")
@@ -161,21 +182,44 @@ def automaticRefillRoutine():
                     print("Stopping refill pump....")
                     writeToArduino("30|off")
                     print(readFromArduino())
+                    mycursor.execute("UPDATE `Device` SET `status` = 'off' WHERE `name` = 'Pump'")
+                    myresult = mycursor.fetchall()
+                    mydb.commit()
                     isRefilling[row[7] - 1] = False
 
+def deleteDataFromDatabase(day):
+    print("-----------------------------------------------------\n\n              DELETE DATA ROUTINE\n\n-----------------------------------------------------\n")
+    print("Deleting last "+ str(day) + "from lecture in database....\n")
+    sql = "DELETE FROM `Lecture` WHERE DATEDIFF(NOW(), `data`) > %s"
+    val = (day,)
+    mycursor.execute(sql, val)
+    mydb.commit()
+    print(mycursor.rowcount, "record(s) deleted")
 
+
+startSensorTime = time.time()
+startDeviceTime = time.time()
+startLedTime = time.time()
+startRefillTime = time.time()
+lastDeleteData = dt.datetime.now()
 
 while True:
-    getSensorData()
-    refreshDeviceState()
-    ledRoutine()
-    automaticRefillRoutine()
-    time.sleep(period)
+    now = time.time()
+    if now - startSensorTime > SensorPeriod:
+        getSensorData()
+        startSensorTime = time.time()
+    if now - startDeviceTime > devicePeriod:
+        refreshDeviceState()
+        startDeviceTime = time.time()
+    if now - startLedTime > LightPeriod:
+        ledRoutine()
+        startLedTime = time.time()
+    if now - startRefillTime > refillPeriod:
+        automaticRefillRoutine()
+        startRefillTime = time.time()
+    if dt.datetime.now() - dt.timedelta(days=1) > lastDeleteData:
+        deleteDataFromDatabase(lectureDayInterval)
+        lastDeleteData = dt.datetime.now()
+    time.sleep(0.5)
 
 arduino.close()
-
-
-
-
-
-
