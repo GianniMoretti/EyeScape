@@ -10,15 +10,12 @@
     $result = $mysqli->query($query_string);
 
 	while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-       $_SESSION["userID"] = $row;
+		$_SESSION["userID"] = $row;
 	}
 
 	if(isset($_SESSION["userID"]))
-	    $response = array('login' => "true");
+		$response = array('login' => "true");
 	else
-	    $response = array('login' => "false");
-
-
+		$response = array('login' => "false");
     echo json_encode($response);
-
 ?>

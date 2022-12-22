@@ -249,13 +249,12 @@ function getLectures(){
 
     $values = array();
     $dates = array();
-    $query_string = "SELECT `data`, `value` FROM `Lecture` WHERE `aquaID` ='".$id."' AND DATEDIFF(`data`, NOW()) < 1 AND `sensorID` = ".$sensorID;
+    $query_string = "SELECT DATE_FORMAT(`data`, '%m-%d %H:%i:%s') as `data`, `value` FROM `Lecture` WHERE `aquaID` ='".$id."' AND DATEDIFF(NOW(), `data`) < 10 AND `sensorID` = ".$sensorID;
     $result = $mysqli->query($query_string);
     while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
         $values[] = $row['value'];
         $dates[] = $row['data'];
     }
-
     $response = array('values'=>$values, 'dates'=>$dates);
     echo json_encode($response);
 }
