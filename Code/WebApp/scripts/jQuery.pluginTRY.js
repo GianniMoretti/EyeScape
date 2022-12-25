@@ -12,7 +12,7 @@
     $.fn.todo = function (options) { //In jQuery, the fn property is just an alias to the prototype property. The jQuery identifier (or $) is just a constructor function, and all instances created with it, inherit from the constructor's prototype.
         console.log("CALL PLUGIN TODO"); //bo
         var defaults = {
-            serverURL: "example.com/server_page_url", //bo TODO da capire!
+            serverURL: "example.com/server_page_url",
         }
         options = $.extend(defaults, options); //The extends keyword is used in class declarations or class expressions to create a class that is a child of another class.
         // cosa cazzo serve porco dio

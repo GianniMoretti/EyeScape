@@ -3,7 +3,7 @@
 ----------------------------------------------
 
 HOME:
--Centrare scritta del logo nella home(nav bar)
+-Centrare scritta del logo nella home(nav bar) X
 -Migliorare scritta welcome e layout pagina home
 -Cambiare colore nome acquari nei bottoni della home
 -Aggiungere il footer
