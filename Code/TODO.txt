@@ -4,10 +4,10 @@
 
 HOME:
 -Centrare scritta del logo nella home(nav bar) X
--Migliorare scritta welcome e layout pagina home
+-Migliorare scritta welcome e layout pagina home non credo
 -Cambiare colore nome acquari nei bottoni della home
--Aggiungere il footer
--Aggiungere un icona che dice se la pompa di riempimento sta andando o no nella home
+-Aggiungere il footer X
+-Aggiungere un icona che dice se la pompa di riempimento sta andando o no nella home X
 
 PAGINA ACQUARIO:
 -Mettere la scritta del logo a sinistra(navbar)

@@ -62,7 +62,145 @@
 </nav>
 -->
 
+<div class="container text-center" style="margin-top: 1%;">
+    <div class="row justify-content-md-center">
+        <div class="col-md-12 box">
+            <div class="WelcomeWrite">
+                <svg viewbox="0 0 100 20">
+                    <defs>
+                        <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                            <stop offset="5%" stop-color="#131D47"/>
+                            <stop offset="95%" stop-color="#9AECED"/>
+                        </linearGradient>
+                        <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+                            <path id="wavePath"
+                                  d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                                  mask="url(#mask)" fill="url(#gradient)">
+                                <animateTransform
+                                        attributeName="transform"
+                                        begin="0s"
+                                        dur="2.5s"
+                                        type="translate"
+                                        from="0,0"
+                                        to="40,0"
+                                        repeatCount="indefinite"/>
+                            </path>
+                        </pattern>
+                    </defs>
+                    <text text-anchor="middle" x="50" y="15" font-size="20" fill="url(#wave)" fill-opacity="0.9">
+                        WELCOME
+                    </text>
+                    <text text-anchor="middle" x="50" y="15" font-size="20" fill="url(#gradient)" fill-opacity="0.7">
+                        WELCOME
+                    </text>
+                </svg>
+            </div>
 
+            <div class="container text-center">
+                <div class="row align-self-center">
+                    <div class="col">
+
+                    </div>
+                    <div class="col">
+                        <p class="fs-1" id="afterWelcome" style="font-weight: bold"></p>
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+                <hr class="border border-dark border-2 opacity-75 "
+                    style="border-radius: 50%; width: 100%; margin-top: 3%">
+            </div>
+
+
+            <div class="container text-center" style="font-weight: bold; font-size:30px;">
+                <div class="row" style="margin-top: 7%; margin-bottom: 8%">
+                    <div class="col">
+                        <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
+                            <div class="form-check form-switch">
+                                <input typeSwitch="filtri" class="form-check-input switch-j" type="checkbox"
+                                       role="switch"
+                                       id="flexSwitchCheckChecked1" checked>
+                                <label class="form-check-label" for="flexSwitchCheckChecked1"><i
+                                        class="bi bi-funnel-fill"></i>Filtri</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
+                            <div class="form-check form-switch">
+                                <input typeSwitch="areatori" class="form-check-input switch-j" type="checkbox"
+                                       role="switch"
+                                       id="flexSwitchCheckChecked2" checked>
+                                <label class="form-check-label" for="flexSwitchCheckChecked2"><i
+                                        class="bi bi-fan"></i>Areatori</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
+                            <div class="form-check form-switch">
+                                <input typeSwitch="riscaldatori" class="form-check-input switch-j" type="checkbox"
+                                       role="switch"
+                                       id="flexSwitchCheckChecked3" checked>
+                                <label class="form-check-label" for="flexSwitchCheckChecked3"><i
+                                        class="bi bi-thermometer-half"></i>Riscaldatori</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <hr class="border border-dark border-2 opacity-75 " style="border-radius: 50%; width: 100%; ">
+            </div>
+
+
+            <p class="text-center" style="color: black; font-size: 30px; font-weight: bold">I miei acquari</p>
+
+            <div class="container text-center " style="color: black; font-size: 20px; font-weight: bold">
+                <div class="row align-self-center">
+                    <div class="col">
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked
+                               disabled>
+                        <label class="form-check-label" for="flexCheckCheckedDisabled">
+                            Pompa automatica
+                        </label>
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-center">
+                <div class="row row-cols-2" id="append-div">
+                    <div class="col">
+                        <button type='button' class='btn btn-primary buttonAquarium' id="aquarium1" pos="1"
+                                style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
+                            <i class="bi bi-plus-circle" style=" width:50px; height: 50px;"></i></button>
+                    </div>
+                    <div class="col">
+                        <button type='button' class='btn btn-primary buttonAquarium' id="aquarium2" pos="2"
+                                style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size:30px;">
+                            <i class="bi bi-plus-circle"></i></button>
+                    </div>
+                    <div class="col">
+                        <button type='button' class='btn btn-primary buttonAquarium' id="aquarium3" pos="3"
+                                style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
+                            <i class="bi bi-plus-circle"></i></button>
+                    </div>
+                    <div class="col">
+                        <button type='button' class='btn btn-primary buttonAquarium' id="aquarium4" pos="4"
+                                style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
+                            <i class="bi bi-plus-circle"></i></button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!--
 <div class="WelcomeWrite">
     <svg viewbox="0 0 100 20">
         <defs>
@@ -152,9 +290,9 @@
         <div class="col">
         </div>
         <div class="col">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-            <label class="form-check-label" for="flexCheckIndeterminate">
-                Pompa automatica<i class="fa-thin fa-pump"></i>
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled>
+            <label class="form-check-label" for="flexCheckCheckedDisabled">
+                Pompa automatica
             </label>
         </div>
         <div class="col">
@@ -186,6 +324,51 @@
         </div>
     </div>
 </div>
+
+-->
+<footer>
+    <div class="footer-blurp">
+        <div class="containers">
+            <div class="footer-blur-item">
+                <img src="../../../Assets/Logo/LittleFishesTransparent.png" class="circle-image"/>
+                <h3>
+                    I'Tina
+                </h3>
+                <p>
+                    sono matte meno gay di gianni e non faccio le trazioni a modo
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-blurp">
+        <div class="containers">
+            <div class="footer-blur-item">
+                <img src="../../../Assets/Logo/LittleFishesTransparent.png" class="circle-image"/>
+                <h3>
+                    Pampaj
+                </h3>
+                <p>
+                    sono il dio pampaj e faccio tante traziioni
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-blurp">
+        <div class="containers">
+            <div class="footer-blur-item">
+                <img src="../../../Assets/Logo/LittleFishesTransparent.png" class="circle-image"/>
+                <h3>
+                    Jhinh
+                </h3>
+                <p>
+                    sono gianni moretti e faccio abbastanza trazioni, non quante il dio
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</footer>
 
 
 </body>

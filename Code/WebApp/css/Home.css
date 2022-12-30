@@ -22,10 +22,17 @@ body {
     background-repeat: no-repeat;
     justify-content: center;
     background-size: cover;
-
+    background-image: url("../../../Assets/Image/LoginWallpaper.png");
 
 }
 
+
+.box {
+    background-color: #ffffff;
+    border-radius: 25px;
+    border: 1px solid rgba(0, 0, 0, .125);
+    box-shadow: 0px 4px 8px rgb(8 35 48 / 24%);
+}
 .WelcomeWrite {
     align-self: center;
     width: 30%;
@@ -58,4 +65,62 @@ body {
     margin: 20px;
     background-color: #9AECED;
 }
+
+
+footer {
+    padding-top: 100px;
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 300px;
+}
+
+.footer-blurp {
+    text-align: center;
+    background-color: #131D47;
+    width: 35%;
+    padding-top: 50px;
+
+}
+
+.footer-blurp-item {
+    float: left;
+    padding-top: 30px;
+    width: 28%;
+
+
+}
+
+.footer-blurp-item:nth-child(2) {
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.circle-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.footer-blurp h3 {
+    color:#9AECED;
+    font-size: 24px;
+    margin: 20px 0 20px 0;
+    font-weight: 500;
+}
+
+.footer-blurp p {
+    color:#9AECED;
+    font-size: 14px;
+    margin: 10px 0 20px 0;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
 
