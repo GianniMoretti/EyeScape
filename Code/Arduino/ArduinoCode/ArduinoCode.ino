@@ -70,22 +70,22 @@
 #include <DallasTemperature.h>
 
 #ifdef ACQ_1
-  #define WTS_1 38
+  #define WTS_1 32
   OneWire oneWire1(WTS_1);
   DallasTemperature wts_1(&oneWire1);
 #endif
 #ifdef ACQ_2
-  #define WTS_2 39
+  #define WTS_2 33
   OneWire oneWire2(WTS_2);
   DallasTemperature wts_2(&oneWire2);
 #endif
 #ifdef ACQ_3
-  #define WTS_3 40
+  #define WTS_3 34
   OneWire oneWire3(WTS_3);
   DallasTemperature wts_3(&oneWire3);
 #endif
 #ifdef ACQ_4
-  #define WTS_4 41
+  #define WTS_4 35
   OneWire oneWire4(WTS_4);
   DallasTemperature wts_4(&oneWire4);
 #endif

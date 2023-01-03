@@ -12,7 +12,7 @@ from math import floor
 #Cancellare le letture da 10 giorni prima
 
 #OPTIONS
-SensorPeriod = 300
+SensorPeriod = 3
 LightPeriod = 1
 devicePeriod = 1
 refillPeriod = 120
@@ -20,7 +20,7 @@ lectureDayInterval = 10
 
 
 minWaterlevel = 2         #acqua min level
-writeOnDB = True
+writeOnDB = False
 
 
 arduino = serial.Serial(port='/dev/ttyACM0', baudrate=115200, timeout=.1)
@@ -96,7 +96,7 @@ def getSensorData():
                     v = -1
                 stri = stri + str(v) + "       "
                 if writeOnDB:
-                    mycursor.execute("SELECT * FROM `Aquarium` WHERE pos = " + str(count))
+                    mycursor.execute("SELECT * FROM `aquarium` WHERE pos = " + str(count))
                     myresult = mycursor.fetchall()[0]
                     sql = "INSERT INTO `Lecture`(`ID`, `aquaID`, `sensorID`, `data`, `value`) VALUES (%s, %s, %s, %s, %s)"
                     val = ('0', myresult[0], i, dt.datetime.now() , v)
@@ -118,7 +118,7 @@ def getSensorData():
 def ledRoutine():
     print("-----------------------------------------------------\n\n                 LED ROUTINE\n\n-----------------------------------------------------\n")
     print("Reading database....\n")
-    mycursor.execute("SELECT * FROM `Aquarium`")
+    mycursor.execute("SELECT * FROM `aquarium`")
     myresult = mycursor.fetchall()
 
     print("Setting value....\n")
@@ -209,16 +209,16 @@ while True:
         getSensorData()
         startSensorTime = time.time()
     if now - startDeviceTime > devicePeriod:
-        refreshDeviceState()
+        #refreshDeviceState()
         startDeviceTime = time.time()
     if now - startLedTime > LightPeriod:
-        ledRoutine()
+        #ledRoutine()
         startLedTime = time.time()
     if now - startRefillTime > refillPeriod:
-        automaticRefillRoutine()
+        #automaticRefillRoutine()
         startRefillTime = time.time()
     if dt.datetime.now() - dt.timedelta(days=1) > lastDeleteData:
-        deleteDataFromDatabase(lectureDayInterval)
+        #deleteDataFromDatabase(lectureDayInterval)
         lastDeleteData = dt.datetime.now()
     time.sleep(0.5)
 
