@@ -4,15 +4,10 @@ import datetime as dt
 import mysql.connector
 from math import floor
 
-#TODO:
-#finire i collegamenti
-#cambiare i sensori
-#creare la valvola
-
 #Cancellare le letture da 10 giorni prima
 
 #OPTIONS
-SensorPeriod = 3
+SensorPeriod = 300
 LightPeriod = 1
 devicePeriod = 1
 refillPeriod = 120
@@ -20,7 +15,7 @@ lectureDayInterval = 10
 
 
 minWaterlevel = 2         #acqua min level
-writeOnDB = False
+writeOnDB = True
 
 
 arduino = serial.Serial(port='/dev/ttyACM0', baudrate=115200, timeout=.1)
@@ -153,7 +148,7 @@ def ledRoutine():
 def automaticRefillRoutine():
     print("-----------------------------------------------------\n\n                 REFILL ROUTINE\n\n-----------------------------------------------------\n")
     print("Reading database....\n")
-    mycursor.execute("SELECT * FROM `Aquarium`")
+    mycursor.execute("SELECT * FROM `aquarium`")
     myresult = mycursor.fetchall()
 
     for row in myresult:
@@ -209,16 +204,16 @@ while True:
         getSensorData()
         startSensorTime = time.time()
     if now - startDeviceTime > devicePeriod:
-        #refreshDeviceState()
+        refreshDeviceState()
         startDeviceTime = time.time()
     if now - startLedTime > LightPeriod:
-        #ledRoutine()
+        ledRoutine()
         startLedTime = time.time()
     if now - startRefillTime > refillPeriod:
-        #automaticRefillRoutine()
+        automaticRefillRoutine()
         startRefillTime = time.time()
     if dt.datetime.now() - dt.timedelta(days=1) > lastDeleteData:
-        #deleteDataFromDatabase(lectureDayInterval)
+        deleteDataFromDatabase(lectureDayInterval)
         lastDeleteData = dt.datetime.now()
     time.sleep(0.5)
 

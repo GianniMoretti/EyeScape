@@ -138,31 +138,13 @@ function getID()
 
 }
 
-function deleteData()
-{
-    global $mysqli;
-    if (isset($_POST['id'])) $id = $_POST['id'];
-    $pieces = explode("_", $id);
-    $query_string = 'DELETE FROM to_do WHERE ID=' . $pieces[0];
-    $result = $mysqli->query($query_string);
-
-
-    if ($mysqli->affected_rows > 0) {
-        $response = array('deleted' => true, 'id' => $id, 'type' => 'delete');
-    } else {
-        $response = array('deleted' => false, 'id' => $id, 'type' => 'delete');
-    }
-
-    echo json_encode($query_string);
-}
-
 function deviceUpdate()
 {
     global $mysqli;
     if (isset($_POST['id'])) $id = $_POST['id'];
     if (isset($_POST['status'])) $status = $_POST['status'];
 
-    $query_string = 'UPDATE device SET status="' . $status . '" WHERE devID=' . $id;
+    $query_string = 'UPDATE Device SET status="' . $status . '" WHERE devID=' . $id;
     $mysqli->query($query_string);
 
     echo json_encode("ok");
@@ -171,7 +153,7 @@ function deviceUpdate()
 function deviceLoad()
 {
     global $mysqli, $_SESSION;
-    $query_string = 'SELECT * FROM device';
+    $query_string = 'SELECT * FROM Device';
     $result = $mysqli->query($query_string);
     $id = array();
     $status = array();
@@ -197,6 +179,8 @@ function updateData()
 
     echo json_encode($query_string);
 }
+
+
 function getAquarium()
 {
     global $mysqli;
@@ -241,6 +225,7 @@ function switchUpdate(){
 
     echo json_encode($query_string);
 }
+
 function getLectures(){
 
     global  $mysqli;
