@@ -196,19 +196,19 @@
                     <div class="card-wrap">
                         <p style=" font-weight: Bold; font-size: large;">Luci:</p>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value = 1>
                             <label class="form-check-label" for="flexRadioDefault1">
                                 ON
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value = 0>
                             <label class="form-check-label" for="flexRadioDefault2">
                                 OFF
                             </label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value = 2>
                             <label class="form-check-label" for="flexRadioDefault3">
                                 AUTO
                             </label>
@@ -306,13 +306,18 @@
                 //todo prendere roba dal database e stamparla
                 document.getElementById("name").innerHTML = response['name'];
                 document.getElementById("description").innerHTML = '<h4>' + response["description"] + '</h4>';
-                document.getElementById("lightTime").innerHTML = '<div class="row"><p style="font:bold; font-size: xx-large">' + response['startLight'] + '</p></div>' + '<div class="row"><p>Orario accensione luci</p></div>'
-                document.getElementById("duration").innerHTML = '<div class="row"><p style="font: bold; font-size: xx-large">' + response['lightDuration'] + ' ore </p></div>' + '<div class="row"><p>Durata</p></div>'
+                document.getElementById("lightTime").innerHTML = '<div class="row"><p style="font-weight:bold; font-size: xx-large">' + response['startLight'] + '</p></div>' + '<div class="row"><p>Orario accensione luci</p></div>'
+                document.getElementById("duration").innerHTML = '<div class="row"><p style="font-weight: bold; font-size: xx-large">' + response['lightDuration'] + ' ore </p></div>' + '<div class="row"><p>Durata</p></div>'
                 document.getElementById("customRange1").value = response["luminosityPercentage"];
                 document.getElementById("valueLabel").innerHTML = '<p>' + response["luminosityPercentage"] + '</p>'
                 if (response['automaticRefill'] == 0)
                     document.getElementById("flexSwitchCheckDefault3").checked = false;
                 else document.getElementById("flexSwitchCheckDefault3").checked = true;
+                if(response['onOffLight'] == 0)
+                    document.getElementById("flexRadioDefault2").checked = true;
+                else if (response['onOffLight'] == 1)
+                    document.getElementById("flexRadioDefault1").checked = true;
+                else document.getElementById("flexRadioDefault3").checked = true;
             }
         });
         $.ajax({
@@ -550,6 +555,23 @@
             type: "POST",
             url: "../Server/Php/Actions.php",
             data: {"action": "switchUpdate", "status": status, "id": id},
+            dataType: 'JSON',
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    });
+</script>
+<script>
+
+    $(document.getElementsByName('flexRadioDefault')).on("click", function (event) {
+        var id = localStorage.getItem("currentID");
+        var status = this.value;
+        console.log("yess");
+        $.ajax({
+            type: "POST",
+            url: "../Server/Php/Actions.php",
+            data: {"action": "lightUpdate", "status": status, "id": id},
             dataType: 'JSON',
             success: function (response) {
                 console.log(response);

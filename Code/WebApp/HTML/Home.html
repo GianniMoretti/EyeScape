@@ -128,10 +128,10 @@
                         <div style="padding: 10px">
                             <div class="card-wrap">
 
-                                    <p> Pompa di riempimento
-                                        <label id="pompa" style="padding-left: 50px">
-                                        </label>
-                                    </p>
+
+                                <label id="pompa">
+                                </label>
+
 
                             </div>
                         </div>
@@ -284,13 +284,15 @@
                 }
                 if (response["status"][3] == 'off') {
                     element = document.getElementById("pompa");
-                    element.innerHTML = '<i className="bi bi-circle-fill"></i>';
+                    element.innerHTML =
+                        '<p> Pompa di riempimento<i style="color: red; padding-left: 50px;" class="bi bi-circle-fill"></i></p>'
                 } else {
                     element = document.getElementById("pompa");
-                    element.innerHTML = '<i className="bi bi-circle-fill"></i>';
-
+                    element.innerHTML =
+                        '<p> Pompa di riempimento<i style="color: green; padding-left: 50px;" class="bi bi-circle-fill"></i></p>'
                 }
             }
+
         });
         $(".buttonAquarium").on("click", function (event) {
             if (this.classList.contains("full")) {
