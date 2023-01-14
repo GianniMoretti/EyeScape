@@ -4,26 +4,26 @@
 
 HOME:
 -Centrare scritta del logo nella home(nav bar) X
--Migliorare scritta welcome e layout pagina home non credo
--Cambiare colore nome acquari nei bottoni della home
+-Migliorare scritta welcome e layout pagina home non credo X
+-Cambiare colore nome acquari nei bottoni della homeX
 -Aggiungere il footer X
 -Aggiungere un icona che dice se la pompa di riempimento sta andando o no nella home 1/2
 
 PAGINA ACQUARIO:
--Mettere la scritta del logo a sinistra(navbar)
--mettere il logout tutto a destra
--Fare il layout dei controlli
--Centrare i grafici (forse 2 per riga)
+-Mettere la scritta del logo a sinistra(navbar) X
+-mettere il logout tutto a destra X
+-Fare il layout dei controlli X
+-Centrare i grafici (forse 2 per riga) X
 -selettore a 3 non cambia i valori nel database
 
 IMPOSTAZIONI:
--un po' vuota 
--Mettere apposto i padding
--bottone non viene il bordo quando fai l'hover
--Spostare logo navbar a sinistra e logout a destra
+-un po' vuota X
+-Mettere apposto i padding X
+-bottone non viene il bordo quando fai l'hoverX
+-Spostare logo navbar a sinistra e logout a destraX
 
 GENERALE:
--Mettere l'immagine di sfondo fissa dappertutto
--Aggiungere il logo nelle intestazioni della tab
+-Mettere l'immagine di sfondo fissa dappertuttoX
+-Aggiungere il logo nelle intestazioni della tabX
 
 
