@@ -7,7 +7,7 @@ from math import floor
 #Cancellare le letture da 10 giorni prima
 
 #OPTIONS
-SensorPeriod = 60
+SensorPeriod = 5
 LightPeriod = 1
 devicePeriod = 1
 refillPeriod = 120
@@ -29,7 +29,7 @@ mydb = mysql.connector.connect(
     host="localhost",
     user="Gianni",
     password="Viva.le.2005",
-    database="Aquarium"
+    database="AquariumDB"
 )
 
 mycursor = mydb.cursor()
@@ -91,7 +91,7 @@ def getSensorData():
                     v = -1
                 stri = stri + str(v) + "       "
                 if writeOnDB:
-                    mycursor.execute("SELECT * FROM `aquarium` WHERE pos = " + str(count))
+                    mycursor.execute("SELECT * FROM `Aquarium` WHERE pos = " + str(count))
                     myresult = mycursor.fetchall()[0]
                     sql = "INSERT INTO `Lecture`(`ID`, `aquaID`, `sensorID`, `data`, `value`) VALUES (%s, %s, %s, %s, %s)"
                     val = ('0', myresult[0], i, dt.datetime.now() , v)
@@ -113,7 +113,7 @@ def getSensorData():
 def ledRoutine():
     print("-----------------------------------------------------\n\n                 LED ROUTINE\n\n-----------------------------------------------------\n")
     print("Reading database....\n")
-    mycursor.execute("SELECT * FROM `aquarium`")
+    mycursor.execute("SELECT * FROM `Aquarium`")
     myresult = mycursor.fetchall()
 
     print("Setting value....\n")
@@ -148,7 +148,7 @@ def ledRoutine():
 def automaticRefillRoutine():
     print("-----------------------------------------------------\n\n                 REFILL ROUTINE\n\n-----------------------------------------------------\n")
     print("Reading database....\n")
-    mycursor.execute("SELECT * FROM `aquarium`")
+    mycursor.execute("SELECT * FROM `Aquarium`")
     myresult = mycursor.fetchall()
 
     for row in myresult:
@@ -184,12 +184,12 @@ def automaticRefillRoutine():
 
 def deleteDataFromDatabase(day):
     print("-----------------------------------------------------\n\n              DELETE DATA ROUTINE\n\n-----------------------------------------------------\n")
-    print("Deleting last "+ str(day) + "from lecture in database....\n")
+    print("Deleting last "+ str(day) + " from lecture in database....\n")
     sql = "DELETE FROM `Lecture` WHERE DATEDIFF(NOW(), `data`) > %s"
     val = (day,)
     mycursor.execute(sql, val)
     mydb.commit()
-    print(mycursor.rowcount, "record(s) deleted")
+    print(mycursor.rowcount, " record(s) deleted")
 
 
 startSensorTime = time.time()
