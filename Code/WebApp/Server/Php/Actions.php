@@ -45,6 +45,9 @@ switch ($action) {
     case "slider":
         updateSlider();
         break;
+    case "lightUpdate":
+        updateLight();
+        break;
 }
 
 function loadData()
@@ -144,7 +147,7 @@ function deviceUpdate()
     if (isset($_POST['id'])) $id = $_POST['id'];
     if (isset($_POST['status'])) $status = $_POST['status'];
 
-    $query_string = 'UPDATE Device SET status="' . $status . '" WHERE devID=' . $id;
+    $query_string = 'UPDATE device SET status="' . $status . '" WHERE devID=' . $id;
     $mysqli->query($query_string);
 
     echo json_encode("ok");
@@ -153,7 +156,7 @@ function deviceUpdate()
 function deviceLoad()
 {
     global $mysqli, $_SESSION;
-    $query_string = 'SELECT * FROM Device';
+    $query_string = 'SELECT * FROM device';
     $result = $mysqli->query($query_string);
     $id = array();
     $status = array();
@@ -218,7 +221,6 @@ function switchUpdate(){
     global $mysqli;
     if (isset($_POST['id'])) $id = $_POST['id'];
     if (isset($_POST['status'])) $status = $_POST['status'];
-    if (isset($_POST['switch'])) $field = $_POST['switch'];
 
     $query_string = "UPDATE `aquarium` SET automaticRefill='" . $status . "' WHERE aquaID=" . $id;
     $mysqli->query($query_string);
@@ -252,6 +254,16 @@ function updateSlider(){
     $query_string = "UPDATE `aquarium` SET `luminosityPercentage`='" . $brightness . "' WHERE aquaID ='" . $id . "'";
     $mysqli->query($query_string);
     echo json_encode("");
+}
+
+function updateLight(){
+    global  $mysqli;
+    if (isset($_POST['id'])) $id = $_POST['id'];
+    if (isset($_POST['status'])) $light = $_POST['status'];
+
+    $query_string = "UPDATE `aquarium` SET `onOffLight`='" . $light . "' WHERE aquaID ='" . $id . "'";
+    $mysqli->query($query_string);
+    echo json_encode($query_string);
 }
 
 

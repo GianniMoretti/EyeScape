@@ -5,52 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="icon" href="../../../Assets/Logo/LittleFishes.png" type="image/icon type">
+
     <link rel="stylesheet" href="../css/Home.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:700' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-            integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-            integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <style>
-        .error-label {
-            font-size: 12px;
-            color: red;
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
 </head>
 
 
 <body>
-
-<nav class="navbar " style="background-color: #131d47;">
+<nav class="navbar navbar-dark navbar-expand-lg bg-body-tertiary" style="background-color: #131d47;">
     <div class="container-fluid">
         <a class="navbar-brand mx-auto" href="#">
-            <img src="../../../Assets/Logo/Logo-completoTransparent.png" alt="" class="img-fluid" width="330"
-                height="60" style="padding-left: 30%"/>
+            <img src="../../../Assets/Logo/Logo-completoTransparent.png" alt="Logo" class="d-inline-block "/>
         </a>
-        <a class="navbar-brand justify-content-end">
-            <button type="button" class="btn btn-outline-light" id="Logout"><i class="bi bi-box-arrow-right"></i> Logout
-            </button>
-        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto my-auto"></ul>
+            <div>
+                <a class="nav-item">
+                    <div style="align-content: center">
+                        <label class="fs-1" id="afterWelcome"></label>
+                        <button type="button" class="btn btn-outline-light" id="Logout"><i
+                                class="bi bi-box-arrow-right"></i>
+                            Logout
+                        </button>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 </nav>
 
-<div class="container text-center" style="margin-top: 1%;">
-    <div class="row justify-content-md-center">
-        
-            <div class="WelcomeWrite" height = 30>
+<div class="container text-center" style="margin-top: 10px; padding-bottom: 50px">
+    <div class="col">
+
+        <div class="col-md-12 box mt-4 mb-4">
+            <div class="WelcomeWrite mx-auto" >
                 <svg viewbox="0 0 100 20">
                     <defs>
                         <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
@@ -59,8 +67,8 @@
                         </linearGradient>
                         <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
                             <path id="wavePath"
-                                d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
-                                mask="url(#mask)" fill="url(#gradient)">
+                                  d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                                  mask="url(#mask)" fill="url(#gradient)">
                                 <animateTransform
                                         attributeName="transform"
                                         begin="0s"
@@ -80,55 +88,59 @@
                     </text>
                 </svg>
             </div>
-            
-            <div class="col-md-12 box">
-            <div class="container text-center">
-                <div class="row align-self-center">
-                    <div class="col">
-                        <p class="fs-1" id="afterWelcome" style="font-weight: bold"></p>
-                    </div>
-                </div>
-                <hr class="border border-dark border-2 opacity-75 "
-                    style="border-radius: 50%; width: 100%; margin-top: 3%">
-            </div>
+        </div>
 
-
+        <div class="col-md-12 box">
             <div class="container text-center" style="font-weight: bold; font-size:30px;">
                 <div class="row" style="margin-top: 7%; margin-bottom: 8%">
-                    <div class="col">
-                        <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
-                            <div class="form-check form-switch">
-                                <input typeSwitch="filtri" class="form-check-input switch-j" type="checkbox"
-                                    role="switch"
-                                    id="flexSwitchCheckChecked1" checked>
-                                <label class="form-check-label" for="flexSwitchCheckChecked1"><i
-                                        class="bi bi-funnel-fill"></i>Filtri</label>
+                    <div class="col-md-4">
+                        <div style="padding: 10px">
+                            <div class="card-wrap">
+                                <div class="form-check form-switch">
+                                    <input typeSwitch="filtri" class="form-check-input switch-j" type="checkbox"
+                                           role="switch"
+                                           id="flexSwitchCheckChecked1" checked>
+                                    <label class="form-check-label" for="flexSwitchCheckChecked1"><i
+                                            class="bi bi-funnel-fill"></i>Filtri</label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
-                            <div class="form-check form-switch">
-                                <input typeSwitch="areatori" class="form-check-input switch-j" type="checkbox"
-                                    role="switch"
-                                    id="flexSwitchCheckChecked2" checked>
-                                <label class="form-check-label" for="flexSwitchCheckChecked2"><i
-                                        class="bi bi-fan"></i>Areatori</label>
+                    <div class="col-md-4 ">
+                        <div style="padding: 10px">
+                            <div class="card-wrap">
+                                <div class="form-check form-switch">
+                                    <input typeSwitch="areatori" class="form-check-input switch-j" type="checkbox"
+                                           role="switch"
+                                           id="flexSwitchCheckChecked2" checked>
+                                    <label class="form-check-label" for="flexSwitchCheckChecked2"><i
+                                            class="bi bi-fan"></i>Areatori</label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
-                            <div class="form-check form-switch">
-                                <input typeSwitch="riscaldatori" class="form-check-input switch-j" type="checkbox"
-                                    role="switch"
-                                    id="flexSwitchCheckChecked3" checked>
-                                <label class="form-check-label" for="flexSwitchCheckChecked3"><i
-                                        class="bi bi-thermometer-half"></i>Riscaldatori</label>
+                    <div class="col-md-4 ">
+                        <div style="padding: 10px">
+                            <div class="card-wrap">
+                                <div class="form-check form-switch">
+                                    <input typeSwitch="riscaldatori" class="form-check-input switch-j" type="checkbox"
+                                           role="switch"
+                                           id="flexSwitchCheckChecked3" checked>
+                                    <label class="form-check-label" for="flexSwitchCheckChecked3"><i
+                                            class="bi bi-thermometer-half"></i>Riscaldatori</label>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+                    <div class="col-md-6 offset-md-3 mt-5">
+
+                        <div class="card-wrap">
+                            <label class="mt-3" id="pompa">
+                            </label>
+                        </div>
+
+                    </div>
                 </div>
                 <hr class="border border-dark border-2 opacity-75 " style="border-radius: 50%; width: 100%; ">
             </div>
@@ -136,178 +148,34 @@
 
             <p class="text-center" style="color: black; font-size: 30px; font-weight: bold">I miei acquari</p>
 
-<!--             <div class="container text-center " style="color: black; font-size: 20px; font-weight: bold">
-                <div class="row align-self-center">
-                    <div class="col">
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked
-                            disabled>
-                        <label class="form-check-label" for="flexCheckCheckedDisabled">
-                            Pompa automatica
-                        </label>
-                    </div>
-                    <div class="col">
-                    </div>
-                </div>
-            </div> -->
-
-            <div class="container text-center">
-                <div class="row row-cols-2" id="append-div">
-                    <div class="col">
+            <div class="container text-center" style="padding-bottom: 30px">
+                <div class="row">
+                    <div class="col-md-6">
                         <button type='button' class='btn btn-primary buttonAquarium' id="aquarium1" pos="1"
-                                style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
+                                style="color: #131D47; border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
                             <i class="bi bi-plus-circle" style=" width:50px; height: 50px;"></i></button>
                     </div>
-                    <div class="col">
+                    <div class="col-md-6">
                         <button type='button' class='btn btn-primary buttonAquarium' id="aquarium2" pos="2"
-                                style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size:30px;">
+                                style="color: #131D47; border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size:30px;">
                             <i class="bi bi-plus-circle"></i></button>
                     </div>
-                    <div class="col">
+                    <div class="col-md-6">
                         <button type='button' class='btn btn-primary buttonAquarium' id="aquarium3" pos="3"
-                                style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
+                                style="color: #131D47; border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
                             <i class="bi bi-plus-circle"></i></button>
                     </div>
-                    <div class="col">
+                    <div class="col-md-6">
                         <button type='button' class='btn btn-primary buttonAquarium' id="aquarium4" pos="4"
-                                style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
+                                style="color: #131D47; border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
                             <i class="bi bi-plus-circle"></i></button>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
 
-<!--
-<div class="WelcomeWrite">
-    <svg viewbox="0 0 100 20">
-        <defs>
-            <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="5%" stop-color="#131D47"/>
-                <stop offset="95%" stop-color="#9AECED"/>
-            </linearGradient>
-            <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
-                <path id="wavePath"
-                    d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
-                    mask="url(#mask)" fill="url(#gradient)">
-                    <animateTransform
-                            attributeName="transform"
-                            begin="0s"
-                            dur="2.5s"
-                            type="translate"
-                            from="0,0"
-                            to="40,0"
-                            repeatCount="indefinite"/>
-                </path>
-            </pattern>
-        </defs>
-        <text text-anchor="middle" x="50" y="15" font-size="20" fill="url(#wave)" fill-opacity="0.9">
-            WELCOME
-        </text>
-        <text text-anchor="middle" x="50" y="15" font-size="20" fill="url(#gradient)" fill-opacity="0.7">
-            WELCOME
-        </text>
-    </svg>
-</div>
-
-<div class="container text-center">
-    <div class="row align-self-center">
-        <div class="col">
-
-        </div>
-        <div class="col">
-            <p class="fs-1" id="afterWelcome" style="font-weight: bold"></p>
-        </div>
-        <div class="col">
-        </div>
-    </div>
-    <hr class="border border-dark border-2 opacity-75 " style="border-radius: 50%; width: 100%; margin-top: 3%">
-</div>
-
-
-<div class="container text-center" style="font-weight: bold; font-size:30px;">
-    <div class="row" style="margin-top: 7%; margin-bottom: 8%">
-        <div class="col">
-            <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
-                <div class="form-check form-switch">
-                    <input typeSwitch="filtri" class="form-check-input switch-j" type="checkbox" role="switch"
-                        id="flexSwitchCheckChecked1" checked>
-                    <label class="form-check-label" for="flexSwitchCheckChecked1"><i class="bi bi-funnel-fill"></i>Filtri</label>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
-                <div class="form-check form-switch">
-                    <input typeSwitch="areatori" class="form-check-input switch-j" type="checkbox" role="switch"
-                        id="flexSwitchCheckChecked2" checked>
-                    <label class="form-check-label" for="flexSwitchCheckChecked2"><i
-                            class="bi bi-fan"></i>Areatori</label>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="p-3 bg-info bg-opacity-10 border border-info" style="border-radius: 50px">
-                <div class="form-check form-switch">
-                    <input typeSwitch="riscaldatori" class="form-check-input switch-j" type="checkbox" role="switch"
-                        id="flexSwitchCheckChecked3" checked>
-                    <label class="form-check-label" for="flexSwitchCheckChecked3"><i class="bi bi-thermometer-half"></i>Riscaldatori</label>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <hr class="border border-dark border-2 opacity-75 " style="border-radius: 50%; width: 100%; ">
-</div>
-
-
-<p class="text-center" style="color: black; font-size: 30px; font-weight: bold">I miei acquari</p>
-
-<div class="container text-center " style="color: black; font-size: 20px; font-weight: bold">
-    <div class="row align-self-center">
-        <div class="col">
-        </div>
-        <div class="col">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" checked disabled>
-            <label class="form-check-label" for="flexCheckCheckedDisabled">
-                Pompa automatica
-            </label>
-        </div>
-        <div class="col">
-        </div>
-    </div>
-</div>
-
-<div class="container text-center">
-    <div class="row row-cols-2" id="append-div">
-        <div class="col">
-            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium1" pos="1"
-                    style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
-                <i class="bi bi-plus-circle" style=" width:50px; height: 50px;"></i></button>
-        </div>
-        <div class="col">
-            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium2" pos="2"
-                    style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size:30px;">
-                <i class="bi bi-plus-circle"></i></button>
-        </div>
-        <div class="col">
-            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium3" pos="3"
-                    style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
-                <i class="bi bi-plus-circle"></i></button>
-        </div>
-        <div class="col">
-            <button type='button' class='btn btn-primary buttonAquarium' id="aquarium4" pos="4"
-                    style=" border-radius: 35px; border : #131D47 solid 4px; background-color: #9AECED; font-size: 30px;">
-                <i class="bi bi-plus-circle"></i></button>
-        </div>
-    </div>
-</div>
-
--->
 <footer>
     <div class="footer-blurp">
         <div class="containers">
@@ -348,13 +216,35 @@
             </div>
         </div>
     </div>
-
-
 </footer>
 
 
 </body>
 </html>
+<style>
+    body {
+        background-image: url("../../../Assets/Image/LoginWallpaper.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: #f2f2f2;
+    }
+
+    .d-inline-block {
+        height: 60px;
+        width: 230px;
+        background-repeat: no-repeat;
+        background-size: 230px 60px;
+    }
+
+    .card-wrap {
+        border-radius: 15px;
+        background-color: #ffffff;
+        box-shadow: 0px 16px 24px rgb(51, 56, 61, 0.4);
+        height: 100%;
+        padding: 20px;
+    }
+</style>
 <script type="text/javascript">
     $(document).ready(function () {
         $.ajax({
@@ -370,7 +260,7 @@
                     document.getElementById("aquarium" + (i + 1)).setAttribute("aquaID", response["id"][i]);
                     document.getElementById("aquarium" + (i + 1)).classList.add("full");
                 }
-                $("#afterWelcome").html(response["user"]);
+                $("#afterWelcome").html("<p style=\"color: white; font-size: large; padding-right: 5px\">" + response["user"] + "</p>");
             },
             error: function () {
                 console.log("è vuoto");
@@ -403,7 +293,15 @@
                 } else {
                     element = document.getElementById("flexSwitchCheckChecked3");
                     element.checked = true;
-
+                }
+                if (response["status"][3] == 'off') {
+                    element = document.getElementById("pompa");
+                    element.innerHTML =
+                        '<p> Pompa di riempimento<i style="color: red; padding-left: 20px;" class="bi bi-circle-fill"></i></p>'
+                } else {
+                    element = document.getElementById("pompa");
+                    element.innerHTML =
+                        '<p> Pompa di riempimento<i style="color: green; padding-left: 20px;" class="bi bi-circle-fill"></i></p>'
                 }
             }
 
