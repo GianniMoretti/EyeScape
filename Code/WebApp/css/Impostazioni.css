@@ -34,3 +34,10 @@ body {
 .input-wrap {
     border-radius: 25px;
 }
+
+.d-inline-block {
+    height:60px;
+    width: 230px;
+    background-repeat: no-repeat;
+    background-size: 230px 60px;
+}
