@@ -7,7 +7,7 @@ from math import floor
 #Cancellare le letture da 10 giorni prima
 
 #OPTIONS
-SensorPeriod = 300
+SensorPeriod = 60
 LightPeriod = 1
 devicePeriod = 1
 refillPeriod = 120
