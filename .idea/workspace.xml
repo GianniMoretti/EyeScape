@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="luci + pompa">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/AquFirstPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/AquFirstPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Aquarium.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/HTML/impostazioni.html" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/HTML/impostazioni.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Aquarium1.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Aquarium1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/WebApp/css/Impostazioni.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/WebApp/css/Impostazioni.css" afterDir="false" />
-    </list>
+    <list default="true" id="aa639746-b90d-4824-acfc-19a06030d315" name="Changes" comment="final git" />
     <list id="f890ead7-90a7-421c-a04f-0fcdb23d9f1a" name="Changes by giannimoretti" comment="" />
     <list id="d847e407-150c-452e-9619-10b55aa2f26f" name="Changes by leona" comment="Changes by leona" />
     <list id="bea43b5e-37f4-4bd6-a96a-dc130e1cebc8" name="Changes by matte" comment="Changes by matte" />
@@ -89,6 +80,7 @@
       <workItem from="1664607977779" duration="985000" />
       <workItem from="1664616696177" duration="73103000" />
       <workItem from="1673438693592" duration="57199000" />
+      <workItem from="1673809432784" duration="407000" />
     </task>
     <task id="LOCAL-00001" summary="User database added">
       <created>1663087546835</created>
@@ -209,7 +201,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673710662597</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="final git">
+      <created>1673809509641</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673809509641</updated>
+    </task>
+    <task id="LOCAL-00019" summary="final git">
+      <created>1673809814340</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673809814340</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +250,7 @@
     <MESSAGE value="migliorie grafiche" />
     <MESSAGE value="screens" />
     <MESSAGE value="luci + pompa" />
-    <option name="LAST_COMMIT_MESSAGE" value="luci + pompa" />
+    <MESSAGE value="final git" />
+    <option name="LAST_COMMIT_MESSAGE" value="final git" />
   </component>
 </project>
